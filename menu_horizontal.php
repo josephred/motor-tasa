@@ -2,7 +2,7 @@
   <div class="container"><div>
     <a href="index.php" id="logo" class="navbar-brand">
     <img src="img/logo2-cmr.jpg" style="width: 30px;height: 25px;" align="left">
-    <p style="font-size:15;">Perfil: Administrador</p></a></div>
+    <p style="font-size:15;"></p></a></div>
     <div class="clearfix">
       <button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
         <span class="sr-only">Toggle navigation</span>
@@ -12,7 +12,7 @@
         <ul class="nav navbar-nav pull-left">
           <li>
             <a class="btn" id="make-small-nav">
-              <i class="fa fa-bars"> </i>
+              <i class="fa fa-bars"></i>
             </a>
           </li>
         </ul>
@@ -22,7 +22,7 @@
           <li class="dropdown profile-dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 			  <img src="img/samples/icono_mujer.png" width="">
-              <span class="hidden-xs">Claudia Menares</span> <b class="caret"></b>
+              <span class="hidden-xs">Claudia Menares / Administrador </span> <b class="caret"></b>
             </a>
             <ul class="dropdown-menu dropdown-menu-right">
               <li><a href="mi_perfil.php"><i class="fa fa-address-card-o"></i>Mi Perfil</a></li>
