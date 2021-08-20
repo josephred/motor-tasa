@@ -12,7 +12,7 @@
         <ul class="nav navbar-nav pull-left">
           <li>
             <a class="btn" id="make-small-nav">
-              <i class="fa fa-bars"></i>
+              <i class="fa fa-bars"> </i>
             </a>
           </li>
         </ul>
