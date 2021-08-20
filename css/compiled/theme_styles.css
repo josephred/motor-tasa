@@ -3527,7 +3527,7 @@ input[type="radio"] {
   /* line 76, Applications/MAMP/htdocs/cube/scss/theme/imports/_login_stuff.scss */
   #login-logo > img {
     display: block;
-    height: 40px;
+    height: 100px;
     margin: 0 auto; }
   /* line 81, Applications/MAMP/htdocs/cube/scss/theme/imports/_login_stuff.scss */
   #login-logo > span {

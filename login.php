@@ -1,11 +1,17 @@
-<!DOCTYPE html>
+
+<?php
+session_start();
+$fecha_hoy = date("d-m-Y");
+$era_hoy = date('Y');
+$_SESSION["LoginError"]=0;
+?><!DOCTYPE html>
 <html>
   <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>CMR - Gestión de Información</title>
+	<title>La Polar - Motor de Tasa</title>
 	
 	<!-- bootstrap -->
 	<link rel="stylesheet" type="text/css" href="components/bootstrap/dist/css/bootstrap.min.css" />
@@ -39,9 +45,9 @@
               <div id="login-box-holder">
                 <div class="row">
                   <div class="col-xs-12">
-                    <header id="login-header">
-                      <div id="login-logo">
-                        <img src="img/logo-cmr.png">
+                    <header id="login-header_">
+                      <div id="login-logo" >
+                        <img src="img/logo-lapolar.png">
                       </div>
                     </header>
                     <div id="login-box-inner">
