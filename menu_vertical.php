@@ -56,43 +56,60 @@ $pagina = str_replace("/", "", $url);
             </ul>
           </li>
         -->
+          <?php if( $_SESSION["perfil"]=="Administrador"  ){?>
           <li class="<?php echo $pagina == 'post_facturacion.php' ? 'active' : ''; ?>">
             <a href="administracion_reglas.php">
               <i class="fa fa-user"></i>
               <div style="margin-left: 30px;">Administración de Reglas de Negocio<br></div>
             </a>
           </li>
+          <?php }?>
+
+          <?php if( $_SESSION["perfil"]=="Administrador"  ){?>
           <li class="<?php echo $pagina == 'frecuencia_gasto_administracion.php' ? 'active' : ''; ?>">
             <a href="administracion_tasas.php">
               <i class="fa fa-money"></i>
               <div style="margin-left: 30px;">Administración de Tasas</div>
             </a>
           </li>
+          <?php } ?>
+
+          <?php if( $_SESSION["perfil"]=="Administrador" ||  $_SESSION["perfil"]=="Auditor"  ){?>
           <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
             <a href="auditoria.php">
               <i class="fa fa-line-chart"></i>
               <div style="margin-left: 30px;">Auditoría</div>
             </a>
           </li>
+          <? } ?>
+          
+          <?php if( $_SESSION["perfil"]=="Administrador" || $_SESSION["perfil"] == "Monitor" ){?>
+            <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
+              <a href="monitoreo.php">
+                <i class="fa fa-pie-chart"></i>
+                <div style="margin-left: 30px;">Monitoreo</div>
+              </a>
+            </li>
+          <? } ?>
+          
+          <?php if( $_SESSION["perfil"]=="Administrador" ||  $_SESSION["perfil"]=="Auditor" || $_SESSION["perfil"] == "Monitor" ){?>
+            <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
+              <a href="configuraciones.php">
+                <i class="fa fa-cog"></i>
+                <div style="margin-left: 30px;">Configuraciones</div>
+              </a>
+            </li>
+          <? } ?>
+
+          <?php if( $_SESSION["perfil"]=="Administrador"  ){?>
           <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
-            <a href="monitoreo.php">
-              <i class="fa fa-line-chart"></i>
-              <div style="margin-left: 30px;">Monitoreo</div>
-            </a>
-          </li>
-          <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
-            <a href="configuraciones.php">
-              <i class="fa fa-cog"></i>
-              <div style="margin-left: 30px;">Configuraciones</div>
-            </a>
-          </li>
-          <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
-            <a href="estadisticas.php">
-              
+            <a href="estadisticas.php">              
               <i class="fa fa-users"></i>
               <div style="margin-left: 30px;">Administración de <br>Usuarios</div>
             </a>
           </li>
+          <? } ?>
+
           <li>
             <a href="salir.php">
               <i class="fa fa-power-off"></i>
