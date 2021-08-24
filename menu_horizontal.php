@@ -1,8 +1,8 @@
 <header class="navbar" id="header-navbar">
   <div class="container"><div>
     <a href="index.php" id="logo" class="navbar-brand">
-    <img src="img/logo2-cmr.jpg" style="width: 30px;height: 25px;" align="left">
-    <p style="font-size:15;">Perfil: <?php echo $_SESSION['perfil'] ?></p></a></div>
+    <img src="img/logo-lapolar.png" style="width: 30px;height: 25px;" align="left">
+    <p style="font-size:15;"></p></a></div>
     <div class="clearfix">
       <button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
         <span class="sr-only">Toggle navigation</span>
@@ -22,7 +22,7 @@
           <li class="dropdown profile-dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 			  <img src="img/samples/icono_mujer.png" width="">
-              <span class="hidden-xs"><?php echo $_SESSION['nombre'] ?></span> <b class="caret"></b>
+              <span class="hidden-xs"><?php echo $_SESSION['nombre'] ?> / <?php echo $_SESSION['perfil'] ?></span> <b class="caret"></b>
             </a>
             <ul class="dropdown-menu dropdown-menu-right">
               <li><a href="mi_perfil.php"><i class="fa fa-address-card-o"></i>Mi Perfil</a></li>
