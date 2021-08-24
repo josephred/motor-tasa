@@ -55,7 +55,7 @@ $fecha_hoy = date("d-m-Y");
 														<dt class="pt-15">Vigencia</dt>
 														<dd>
 															<div class="fg-line">
-																<input type="text" class="form-control" name="nombres" id="nombres" value="" />
+																<input type="text" class="form-control hasDatepicker " name="nombres" id="nombres" value="" />
 															</div>
 														</dd>
 													</dl>
@@ -82,8 +82,8 @@ $fecha_hoy = date("d-m-Y");
 																				<div class="col-lg-3 col-md-3 col-sm-3">
 																					<?php  
 																					$html = "<select id='cmbCondicion_".$var['id']."' class='form-control' >";
-																					foreach( $_SESSION["store_condiciones"] as $key => $con ){
-																						$html .= "<option value='".$key."' >".$con."</option>";
+																					foreach( $_SESSION["store_condiciones"] as $con ){
+																						$html .= "<option value='".$con['id']."' >".$con['nombre']."</option>";
 																					}
 																					$html .= "</select>";
 																					echo $html; 
@@ -97,7 +97,7 @@ $fecha_hoy = date("d-m-Y");
 																					<input type='text' class="form-control" id="txtValor_<?php echo $var['id'];?>" value=''/>
 																				</div>
 																			</div>																		
-																		<? }
+																		<?php }
 																		} ?>																	
 																	</div>
 																	<div  id="variablesOpcionales">
@@ -121,7 +121,7 @@ $fecha_hoy = date("d-m-Y");
 								</div>
 							</div>
 
-
+<!-- 
 							<div class="story-content">
 								<form role="form" method="post" name="frm" id="frm">
 									<div class="pmbb-edit">
@@ -187,7 +187,7 @@ $fecha_hoy = date("d-m-Y");
 										</div>
 									</div>
 								</form>
-							</div>
+							</div> -->
 
 
 
@@ -215,7 +215,7 @@ $fecha_hoy = date("d-m-Y");
 												<tr>
 													<td>
 														<div class="form-group">
-															<label for="datepickerDate">Fecha Inicio</label>
+															<label for="datepickerDate">Nº</label>
 															<input type="text" class="form-control" id="datepickerDate" value="04-11-2014">
 														</div>
 													</td>
@@ -403,7 +403,60 @@ $fecha_hoy = date("d-m-Y");
 			});
 
 		});
+
+		const tablaReglas = document.querySelector("#table-example-fixed");
+		const divVariablesOpcionales = document.querySelector("#variablesOpcionales");
+		const storeReglas = JSON.parse('<?php echo json_encode($_SESSION["store_reglas"]) ?>');
+		const storeVariables = JSON.parse('<?php echo json_encode($_SESSION["store_variables"]) ?>');
+		const storeCondciones = JSON.parse('<?php echo json_encode($_SESSION["store_condiciones"]) ?>');
+
+		let html = `<tr>
+						<td>Nº</td>
+						<td>Nombre</td>
+						<td>Variables</td>
+						<td>Tasas</td>
+						<td>Vigencia</td>
+						<td>Estado</td>
+						<td>Fecha Creacion</td>
+						<td>Acción</td>
+					</tr>`;
+		let n = 0;
+		storeReglas.forEach((i)=>{
+			let html2 = '';
+			i.variables.split(' ').forEach((v)=>{
+				for( let j=0 ; j<storeVariables.length ; j++ ){
+					if( v == storeVariables[j].id ){
+						html2 += ` &nbsp; <span class="label label-info">${storeVariables[j].nombre}</span>`;
+					}
+				}
+
+			});
+
+			html += `<tr>
+						<td>${++n}</td>
+						<td>${i.nombre}</td>
+						<td>${html2}</td>
+						<td>${i.tasa}</td>
+						<td>${i.vigencia}</td>
+						<td>${i.estado}</td>
+						<td>${i.fecha_creacion}</td>
+						<td> 
+							<button class='btn btn-sm btn-warning'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+							<button class='btn btn-sm btn-danger' onclick='eliminar()'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+						</td>
+					</tr>`;
+		});
+
+		tablaReglas.innerHTML = html ; 
+
+		console.log(storeVariables);
+		console.log(storeCondciones);
+		console.log(storeReglas);
+		const eliminar = ()=>{
+			alert('¿Seguro desea eliminar el registro?')
+		}
 	</script>
 </body>
 
 </html>
+<?php echo "<pre>"; print_r($_SESSION);?>
