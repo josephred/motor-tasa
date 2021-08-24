@@ -2,8 +2,6 @@
 session_start();
 $fecha_hoy = date("d-m-Y");
 $era_hoy = date('Y');
-// echo "<pre>";
-// print_r($_SESSION);
 ?>
 <style type="text/css">
   .ocultar{ 
