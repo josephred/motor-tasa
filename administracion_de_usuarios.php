@@ -19,9 +19,9 @@ $fecha_hoy = date("d-m-Y");
                   <div class="col-lg-12">
                     <ol class="breadcrumb">
                       <li><a href="index.php">Inicio</a></li>
-                      <li class="active"><span>Frecuencia Gastos de Administración</span></li>
+                      <li class="active"><span>Administración de Usuarios</span></li>
                     </ol>  
-                    <h1>Frecuencia Gastos de Administración</h1>
+                    <h1>Administración de Usuarios</h1>
                   </div>
                 </div>
 
@@ -33,23 +33,26 @@ $fecha_hoy = date("d-m-Y");
                                         <dt class="p-t-10">Nombres</dt>
                                         <dd>
                                           <div class="fg-line">
-                                            <input type="text" class="form-control" name="nombres" id="nombres" value="Claudia" />
+                                            <input type="text" class="form-control" name="nombres" id="nombres" value="Patricio" />
                                           </div>
                                         </dd>
+
+
+
                                       </dl>
                                       <dl class="dl-horizontal">
                                         <dt class="p-t-10">Apellidos</dt>
                                         <dd>
                                           <div class="fg-line">
-                                           <input type="text" class="form-control" name="apellidos" id="apellidos" value="Menares" />
+                                           <input type="text" class="form-control" name="apellidos" id="apellidos" value="Arroyo" />
                                           </div>
                                         </dd>
                                       </dl>
                                       <dl class="dl-horizontal">
-                                        <dt class="p-t-10">Teléfono Fijo</dt>
+                                        <dt class="p-t-10">Rut</dt>
                                         <dd>
                                           <div class="fg-line">
-                                            <input type="text" class="form-control" name="fijo" id="fijo" value="(+56 2) 1234 5678" maxlength="17" />
+                                            <input type="text" class="form-control" name="rut" id="rut" value="15.345.567-8" maxlength="17" />
                                           </div>
                                         </dd>
                                       </dl>
@@ -61,16 +64,30 @@ $fecha_hoy = date("d-m-Y");
                                           </div>
                                         </dd>
                                       </dl>
+                                        <dl class="dl-horizontal">
+                                          <dt class="p-t-10">Correo</dt>
+                                                                            <dd>
+                                                                              <div class="fg-line">
+                                                                                <input type="Text" class="form-control" name="correo" id="correo" value="parroyo@gmail.com" maxlength="17" >
+                                                                              </div>
+                                                                            </dd>
+                                                                          </dl>
+                                       <dl class="dl-horizontal">
+                                                                            <dt class="p-t-10">Perfil </dt>
+                                                                            <dd>
+                                                           <div class="input-group mb-3">
+                                                             <select class="form-control" id="inputGroupSelect02">
+                                                               <option selected>Elija una opción</option>
+                                                               <option value="1">Administrador</option>
+                                                               <option value="2">Auditor</option>
+                                                               <option value="3">Monitor</option>
+                                                             </select>
+
+                                                           </div>
+                                                                            </dd>
+                                                                          </dl>
                                       <dl class="dl-horizontal">
-                                        <dt class="p-t-10">Correo</dt>
-                                        <dd>
-                                          <div class="fg-line">
-                                            <input type="email" class="form-control" value="cvmenares@Falabella.cl" readonly>
-                                          </div>
-                                        </dd>
-                                      </dl>
-                                      <dl class="dl-horizontal">
-                                        <dt class="p-t-10">Ingrese Clave Nueva</dt>
+                                        <dt class="p-t-10">Ingrese Clave </dt>
                                         <dd>
                                           <div class="fg-line">
                                             <input type="password" name="passwordNueva" id="passwordNueva" value="" class="form-control" placeholder="Ingrese nueva clave">
@@ -78,7 +95,7 @@ $fecha_hoy = date("d-m-Y");
                                         </dd>
                                       </dl>
                                       <dl class="dl-horizontal">
-                                        <dt class="p-t-10">Repita Clave Nueva</dt>
+                                        <dt class="p-t-10">Repita Clave </dt>
                                         <dd>
                                           <div class="fg-line">
                                             <input type="password" name="passwordRepite" id="passwordRepite" value="" class="form-control" placeholder="Repita nueva clave">
