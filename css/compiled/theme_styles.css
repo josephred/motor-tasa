@@ -920,12 +920,15 @@ h3 .small {
     /* line 53, Applications/MAMP/htdocs/cube/scss/theme/imports/_sidebar.scss */
     #sidebar-nav .nav > li > a {
       color: #fff;
-      height: 44px;
-      line-height: 28px;
+      height: 70px;
+      line-height: 24px;
+      text-align: left;
       transition: border-color 0.1s ease-in-out 0s, background-color 0.1s ease-in-out 0s, box-shadow 0.1s ease-in-out 0s;
       overflow: hidden;
       padding: 8px 15px 8px 20px;
-      border-left: 0 solid transparent; }
+      border-left: 0 solid transparent; 
+      vertical-align: middle;
+      }
       /* line 62, Applications/MAMP/htdocs/cube/scss/theme/imports/_sidebar.scss */
       #sidebar-nav .nav > li > a:hover {
         border-left-color: #03a9f4; }
