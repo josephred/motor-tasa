@@ -110,15 +110,6 @@ $pagina = str_replace("/", "", $url);
             </li>
           <? } ?>
 
-          <?php if( $_SESSION["perfil"]=="Administrador"  ){?>
-          <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
-            <a href="administracion_de_usuarios.php">              
-              <i class="fa fa-users"></i>
-              <div style="margin-left: 30px;">Administración de <br>Usuarios</div>
-            </a>
-          </li>
-          <? } ?>
-
           <li>
             <a href="salir.php">
               <i class="fa fa-power-off"></i>
