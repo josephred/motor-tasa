@@ -55,7 +55,7 @@ $pagina = str_replace("/", "", $url);
               <div style="margin-left: 30px;">Auditoría</div>
             </a>
           </li>
-          <? } ?>
+          <?php } ?>
           
           <?php if( $_SESSION["perfil"]=="Administrador" || $_SESSION["perfil"] == "Monitor" ){?>
             <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
@@ -64,9 +64,42 @@ $pagina = str_replace("/", "", $url);
                 <div style="margin-left: 30px;">Monitoreo</div>
               </a>
             </li>
-          <? } ?>
+          <?php } ?>
 
 
+          <?php if( $_SESSION["perfil"]=="Administrador" ||  $_SESSION["perfil"]=="Auditor"  ){?>
+            <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
+              <a href="pendientes_autorizar.php">
+                <i class="fa fa-cog"></i>
+                <div style="margin-left: 30px;">Pendientes de Autorizar</div>
+              </a>
+            </li>
+          <?php } ?>
+
+          <?php if( $_SESSION["perfil"]=="Administrador" ||  $_SESSION["perfil"]=="Auditor" || $_SESSION["perfil"] == "Monitor" ){?>
+            <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
+              <a href="configuraciones.php">
+                <i class="fa fa-cog"></i>
+                <div style="margin-left: 30px;">Configuraciones</div>
+              </a>
+            </li>
+          <?php } ?>
+
+          <?php if( $_SESSION["perfil"]=="Administrador"  ){?>
+          <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
+            <a href="administracion_de_usuarios.php">              
+              <i class="fa fa-users"></i>
+              <div style="margin-left: 30px;">Administración de <br>Usuarios</div>
+            </a>
+          </li>
+          <?php } ?>
+
+          <li>
+            <a href="salir.php">
+              <i class="fa fa-power-off"></i>
+              <span>Cerrar Sesión</span>
+            </a>
+          </li>
 
          
         </ul>
