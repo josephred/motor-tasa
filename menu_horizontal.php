@@ -1,8 +1,8 @@
 <header class="navbar" id="header-navbar">
   <div class="container"><div>
     <a href="index.php" id="logo" class="navbar-brand">
-    <img src="img/logo-lapolar.png" style="width: 30px;height: 25px;" align="left">
-    <p style="font-size:15;"></p></a></div>
+    <img src="img/logo-lapolar.png" style="" align="left"> 
+    <p style="font-size:28; margin-top: 5px;">La Polar</p></a></div>
     <div class="clearfix">
       <button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
         <span class="sr-only">Toggle navigation</span>
