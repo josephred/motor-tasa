@@ -68,29 +68,41 @@ $fecha_hoy = date("d-m-Y");
 														<dd>
 															<div class="panel panel-default">
 																<div class="panel-body">
-																	<?php 
-																	foreach( $_SESSION["store_variables"] as $var ){ 
-																		if( $var['tipo'] == 'OBLIGATORIA' ){
-																	?>
-																		<div class="row">
-																			<div class="col-lg-3 col-md-3 col-sm-3">
-																				<input readonly type="text" class="form-control" id="<?php echo $var['id'] ?>" value="<?php echo $var['nombre'] ?>"  />
-																			</div>
-																			<div class="col-lg-3 col-md-3 col-sm-3">
-																				<?php  
-																				$html = "<select id='cmbCondicion_".$var['id']."' class='form-control' >";
-																				foreach( $_SESSION["store_condiciones"] as $con ){
-																					$html .= "<option value='".$con['id']."' >".$con['nombre']."</option>";
-																				}
-																				$html .= "</select>";
-																				echo $html; 
-																				?>
-																			</div>
-																			<div class="col-lg-3 col-md-3 col-sm-3">
-																			</div>
-																		</div>																		
-																	<? }
-																	} ?>
+																	<div>
+																		<?php 
+																		foreach( $_SESSION["store_variables"] as $var ){ 
+																			if( $var['tipo'] == 'OBLIGATORIA' ){
+																		?>
+																			<div class="row">
+
+																				<div class="col-lg-3 col-md-3 col-sm-3">
+																					<input readonly type="text" class="form-control" id="<?php echo $var['id'] ?>" value="<?php echo $var['nombre'] ?>"  />
+																				</div>
+
+																				<div class="col-lg-3 col-md-3 col-sm-3">
+																					<?php  
+																					$html = "<select id='cmbCondicion_".$var['id']."' class='form-control' >";
+																					foreach( $_SESSION["store_condiciones"] as $key => $con ){
+																						$html .= "<option value='".$key."' >".$con."</option>";
+																					}
+																					$html .= "</select>";
+																					echo $html; 
+																					?>
+																				</div>
+
+																				<div class="col-lg-1 col-md-1 col-sm-3">
+																					<span style="float: right; margin-top: 8px;" >valor</span> 
+																				</div>
+																				<div class="col-lg-1 col-md-1 col-sm-3">
+																					<input type='text' class="form-control" id="txtValor_<?php echo $var['id'];?>" value=''/>
+																				</div>
+																			</div>																		
+																		<? }
+																		} ?>																	
+																	</div>
+																	<div  id="variablesOpcionales">
+
+																	</div>
 																</div>
 															</div>
 														</dd>
