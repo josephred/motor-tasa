@@ -18,11 +18,28 @@ $fecha_hoy = date("d-m-Y");
 						<div class="col-lg-12">
 							<div class="row">
 								<div class="col-lg-12">
-									<ol class="breadcrumb">
-										<li><a href="index.php">Inicio</a></li>
-										<li class="active"><span>Frecuencia Gastos de Administración</span></li>
-									</ol>
-									<h1>Frecuencia Gastos de Administración</h1>
+									<div class="col-lg-8 col-md-8 col-sm-12">
+										<ol class="breadcrumb">
+											<li><a href="index.php">Panel</a></li>
+											<li class="active"><span>Administración de Reglas de Negocio</span></li>
+										</ol>
+										<h1>Administración de Reglas de Negocio</h1>
+									</div>
+									<div class="col-lg-4 col-md-4 col-sm-12" style="margin-top: 20px;" >
+										<button class="btn btn-primary pull-right " style='margin-left: 16px; ;' type="button" >	Administración de Variables	</button>
+										<button class="btn btn-success pull-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+											Nueva Regla
+										</button>
+									</div>
+								</div>
+							</div>							
+
+							<div class="collapse" id="collapseExample">
+								<div class="well">
+									
+									<button class="btn btn-primary pull-right col-3" style='margin-left: 16px; ;' type="button" >Guardar</button>
+									<br>
+									<br>
 								</div>
 							</div>
 
