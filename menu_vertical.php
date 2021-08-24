@@ -26,6 +26,27 @@ $pagina = str_replace("/", "", $url);
             </a>
           </li>
 
+
+          <?php if( $_SESSION["perfil"]=="Administrador"  ){?>
+          <li class="<?php echo $pagina == 'post_facturacion.php' ? 'active' : ''; ?>">
+            <a href="reglas_de_negocio.php">
+              <i class="fa fa-user"></i>
+              <div style="margin-left: 30px;">Administración de Reglas de Negocio<br></div>
+            </a>
+          </li>
+          <?php }?>
+
+          <?php if( $_SESSION["perfil"]=="Administrador"  ){?>
+          <li class="<?php echo $pagina == 'frecuencia_gasto_administracion.php' ? 'active' : ''; ?>">
+            <a href="administracion_tasas.php">
+              <i class="fa fa-money"></i>
+              <div style="margin-left: 30px;">Administración de Tasas</div>
+            </a>
+          </li>
+          <?php } ?>
+
+
+
          
         </ul>
       </div>
