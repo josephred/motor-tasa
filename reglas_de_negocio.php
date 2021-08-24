@@ -410,6 +410,9 @@ $fecha_hoy = date("d-m-Y");
 		const storeVariables = JSON.parse('<?php echo json_encode($_SESSION["store_variables"]) ?>');
 		const storeCondciones = JSON.parse('<?php echo json_encode($_SESSION["store_condiciones"]) ?>');
 
+	
+		
+
 		let html = `<tr>
 						<td>Nº</td>
 						<td>Nombre</td>
@@ -421,6 +424,7 @@ $fecha_hoy = date("d-m-Y");
 						<td>Acción</td>
 					</tr>`;
 		let n = 0;
+
 		storeReglas.forEach((i)=>{
 			let html2 = '';
 			i.variables.split(' ').forEach((v)=>{
@@ -442,18 +446,22 @@ $fecha_hoy = date("d-m-Y");
 						<td>${i.fecha_creacion}</td>
 						<td> 
 							<button class='btn btn-sm btn-warning'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
-							<button class='btn btn-sm btn-danger' onclick='eliminar()'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+							<button class='btn btn-sm btn-danger' onclick='eliminar("${i.id}")'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
 						</td>
 					</tr>`;
 		});
 
 		tablaReglas.innerHTML = html ; 
 
+
+
+
 		console.log(storeVariables);
 		console.log(storeCondciones);
 		console.log(storeReglas);
-		const eliminar = ()=>{
-			alert('¿Seguro desea eliminar el registro?')
+		const eliminar = (id)=>{
+			alert(`¿Seguro desea eliminar el registro #${id} ?`);
+			//storeReglas.splice(2, 2);
 		}
 	</script>
 </body>
