@@ -58,7 +58,7 @@ $pagina = str_replace("/", "", $url);
         -->
           <?php if( $_SESSION["perfil"]=="Administrador"  ){?>
           <li class="<?php echo $pagina == 'post_facturacion.php' ? 'active' : ''; ?>">
-            <a href="administracion_reglas.php">
+            <a href="reglas_de_negocio.php">
               <i class="fa fa-user"></i>
               <div style="margin-left: 30px;">Administración de Reglas de Negocio<br></div>
             </a>
@@ -92,6 +92,15 @@ $pagina = str_replace("/", "", $url);
             </li>
           <? } ?>
           
+          <?php if( $_SESSION["perfil"]=="Administrador" ||  $_SESSION["perfil"]=="Auditor"  ){?>
+            <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
+              <a href="pendientes_autorizar.php">
+                <i class="fa fa-cog"></i>
+                <div style="margin-left: 30px;">Pendientes de Autorizar</div>
+              </a>
+            </li>
+          <? } ?>
+
           <?php if( $_SESSION["perfil"]=="Administrador" ||  $_SESSION["perfil"]=="Auditor" || $_SESSION["perfil"] == "Monitor" ){?>
             <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
               <a href="configuraciones.php">
@@ -103,7 +112,7 @@ $pagina = str_replace("/", "", $url);
 
           <?php if( $_SESSION["perfil"]=="Administrador"  ){?>
           <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
-            <a href="estadisticas.php">              
+            <a href="administracion_de_usuarios.php">              
               <i class="fa fa-users"></i>
               <div style="margin-left: 30px;">Administración de <br>Usuarios</div>
             </a>
