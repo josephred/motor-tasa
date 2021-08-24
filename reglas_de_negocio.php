@@ -25,19 +25,85 @@ $fecha_hoy = date("d-m-Y");
 										</ol>
 										<h1>Administración de Reglas de Negocio</h1>
 									</div>
-									<div class="col-lg-4 col-md-4 col-sm-12" style="margin-top: 20px;" >
-										<button class="btn btn-primary pull-right " style='margin-left: 16px; ;' type="button" >	Administración de Variables	</button>
+									<div class="col-lg-4 col-md-4 col-sm-12" style="margin-top: 20px;">
+										<button class="btn btn-primary pull-right " style='margin-left: 16px; ;' type="button"> Administración de Variables </button>
 										<button class="btn btn-success pull-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 											Nueva Regla
 										</button>
 									</div>
 								</div>
-							</div>							
+							</div>
 
 							<div class="collapse" id="collapseExample">
 								<div class="well">
-									
-									<button class="btn btn-primary pull-right col-3" style='margin-left: 16px; ;' type="button" >Guardar</button>
+
+									<div class="panel panel-default">
+										<div class="panel-body">
+											<div class="row">
+												<div class="col-lg-6 col-md-6 col-sm-12">
+													<dl class="dl-horizontal">
+														<dt class="pt-15">Nombres</dt>
+														<dd>
+															<div class="fg-line">
+																<input type="text" class="form-control" name="nombres" id="nombres" value="" />
+															</div>
+														</dd>
+													</dl>
+												</div>
+												<div class="col-lg-6 col-md-6 col-sm-12">
+													<dl class="dl-horizontal">
+														<dt class="pt-15">Vigencia</dt>
+														<dd>
+															<div class="fg-line">
+																<input type="text" class="form-control" name="nombres" id="nombres" value="" />
+															</div>
+														</dd>
+													</dl>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-12 col-md-12 col-sm-12">
+													<dl class="dl-horizontal">
+														<dt class="pt-15">Variables</dt>
+														<dd>
+															<div class="panel panel-default">
+																<div class="panel-body">
+																	<?php 
+																	foreach( $_SESSION["store_variables"] as $var ){ 
+																		if( $var['tipo'] == 'OBLIGATORIA' ){
+																	?>
+																		<div class="row">
+																			<div class="col-lg-3 col-md-3 col-sm-3">
+																				<input readonly type="text" class="form-control" id="<?php echo $var['id'] ?>" value="<?php echo $var['nombre'] ?>"  />
+																			</div>
+																			<div class="col-lg-3 col-md-3 col-sm-3">
+																				<?php  
+																				$html = "<select id='cmbCondicion_".$var['id']."' class='form-control' >";
+																				foreach( $_SESSION["store_condiciones"] as $con ){
+																					$html .= "<option value='".$con['id']."' >".$con['nombre']."</option>";
+																				}
+																				$html .= "</select>";
+																				echo $html; 
+																				?>
+																			</div>
+																			<div class="col-lg-3 col-md-3 col-sm-3">
+																			</div>
+																		</div>																		
+																	<? }
+																	} ?>
+																</div>
+															</div>
+														</dd>
+													</dl>
+												</div>
+												<div class="col-lg-4 col-md-4 col-sm-12">
+
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<button class="btn btn-primary pull-right col-3" style='margin-left: 16px; ;' type="button">Guardar</button>
 									<br>
 									<br>
 								</div>
