@@ -3,407 +3,473 @@ include('lib/support.php');
 session_start();
 $fecha_hoy = date("d-m-Y");
 ?>
-<!DOCTYPE html>
-<html>
-<?php include('head.php') ?>
+    <!DOCTYPE html>
+    <html>
+    <?php include('head.php') ?>
 
-<body>
-	<div id="theme-wrapper">
-		<?php include('menu_horizontal.php') ?>
-		<div id="page-wrapper" class="container">
-			<div class="row">
-				<?php include('menu_vertical.php') ?>
-				<div id="content-wrapper">
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="row">
-								<div class="col-lg-12">
-									<div class="col-lg-8 col-md-8 col-sm-12">
-										<ol class="breadcrumb">
-											<li><a href="index.php">Panel</a></li>
-											<li class="active"><span>Administración de Reglas de Negocio</span></li>
-										</ol>
-										<h1>Administración de Reglas de Negocio</h1>
-									</div>
-									<div class="col-lg-4 col-md-4 col-sm-12" style="margin-top: 20px;">
-										<button class="btn btn-primary pull-right " style='margin-left: 16px; ;' type="button"> Administración de Variables </button>
-										<button class="btn btn-success pull-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-											Nueva Regla
-										</button>
-									</div>
-								</div>
-							</div>
+    <body>
+    <div id="theme-wrapper">
+        <?php include('menu_horizontal.php') ?>
+        <div id="page-wrapper" class="container">
+            <div class="row">
+                <?php include('menu_vertical.php') ?>
+                <div id="content-wrapper">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-8 col-md-8 col-sm-12">
+                                        <ol class="breadcrumb">
+                                            <li><a href="index.php">Panel</a></li>
+                                            <li class="active"><span>Administración de Reglas de Negocio</span></li>
+                                        </ol>
+                                        <h1>Administración de Reglas de Negocio</h1>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-12" style="margin-top: 20px;">
+                                        <button class="btn btn-primary pull-right " style='margin-left: 16px; ;'
+                                                type="button"> Administración de Variables
+                                        </button>
+                                        <button class="btn btn-success pull-right" type="button" data-toggle="collapse"
+                                                data-target="#collapseExample" aria-expanded="false"
+                                                aria-controls="collapseExample">
+                                            Nueva Regla
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
 
-							<div class="collapse" id="collapseExample">
-								<div class="well">
+                            <div class="collapse" id="collapseExample">
+                                <div class="well">
 
-									<div class="panel panel-default">
-										<div class="panel-body">
-											<div class="row">
-												<div class="col-lg-6 col-md-6 col-sm-12">
-													<dl class="dl-horizontal">
-														<dt class="pt-15">Nombres</dt>
-														<dd>
-															<div class="fg-line">
-																<input type="text" class="form-control" name="nombres" id="nombres" value="" />
-															</div>
-														</dd>
-													</dl>
-												</div>
-												<div class="col-lg-6 col-md-6 col-sm-12">
-													<dl class="dl-horizontal">
-														<dt class="pt-15">Vigencia</dt>
-														<dd>
-															<div class="fg-line">
-																<input type="text" class="form-control" name="nombres" id="nombres" value="" />
-															</div>
-														</dd>
-													</dl>
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-lg-12 col-md-12 col-sm-12">
-													<dl class="dl-horizontal">
-														<dt class="pt-15">Variables</dt>
-														<dd>
-															<div class="panel panel-default">
-																<div class="panel-body">
-																	<div>
-																		<?php 
-																		foreach( $_SESSION["store_variables"] as $var ){ 
-																			if( $var['tipo'] == 'OBLIGATORIA' ){
-																		?>
-																			<div class="row">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                                    <dl class="dl-horizontal">
+                                                        <dt class="pt-15">Nombres</dt>
+                                                        <dd>
+                                                            <div class="fg-line">
+                                                                <input type="text" class="form-control" name="nombres"
+                                                                       id="nombres" value=""/>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                                    <dl class="dl-horizontal">
+                                                        <dt class="pt-15">Vigencia</dt>
+                                                        <dd>
+                                                            <div class="fg-line">
+                                                                <input type="text" class="form-control hasDatepicker "
+                                                                       name="nombres" id="nombres" value=""/>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                                    <dl class="dl-horizontal">
+                                                        <dt class="pt-15">Variables</dt>
+                                                        <dd>
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-body">
+                                                                    <div>
+                                                                        <?php
+                                                                        foreach ($_SESSION["store_variables"] as $var) {
+                                                                            if ($var['tipo'] == 'OBLIGATORIA') {
+                                                                                ?>
+                                                                                <div class="row">
 
-																				<div class="col-lg-3 col-md-3 col-sm-3">
-																					<input readonly type="text" class="form-control" id="<?php echo $var['id'] ?>" value="<?php echo $var['nombre'] ?>"  />
-																				</div>
+                                                                                    <div class="col-lg-3 col-md-3 col-sm-3">
+                                                                                        <input readonly type="text"
+                                                                                               class="form-control"
+                                                                                               id="<?php echo $var['id'] ?>"
+                                                                                               value="<?php echo $var['nombre'] ?>"/>
+                                                                                    </div>
 
-																				<div class="col-lg-3 col-md-3 col-sm-3">
-																					<?php  
-																					$html = "<select id='cmbCondicion_".$var['id']."' class='form-control' >";
-																					foreach( $_SESSION["store_condiciones"] as $key => $con ){
-																						$html .= "<option value='".$key."' >".$con."</option>";
-																					}
-																					$html .= "</select>";
-																					echo $html; 
-																					?>
-																				</div>
+                                                                                    <div class="col-lg-3 col-md-3 col-sm-3">
+                                                                                        <?php
+                                                                                        $html = "<select id='cmbCondicion_" . $var['id'] . "' class='form-control' >";
+                                                                                        foreach ($_SESSION["store_condiciones"] as $con) {
+                                                                                            $html .= "<option value='" . $con['id'] . "' >" . $con['nombre'] . "</option>";
+                                                                                        }
+                                                                                        $html .= "</select>";
+                                                                                        echo $html;
+                                                                                        ?>
+                                                                                    </div>
 
-																				<div class="col-lg-1 col-md-1 col-sm-3">
-																					<span style="float: right; margin-top: 8px;" >valor</span> 
-																				</div>
-																				<div class="col-lg-1 col-md-1 col-sm-3">
-																					<input type='text' class="form-control" id="txtValor_<?php echo $var['id'];?>" value=''/>
-																				</div>
-																			</div>																		
-																		<? }
-																		} ?>																	
-																	</div>
-																	<div  id="variablesOpcionales">
+                                                                                    <div class="col-lg-1 col-md-1 col-sm-3">
+                                                                                        <span style="float: right; margin-top: 8px;">valor</span>
+                                                                                    </div>
+                                                                                    <div class="col-lg-1 col-md-1 col-sm-3">
+                                                                                        <input type='text'
+                                                                                               class="form-control"
+                                                                                               id="txtValor_<?php echo $var['id']; ?>"
+                                                                                               value=''/>
+                                                                                    </div>
+                                                                                </div>
+                                                                            <?php }
+                                                                        } ?>
+                                                                    </div>
+                                                                    <div id="variablesOpcionales">
 
-																	</div>
-																</div>
-															</div>
-														</dd>
-													</dl>
-												</div>
-												<div class="col-lg-4 col-md-4 col-sm-12">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-sm-12">
 
-												</div>
-											</div>
-										</div>
-									</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-									<button class="btn btn-primary pull-right col-3" style='margin-left: 16px; ;' type="button">Guardar</button>
-									<br>
-									<br>
-								</div>
-							</div>
+                                    <button class="btn btn-primary pull-right col-3" style='margin-left: 16px; ;'
+                                            type="button">Guardar
+                                    </button>
+                                    <br>
+                                    <br>
+                                </div>
+                            </div>
 
-
-							<div class="story-content">
-								<form role="form" method="post" name="frm" id="frm">
-									<div class="pmbb-edit">
-										<dl class="dl-horizontal">
-											<dt class="p-t-10">Nombres</dt>
-											<dd>
-												<div class="fg-line">
-													<input type="text" class="form-control" name="nombres" id="nombres" value="Claudia" />
-												</div>
-											</dd>
-										</dl>
-										<dl class="dl-horizontal">
-											<dt class="p-t-10">Apellidos</dt>
-											<dd>
-												<div class="fg-line">
-													<input type="text" class="form-control" name="apellidos" id="apellidos" value="Menares" />
-												</div>
-											</dd>
-										</dl>
-										<dl class="dl-horizontal">
-											<dt class="p-t-10">Teléfono Fijo</dt>
-											<dd>
-												<div class="fg-line">
-													<input type="text" class="form-control" name="fijo" id="fijo" value="(+56 2) 1234 5678" maxlength="17" />
-												</div>
-											</dd>
-										</dl>
-										<dl class="dl-horizontal">
-											<dt class="p-t-10">Teléfono Celular</dt>
-											<dd>
-												<div class="fg-line">
-													<input type="text" class="form-control" name="celular" id="celular" value="(+56 9) 8765 4321" maxlength="17">
-												</div>
-											</dd>
-										</dl>
-										<dl class="dl-horizontal">
-											<dt class="p-t-10">Correo</dt>
-											<dd>
-												<div class="fg-line">
-													<input type="email" class="form-control" value="cvmenares@Falabella.cl" readonly>
-												</div>
-											</dd>
-										</dl>
-										<dl class="dl-horizontal">
-											<dt class="p-t-10">Ingrese Clave Nueva</dt>
-											<dd>
-												<div class="fg-line">
-													<input type="password" name="passwordNueva" id="passwordNueva" value="" class="form-control" placeholder="Ingrese nueva clave">
-												</div>
-											</dd>
-										</dl>
-										<dl class="dl-horizontal">
-											<dt class="p-t-10">Repita Clave Nueva</dt>
-											<dd>
-												<div class="fg-line">
-													<input type="password" name="passwordRepite" id="passwordRepite" value="" class="form-control" placeholder="Repita nueva clave">
-												</div>
-											</dd>
-										</dl>
-										<div class="m-t-30" style="text-align:center;">
-											<div class="btn btn-primary btn-sm" id="btnEditar">Guardar</div>
-											<button data-pmb-action="reset" class="btn btn-danger btn-sm">Cancelar</button>
-										</div>
-									</div>
-								</form>
-							</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-							<div class="row">
-								<div class="col-lg-12">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-12" id="">
-							<div class="main-box clearfix">
-								<div class="main-box-body clearfix">
-									<div class="table-responsive">
-										<table id="table-example-fixed" class="table table-hover">
-											<thead>
-												<tr>
-													<td>
-														<div class="form-group">
-															<label for="datepickerDate">Fecha Inicio</label>
-															<input type="text" class="form-control" id="datepickerDate" value="04-11-2014">
-														</div>
-													</td>
-													<td>
-														<div class="form-group">
-															<label for="datepickerDate2">Fecha Fin</label>
-															<input type="text" class="form-control" id="datepickerDate2" value="31-12-2015">
-														</div>
-													</td>
-													<td>
-														<div class="form-group">
-															<label for="datepickerDate3">Fecha de Facturación</label>
-															<input type="text" class="form-control" id="datepickerDate3" value="04-10-2018">
-														</div>
-													</td>
-													</td>
-													<td>
-														<div class="form-group">
-															<label for="tags">Producto</label>
-															<input id="tags">
-														</div>
-													</td>
-													<td>
-														<div class="form-group">
-															<button type="button" class="form-control" onclick="window.location.href='frecuencia_gasto_administracion_detalle.php'"><i class="fa fa-search"></i></button>
-														</div>
-													</td>
-
-												</tr>
+                            <!--
+                                                        <div class="story-content">
+                                                            <form role="form" method="post" name="frm" id="frm">
+                                                                <div class="pmbb-edit">
+                                                                    <dl class="dl-horizontal">
+                                                                        <dt class="p-t-10">Nombres</dt>
+                                                                        <dd>
+                                                                            <div class="fg-line">
+                                                                                <input type="text" class="form-control" name="nombres" id="nombres" value="Claudia" />
+                                                                            </div>
+                                                                        </dd>
+                                                                    </dl>
+                                                                    <dl class="dl-horizontal">
+                                                                        <dt class="p-t-10">Apellidos</dt>
+                                                                        <dd>
+                                                                            <div class="fg-line">
+                                                                                <input type="text" class="form-control" name="apellidos" id="apellidos" value="Menares" />
+                                                                            </div>
+                                                                        </dd>
+                                                                    </dl>
+                                                                    <dl class="dl-horizontal">
+                                                                        <dt class="p-t-10">Teléfono Fijo</dt>
+                                                                        <dd>
+                                                                            <div class="fg-line">
+                                                                                <input type="text" class="form-control" name="fijo" id="fijo" value="(+56 2) 1234 5678" maxlength="17" />
+                                                                            </div>
+                                                                        </dd>
+                                                                    </dl>
+                                                                    <dl class="dl-horizontal">
+                                                                        <dt class="p-t-10">Teléfono Celular</dt>
+                                                                        <dd>
+                                                                            <div class="fg-line">
+                                                                                <input type="text" class="form-control" name="celular" id="celular" value="(+56 9) 8765 4321" maxlength="17">
+                                                                            </div>
+                                                                        </dd>
+                                                                    </dl>
+                                                                    <dl class="dl-horizontal">
+                                                                        <dt class="p-t-10">Correo</dt>
+                                                                        <dd>
+                                                                            <div class="fg-line">
+                                                                                <input type="email" class="form-control" value="cvmenares@Falabella.cl" readonly>
+                                                                            </div>
+                                                                        </dd>
+                                                                    </dl>
+                                                                    <dl class="dl-horizontal">
+                                                                        <dt class="p-t-10">Ingrese Clave Nueva</dt>
+                                                                        <dd>
+                                                                            <div class="fg-line">
+                                                                                <input type="password" name="passwordNueva" id="passwordNueva" value="" class="form-control" placeholder="Ingrese nueva clave">
+                                                                            </div>
+                                                                        </dd>
+                                                                    </dl>
+                                                                    <dl class="dl-horizontal">
+                                                                        <dt class="p-t-10">Repita Clave Nueva</dt>
+                                                                        <dd>
+                                                                            <div class="fg-line">
+                                                                                <input type="password" name="passwordRepite" id="passwordRepite" value="" class="form-control" placeholder="Repita nueva clave">
+                                                                            </div>
+                                                                        </dd>
+                                                                    </dl>
+                                                                    <div class="m-t-30" style="text-align:center;">
+                                                                        <div class="btn btn-primary btn-sm" id="btnEditar">Guardar</div>
+                                                                        <button data-pmb-action="reset" class="btn btn-danger btn-sm">Cancelar</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div> -->
 
 
-										</table>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<?php //include('footer.php');
-			?>
-		</div>
-	</div>
-	</div>
-	</div>
-	<!-- global scripts -->
-	<script src="js/demo-skin-changer.js"></script>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12" id="">
+                            <div class="main-box clearfix">
+                                <div class="main-box-body clearfix">
+                                    <div class="table-responsive">
+                                        <table id="table-example-fixed" class="table table-hover">
+                                            <thead>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-group">
+                                                        <label for="datepickerDate">Nº</label>
+                                                        <input type="text" class="form-control" id="datepickerDate"
+                                                               value="04-11-2014">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="form-group">
+                                                        <label for="datepickerDate2">Fecha Fin</label>
+                                                        <input type="text" class="form-control" id="datepickerDate2"
+                                                               value="31-12-2015">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="form-group">
+                                                        <label for="datepickerDate3">Fecha de Facturación</label>
+                                                        <input type="text" class="form-control" id="datepickerDate3"
+                                                               value="04-10-2018">
+                                                    </div>
+                                                </td>
+                                                </td>
+                                                <td>
+                                                    <div class="form-group">
+                                                        <label for="tags">Producto</label>
+                                                        <input id="tags">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="form-group">
+                                                        <button type="button" class="form-control"
+                                                                onclick="window.location.href='frecuencia_gasto_administracion_detalle.php'">
+                                                            <i class="fa fa-search"></i></button>
+                                                    </div>
+                                                </td>
 
-	<script src="components/jquery/dist/jquery.min.js"></script>
-	<script src="components/bootstrap/dist/js/bootstrap.js"></script>
-	<script src="components/nanoscroller/bin/javascripts/jquery.nanoscroller.min.js"></script>
+                                            </tr>
 
-	<!-- this page specific scripts -->
-	<script src="components/datatables.net/js/jquery.dataTables.min.js"></script>
-	<script src="components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-	<script src="components/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-	<script src="components/datatables.net-rowgroup/js/dataTables.rowGroup.min.js"></script>
-	<script src="components/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
-	<script src="components/datatables.net-select/js/dataTables.select.min.js"></script>
 
-	<script src="components/jquery.maskedinput/dist/jquery.maskedinput.min.js"></script>
-	<script src="components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-	<script src="components/moment/min/moment.min.js"></script>
-	<script src="components/bootstrap-daterangepicker/daterangepicker.js"></script>
-	<script src="components/pw-bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
-	<script src="components/select2/dist/js/select2.min.js"></script>
-	<script src="components/hogan/web/builds/3.0.2/hogan-3.0.2.min.js"></script>
-	<script src="components/typeahead.js/dist/typeahead.js"></script>
-	<script src="components/jquery.pwstrength/jquery.pwstrength.min.js"></script>
-	<script src="components/pwstrength-bootstrap/dist/pwstrength-bootstrap.min.js"></script>
-	<script src="components/va-clockpicker/dist/bootstrap-clockpicker.min.js"></script>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php //include('footer.php');
+            ?>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!-- global scripts -->
+    <script src="js/demo-skin-changer.js"></script>
 
-	<script src="components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="components/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+    <script src="components/jquery/dist/jquery.min.js"></script>
+    <script src="components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="components/nanoscroller/bin/javascripts/jquery.nanoscroller.min.js"></script>
 
-	<!-- theme scripts -->
-	<script src="js/scripts.js"></script>
-	<script src="components/PACE/pace.min.js"></script>
+    <!-- this page specific scripts -->
+    <script src="components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="components/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="components/datatables.net-rowgroup/js/dataTables.rowGroup.min.js"></script>
+    <script src="components/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+    <script src="components/datatables.net-select/js/dataTables.select.min.js"></script>
 
-	<script src="components/PACE/pace.min.js"></script>
-	<script src="components/jquery-ui-1.12.1/jquery-ui.js"></script>
-	<link rel="stylesheet" href="components/jquery-ui-1.12.1/jquery-ui.css">
+    <script src="components/jquery.maskedinput/dist/jquery.maskedinput.min.js"></script>
+    <script src="components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="components/moment/min/moment.min.js"></script>
+    <script src="components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="components/pw-bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+    <script src="components/select2/dist/js/select2.min.js"></script>
+    <script src="components/hogan/web/builds/3.0.2/hogan-3.0.2.min.js"></script>
+    <script src="components/typeahead.js/dist/typeahead.js"></script>
+    <script src="components/jquery.pwstrength/jquery.pwstrength.min.js"></script>
+    <script src="components/pwstrength-bootstrap/dist/pwstrength-bootstrap.min.js"></script>
+    <script src="components/va-clockpicker/dist/bootstrap-clockpicker.min.js"></script>
 
-	<!-- this page specific inline scripts -->
-	<script type="text/javascript">
-		$(function() {
+    <script src="components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="components/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
 
-			var tableFixed = $('#table-example-fixed').dataTable({
-				// info: false,
-				pageLength: 10,
-				fixedHeader: {
-					header: true,
-					headerOffset: $('body.fixed-header #header-navbar').height()
-				}
-			});
+    <!-- theme scripts -->
+    <script src="js/scripts.js"></script>
+    <script src="components/PACE/pace.min.js"></script>
 
-			var data = [];
-			for (var i = 0; i < 50000; i++) {
-				data.push([i, i, i, i, i]);
-			}
+    <script src="components/PACE/pace.min.js"></script>
+    <script src="components/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="components/jquery-ui-1.12.1/jquery-ui.css">
 
-			$('#datepickerDate').datepicker({
-				format: 'dd-mm-yyyy',
-				autoclose: true
-			});
+    <!-- this page specific inline scripts -->
+    <script type="text/javascript">
+        $(function () {
 
-			$('#datepickerDate2').datepicker({
-				format: 'dd-mm-yyyy',
-				autoclose: true
-			});
+            var tableFixed = $('#table-example-fixed').dataTable({
+                // info: false,
+                pageLength: 10,
+                fixedHeader: {
+                    header: true,
+                    headerOffset: $('body.fixed-header #header-navbar').height()
+                }
+            });
 
-			$('#datepickerDate3').datepicker({
-				format: 'dd-mm-yyyy',
-				autoclose: true
-			});
+            var data = [];
+            for (var i = 0; i < 50000; i++) {
+                data.push([i, i, i, i, i]);
+            }
 
-			$(':file').change(function() {
-				//alert('fds');
-				//obtenemos un array con los datos del archivo
-				var file = $(this).prop('files')[0]; //$("#fileInput").prop('files')[0];
-				//obtenemos el nombre del archivo
-				fileName = file.name;
-				//obtenemos la extensión del archivo
-				fileExtension = fileName.substring(fileName.lastIndexOf('.') + 1);
-				//alert(fileExtension);
-				//obtenemos el tamaño del archivo
-				fileSize = file.size;
-				//obtenemos el tipo de archivo image/png ejemplo
-				fileType = file.type;
-				//mensaje con la información del archivo
-				//showMessage("<span class='info'>Archivo para subir: "+fileName+", peso total: "+fileSize+" bytes.</span>");		 
-				//alert(fileSize);
-			});
+            $('#datepickerDate').datepicker({
+                format: 'dd-mm-yyyy',
+                autoclose: true
+            });
 
-			$('body').on('click', '.btn_guardar', function() {
-				var file = $('#foto').val();
-				fileMax = 5000000;
-				if (fileExtension == 'orf' || fileExtension == 'ORF') {
-					if (fileSize > fileMax) {
-						swal("Supera el máximo", "El archivo no debe superar 5MB como máximo", "error");
-					} else {
-						var estado = 0;
-						if (file != '') {
-							estado = 1;
-						} else {
-							estado = 0;
-						}
-						if (estado == 1) {
-							swal({
-								title: "Archivo Cargado",
-								text: "Los datos se han cargado exitosamente!!",
-								type: "success",
-								showCancelButton: false,
-								confirmButtonColor: "#7ac144",
-								confirmButtonText: "Ok",
-								closeOnConfirm: true
-							}, function(isConfirm) {
-								if (isConfirm) {
-									$("#preview").removeClass("ocultar_formato").addClass('mostrar');
-								}
-							});
-						} else {
-							swal("ERROR", "No hay archivo para guardar", "error");
-						}
-					}
-				} else {
-					swal("La extensión no es permitida", "La carga permite las siguientes extensiones: orf", "error");
-				}
-			});
+            $('#datepickerDate2').datepicker({
+                format: 'dd-mm-yyyy',
+                autoclose: true
+            });
 
-			$('body').on('click', '.btn_preview', function() {
-				$("#tabla").removeClass("ocultar_formato").addClass('mostrar');
-			});
+            $('#datepickerDate3').datepicker({
+                format: 'dd-mm-yyyy',
+                autoclose: true
+            });
 
-			var availableTags = [
-				"T1",
-				"T2",
-				"T3",
-				"T4",
-				"T5"
+            $(':file').change(function () {
+                //alert('fds');
+                //obtenemos un array con los datos del archivo
+                var file = $(this).prop('files')[0]; //$("#fileInput").prop('files')[0];
+                //obtenemos el nombre del archivo
+                fileName = file.name;
+                //obtenemos la extensión del archivo
+                fileExtension = fileName.substring(fileName.lastIndexOf('.') + 1);
+                //alert(fileExtension);
+                //obtenemos el tamaño del archivo
+                fileSize = file.size;
+                //obtenemos el tipo de archivo image/png ejemplo
+                fileType = file.type;
+                //mensaje con la información del archivo
+                //showMessage("<span class='info'>Archivo para subir: "+fileName+", peso total: "+fileSize+" bytes.</span>");
+                //alert(fileSize);
+            });
 
-			];
-			$("#tags").autocomplete({
-				source: availableTags
-			});
+            $('body').on('click', '.btn_guardar', function () {
+                var file = $('#foto').val();
+                fileMax = 5000000;
+                if (fileExtension == 'orf' || fileExtension == 'ORF') {
+                    if (fileSize > fileMax) {
+                        swal("Supera el máximo", "El archivo no debe superar 5MB como máximo", "error");
+                    } else {
+                        var estado = 0;
+                        if (file != '') {
+                            estado = 1;
+                        } else {
+                            estado = 0;
+                        }
+                        if (estado == 1) {
+                            swal({
+                                title: "Archivo Cargado",
+                                text: "Los datos se han cargado exitosamente!!",
+                                type: "success",
+                                showCancelButton: false,
+                                confirmButtonColor: "#7ac144",
+                                confirmButtonText: "Ok",
+                                closeOnConfirm: true
+                            }, function (isConfirm) {
+                                if (isConfirm) {
+                                    $("#preview").removeClass("ocultar_formato").addClass('mostrar');
+                                }
+                            });
+                        } else {
+                            swal("ERROR", "No hay archivo para guardar", "error");
+                        }
+                    }
+                } else {
+                    swal("La extensión no es permitida", "La carga permite las siguientes extensiones: orf", "error");
+                }
+            });
 
-		});
-	</script>
-</body>
+            $('body').on('click', '.btn_preview', function () {
+                $("#tabla").removeClass("ocultar_formato").addClass('mostrar');
+            });
 
-</html>
+            var availableTags = [
+                "T1",
+                "T2",
+                "T3",
+                "T4",
+                "T5"
+
+            ];
+            $("#tags").autocomplete({
+                source: availableTags
+            });
+
+        });
+
+        const tablaReglas = document.querySelector("#table-example-fixed");
+        const divVariablesOpcionales = document.querySelector("#variablesOpcionales");
+        const storeReglas = JSON.parse('<?php echo json_encode($_SESSION["store_reglas"]) ?>');
+        const storeVariables = JSON.parse('<?php echo json_encode($_SESSION["store_variables"]) ?>');
+        const storeCondciones = JSON.parse('<?php echo json_encode($_SESSION["store_condiciones"]) ?>');
+
+
+        let html = `<tr>
+						<td>Nº</td>
+						<td>Nombre</td>
+						<td>Variables</td>
+						<td>Tasas</td>
+						<td>Vigencia</td>
+						<td>Estado</td>
+						<td>Fecha Creacion</td>
+						<td>Acción</td>
+					</tr>`;
+        let n = 0;
+
+        storeReglas.forEach((i) => {
+            let html2 = '';
+            i.variables.split(' ').forEach((v) => {
+                for (let j = 0; j < storeVariables.length; j++) {
+                    if (v == storeVariables[j].id) {
+                        html2 += ` &nbsp; <span class="label label-info">${storeVariables[j].nombre}</span>`;
+                    }
+                }
+
+            });
+
+            html += `<tr>
+						<td>${++n}</td>
+						<td>${i.nombre}</td>
+						<td>${html2}</td>
+						<td>${i.tasa}</td>
+						<td>${i.vigencia}</td>
+						<td>${i.estado}</td>
+						<td>${i.fecha_creacion}</td>
+						<td> 
+							<button class='btn btn-sm btn-warning'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+							<button class='btn btn-sm btn-danger' onclick='eliminar("${i.id}")'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+						</td>
+					</tr>`;
+        });
+
+        tablaReglas.innerHTML = html;
+
+
+        console.log(storeVariables);
+        console.log(storeCondciones);
+        console.log(storeReglas);
+        const eliminar = (id) => {
+            alert(`¿Seguro desea eliminar el registro #${id} ?`);
+            //storeReglas.splice(2, 2);
+        }
+    </script>
+    </body>
+
+    </html>
+<?php echo "<pre>";
+print_r($_SESSION); ?>
