@@ -19,9 +19,9 @@ $fecha_hoy = date("d-m-Y");
                             <div class="col-lg-12">
                                 <ol class="breadcrumb">
                                     <li><a href="index.php">Inicio</a></li>
-                                    <li class="active"><span>Frecuencia Gastos de Administración</span></li>
+                                    <li class="active"><span>Pendientes de autorizar</span></li>
                                 </ol>
-                                <h1>Frecuencia Gastos de Administración</h1>
+                                <h1>Pendientes de autorizar</h1>
                             </div>
                         </div>
                         <div class="row">
@@ -45,64 +45,42 @@ $fecha_hoy = date("d-m-Y");
                                                 <thead>
 
                                                 <tr class"">
-                                                <th>N°</th>
+
                                                 <th>Nombre</th>
-                                                <th>Apellido</th>
-                                                <th>Rut</th>
                                                 <th>Perfil</th>
-                                                <th>Correo</th>
-                                                <th>Teléfono</th>
-                                                <th>Contraseña</th>
-                                                <th>Acción</th>
+                                                <th>Evento</th>
+                                                <th>Fecha Creación</th>
+                                                 <th>Detalle</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
                                                 <tr class="">
-                                                    <td>1</td>
+
                                                     <td>Maria Paula</td>
-                                                    <td>Pino</td>
-                                                    <td>18.223.456-2</td>
                                                     <td>Administrador</td>
-                                                    <td>Mpino@gmail.com</td>
-                                                    <td>(9)76892344</td>
-                                                    <td>*********</td>
+                                                    <td>Creo nueva tasa</td>
+                                                    <td>2021-08-21 18:21:23</td>
                                                     <td>
-                                                        <button class='btn btn-sm btn-warning'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
-                                                        <button class='btn btn-sm btn-danger' onclick='eliminar("${i.id}","${i.nombre}")'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <button type="button" class="form-control" onclick="window.location.href=''"><i class="fa fa-search"></i></button>
-                                                        </div>
+                                                        <button class="btn btn-light" style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"><i class="fa fa-eye" aria-hidden="true"></i></button>
                                                     </td>
                                                 </tr>
                                                 <tr class="">
-                                                    <td>1</td>
                                                     <td>Maria Paula</td>
-                                                    <td>Pino</td>
-                                                    <td>18.223.456-2</td>
                                                     <td>Administrador</td>
-                                                    <td>Mpino@gmail.com</td>
-                                                    <td>(9)76892344</td>
-                                                    <td>*********</td>
+                                                    <td>Creo nueva tasa</td>
+                                                    <td>2021-08-21 18:21:23</td>
                                                     <td>
-                                                        <button class='btn btn-sm btn-warning'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
-                                                        <button class='btn btn-sm btn-danger' onclick='eliminar("${i.id}","${i.nombre}")'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                                        <button class="btn btn-light" style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"><i class="fa fa-eye" aria-hidden="true"></i></button>
                                                     </td>
 
                                                 </tr>
                                                 <tr class="">
-                                                    <td>1</td>
                                                     <td>Maria Paula</td>
-                                                    <td>Pino</td>
-                                                    <td>18.223.456-2</td>
                                                     <td>Administrador</td>
-                                                    <td>Mpino@gmail.com</td>
-                                                    <td>(9)76892344</td>
-                                                    <td>*********</td>
+                                                    <td>Creo nueva tasa</td>
+                                                    <td>2021-08-21 18:21:23</td>
                                                     <td>
-                                                        <button class='btn btn-sm btn-warning'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
-                                                        <button class='btn btn-sm btn-danger' onclick='eliminar("${i.id}","${i.nombre}")'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                                        <button class="btn btn-light" style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"><i class="fa fa-eye" aria-hidden="true"></i></button>
                                                     </td>
 
                                                 </tr>
@@ -110,10 +88,7 @@ $fecha_hoy = date("d-m-Y");
                                             </table>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -123,6 +98,61 @@ $fecha_hoy = date("d-m-Y");
     </div>
 </div>
 </div>
+</div>
+
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="ModalAdminVar">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="gridSystemModalLabel">Detalle</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-md-2">Descripción</div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1"></label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" readonly placeholder="">
+                      Nombre regla: Aniversario
+                      Variables: Zona sur
+                      Tasa: tasa 1
+                      Vigencia: 2021-08-01,2021-08-15
+                        </textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="" align="center">Señale si desea autorizar o rechazar</div>
+
+<br>
+                </div>  <div class="row">
+
+                    <div class="col-md-6" > <input type="checkbox" >Autorizar </div>
+                    <div class="col-md-6"> <input type="checkbox" >Rechazar </div>
+
+                </div>
+
+                <br>
+                <div class="row">
+                    <div class="col-md-2" >Observación</div>
+                    <div class="col-md-6"> <input type="text" class="form-control"> </div>
+
+                </div>
+                <hr>
+                <table id="tblAdmVar" class="table" style="width: 100%;">
+                    <thead></thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary btn-sm"> Guardar </button>
+                <button type="button" class="btn btn-default btn-sm pull-left" data-dismiss="modal" aria-label="Close">Cerrar</button>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- global scripts -->
 <script src="js/demo-skin-changer.js"></script>
