@@ -67,96 +67,63 @@ $fecha_hoy = date("d-m-Y");
 
 										</div>
 									</div>
+									<div class="row">
+										<div class="col-lg-12">
+											<button class="btn btn-success pull-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin: 10px;">Nueva Tasa</button>
+										</div>
+										<div class="collapse" id="collapseExample">
+											<div class="well">
+
+												<div class="row">
+													<div class="col-lg-4">
+														Nombre <input type="text" class="form-control" id="txtTasaNombre">
+													</div>
+													<div class="col-lg-2">
+														Valor <input type="text" class="form-control" id="txtTasaValor">
+													</div>
+													<div class="col-lg-4">
+														Vigencia <input type="text" class="form-control" id="txtTasaVigencia">
+													</div>
+													<div class="col-lg-2">
+														&nbsp; <br>
+														<button class="btn btn-primary pull-right col-3" style='margin-left: 16px; margin-bottom: 3px;' type="button">Guardar </button>
+													</div>
+												</div>
+
+												<br>
+											</div>
+										</div>
+
+										<!-- <div class="panel panel-default">
+												<div class="panel-body">
+													
+												</div>
+											</div> -->
+
+
+
+
+
+									</div>
 								</div>
+
 							</div>
 
 
 
-
-							<!--
-                                                        <div class="story-content">
-                                                            <form role="form" method="post" name="frm" id="frm">
-                                                                <div class="pmbb-edit">
-                                                                    <dl class="dl-horizontal">
-                                                                        <dt class="p-t-10">Nombres</dt>
-                                                                        <dd>
-                                                                            <div class="fg-line">
-                                                                                <input type="text" class="form-control" name="nombres" id="nombres" value="Claudia" />
-                                                                            </div>
-                                                                        </dd>
-                                                                    </dl>
-                                                                    <dl class="dl-horizontal">
-                                                                        <dt class="p-t-10">Apellidos</dt>
-                                                                        <dd>
-                                                                            <div class="fg-line">
-                                                                                <input type="text" class="form-control" name="apellidos" id="apellidos" value="Menares" />
-                                                                            </div>
-                                                                        </dd>
-                                                                    </dl>
-                                                                    <dl class="dl-horizontal">
-                                                                        <dt class="p-t-10">Teléfono Fijo</dt>
-                                                                        <dd>
-                                                                            <div class="fg-line">
-                                                                                <input type="text" class="form-control" name="fijo" id="fijo" value="(+56 2) 1234 5678" maxlength="17" />
-                                                                            </div>
-                                                                        </dd>
-                                                                    </dl>
-                                                                    <dl class="dl-horizontal">
-                                                                        <dt class="p-t-10">Teléfono Celular</dt>
-                                                                        <dd>
-                                                                            <div class="fg-line">
-                                                                                <input type="text" class="form-control" name="celular" id="celular" value="(+56 9) 8765 4321" maxlength="17">
-                                                                            </div>
-                                                                        </dd>
-                                                                    </dl>
-                                                                    <dl class="dl-horizontal">
-                                                                        <dt class="p-t-10">Correo</dt>
-                                                                        <dd>
-                                                                            <div class="fg-line">
-                                                                                <input type="email" class="form-control" value="cvmenares@Falabella.cl" readonly>
-                                                                            </div>
-                                                                        </dd>
-                                                                    </dl>
-                                                                    <dl class="dl-horizontal">
-                                                                        <dt class="p-t-10">Ingrese Clave Nueva</dt>
-                                                                        <dd>
-                                                                            <div class="fg-line">
-                                                                                <input type="password" name="passwordNueva" id="passwordNueva" value="" class="form-control" placeholder="Ingrese nueva clave">
-                                                                            </div>
-                                                                        </dd>
-                                                                    </dl>
-                                                                    <dl class="dl-horizontal">
-                                                                        <dt class="p-t-10">Repita Clave Nueva</dt>
-                                                                        <dd>
-                                                                            <div class="fg-line">
-                                                                                <input type="password" name="passwordRepite" id="passwordRepite" value="" class="form-control" placeholder="Repita nueva clave">
-                                                                            </div>
-                                                                        </dd>
-                                                                    </dl>
-                                                                    <div class="m-t-30" style="text-align:center;">
-                                                                        <div class="btn btn-primary btn-sm" id="btnEditar">Guardar</div>
-                                                                        <button data-pmb-action="reset" class="btn btn-danger btn-sm">Cancelar</button>
-                                                                    </div>
-                                                                </div>
-                                                            </form>
-                                                        </div> -->
-
-
-							<div class="row">
-								<div class="col-lg-12">
-								</div>
-							</div>
 						</div>
 						<div class="col-lg-12" id="">
-							<button class="btn btn-success pull-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-										Nueva Tasa
-									</button>
-							<div class="main-box clearfix">
-								<div class="main-box-body clearfix">
-									<div class="table-responsive">
-										<table id="table-example-fixed" class="table table-hover">
-
-										</table>
+							<div class="row">
+							</div>
+							<div class="row">
+								<div class="main-box clearfix">
+									<div class="main-box-body clearfix">
+										<div class="table-responsive">
+											<table id="table-example-fixed" class="table table-hover">
+												<thead></thead>
+												<tbody></tbody>
+											</table>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -211,6 +178,19 @@ $fecha_hoy = date("d-m-Y");
 	<!-- this page specific inline scripts -->
 	<script type="text/javascript">
 		$(function() {
+
+			$('input[id="txtTasaVigencia"]').daterangepicker({
+				opens: 'left',
+				timePicker: true,
+				startDate: moment().startOf('hour'),
+				endDate: moment().startOf('hour').add(32, 'hour'),
+				locale: {
+					format: 'M/DD hh:mm A'
+				}
+			}, function(start, end, label) {
+				console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+			});
+
 
 			var tableFixed = $('#table-example-fixed').dataTable({
 				// info: false,
