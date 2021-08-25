@@ -30,7 +30,7 @@ $fecha_hoy = date("d-m-Y");
                         <div class="panel panel">
                             <div class="panel-body">
                                 <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="col-lg-5 col-md-5 col-sm-10">
                                         <dl class="dl-horizontal">
                                             <dt class="pt-15">Nombres</dt>
                                             <dd>
@@ -41,7 +41,7 @@ $fecha_hoy = date("d-m-Y");
                                             </dd>
                                         </dl>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="col-lg-5 col-md-5 col-sm-10">
                                         <dl class="dl-horizontal">
                                             <dt class="pt-15">Rut</dt>
                                             <dd>
@@ -54,7 +54,7 @@ $fecha_hoy = date("d-m-Y");
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="col-lg-5 col-md-5 col-sm-10">
                                         <dl class="dl-horizontal">
                                             <dt class="pt-15">Apellidos</dt>
                                             <dd>
@@ -65,161 +65,210 @@ $fecha_hoy = date("d-m-Y");
                                             </dd>
                                         </dl>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="row">
+                                        <div class="col-lg-5 col-md-5 col-sm-10">
+                                            <dl class="dl-horizontal">
+                                                <dt class="pt-10">Fecha Nacimiento</dt>
+                                                <dd>
+                                                    <div class="fg-line">
+                                                        <input type="date" class="form-control" name="fechana"
+                                                               id="apellidos" value="" placeholder="opcional"/>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-5 col-sm-10">
+                                        <dl class="dl-horizontal">
+                                            <dt class="pt-10">Cargo</dt>
+                                            <dd>
+                                                <div class="fg-line">
+                                                    <input type="text" class="form-control" name="cargo"
+                                                           id="cargo" value="" placeholder="opcional"/>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-10">
                                         <dl class="dl-horizontal">
                                             <dt class="pt-15">Perfil</dt>
                                             <dd>
 
-                                                    <select class="form-control" id="inputGroupSelect01">
-                                                        <option selected>Elija una opción</option>
-                                                        <option value="1">Administrador</option>
-                                                        <option value="2">Auditor</option>
-                                                        <option value="3">Monitor</option>
-                                                    </select>
+                                                <select class="form-control" id="inputGroupSelect01">
+                                                    <option selected>Elija una opción</option>
+                                                    <option value="1">Administrador</option>
+                                                    <option value="2">Auditor</option>
+                                                    <option value="3">Monitor</option>
+                                                </select>
 
                                             </dd>
                                         </dl>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                            <dl class="dl-horizontal">
-                                                <dt class="pt-15">Correo</dt>
-                                                <dd>
-                                                    <div class="fg-line">
-                                                        <input type="text" class="form-control" name="correo"
-                                                               id="correo" value=""/>
-                                                    </div>
-                                                </dd>
-                                            </dl>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                            <dl class="dl-horizontal">
-                                                <dt class="pt-15">Teléfono</dt>
-                                                <dd>
-                                                    <div class="fg-line">
-                                                        <input type="text" class="form-control hasDatepicker "
-                                                               name="telefono" id="telefono" value="" placeholder="">
-                                                    </div>
-                                                </dd>
-                                            </dl>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                                <dl class="dl-horizontal">
-                                                    <dt class="pt-15">Contraseña</dt>
-                                                    <dd>
-                                                        <div class="fg-line">
-                                                            <input type="password" class="form-control" name="correo"
-                                                                   id="correo" value="" placeholder=" Ingrese una contraseña">
-                                                        </div>
-                                                    </dd>
-                                                </dl>
-                                            </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                                <dl class="dl-horizontal">
-                                                    <dt class="pt-15">Repita la contraseña</dt>
-                                                    <dd>
-                                                        <div class="fg-line">
-                                                            <input type="password" class="form-control hasDatepicker "
-                                                                   name="telefono" id="telefono" value="" placeholder=" Repita la contraseña">
-                                                        </div>
-                                                    </dd>
-                                                </dl>
-                                            </div>
 
+                                </div>
+                                <div class="row " style="align-content: center">
+                                    <div class="col-lg-5 col-md-5 col-sm-10">
+                                        <dl class="dl-horizontal">
+                                            <dt class="pt-10">Correo</dt>
+                                            <dd>
+                                                <div class="fg-line">
+                                                    <input type="text" class="form-control" name="correo"
+                                                           id="correo" value=""/>
+                                                </div>
+                                            </dd>
+                                        </dl>
                                     </div>
-                                    </dd>
-                                    </dl>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <div class="col-lg-5 col-md-5 col-sm-10">
+                                        <dl class="dl-horizontal">
+                                            <dt class="pt-15">Teléfono</dt>
+                                            <dd>
+                                                <div class="fg-line">
+                                                    <input type="text" class="form-control hasDatepicker "
+                                                           name="telefono" id="telefono" value="" placeholder="">
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
 
                                 </div>
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-5 col-sm-10">
+                                        <dl class="dl-horizontal">
+                                            <dt class="pt-10">Contraseña</dt>
+                                            <dd>
+                                                <div class="fg-line">
+                                                    <input type="password" class="form-control" name="correo"
+                                                           id="correo" value=""
+                                                           placeholder=" Ingrese una contraseña">
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-10">
+                                        <dl class="dl-horizontal">
+                                            <dt class="pt-15">Repita la contraseña</dt>
+                                            <dd>
+                                                <div class="fg-line">
+                                                    <input type="password" class="form-control hasDatepicker "
+                                                           name="telefono" id="telefono" value=""
+                                                           placeholder=" Repita la contraseña">
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+
+
+                                </dd>
+                                </dl>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12">
 
                             </div>
-                            <div class="m-t-30" style="text-align:center;">
-                                <div class="btn btn-primary btn-sm" id="btn_guardar">Guardar</div>
-                                <button data-pmb-action="reset" class="btn btn-danger btn-sm">Cancelar</button>
-                            </div>
-                            <br>
-                            <br>
+
                         </div>
-                    </div>
-
-
-                        <div class="row">
-                            <div class="col-lg-12">
-                            </div>
+                        <div class="m-t-30" style="text-align:center;">
+                            <div class="btn btn-primary btn-sm" id="btn_guardar">Guardar</div>
+                            <button data-pmb-action="reset" class="btn btn-danger btn-sm">Cancelar</button>
                         </div>
+                        <br>
+                        <br>
                     </div>
-                    <div class="col-lg-12" id="">
-                        <div class="main-box clearfix">
-                            <div class="main-box-body clearfix">
-                                <div class="table-responsive">
-                                    <table id="table-example-fixed" class="table table-hover">
-                                        <thead>
+                </div>
 
-                                        <tr class"">
-                                            <th>N°</th>
-                                            <th>Nombre</th>
-                                            <th>Apellido</th>
-                                            <th>Rut</th>
-                                            <th>Perfil</th>
-                                            <th>Correo</th>
-                                            <th>Teléfono</th>
-                                            <th>Contraseña</th>
-                                            <th>Acción</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr class="">
-                                            <td>1</td>
-                                            <td>Maria Paula</td>
-                                            <td>Pino</td>
-                                            <td>18.223.456-2</td>
-                                            <td>Administrador</td>
-                                            <td>Mpino@gmail.com</td>
-                                            <td>(9)76892344</td>
-                                            <td>*********</td>
-                                            <td>
-                                                <button class='btn btn-sm btn-warning'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
-                                                <button class='btn btn-sm btn-danger' onclick='eliminar("${i.id}","${i.nombre}")'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
-                                            </td>
-                                        
-                                        </tr>
-                                        <tr class="">
-                                            <td>1</td>
-                                            <td>Maria Paula</td>
-                                            <td>Pino</td>
-                                            <td>18.223.456-2</td>
-                                            <td>Administrador</td>
-                                            <td>Mpino@gmail.com</td>
-                                            <td>(9)76892344</td>
-                                            <td>*********</td>
-                                            <td>
-                                                <button class='btn btn-sm btn-warning'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
-                                                <button class='btn btn-sm btn-danger' onclick='eliminar("${i.id}","${i.nombre}")'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
-                                            </td>
 
-                                        </tr>
-                                        <tr class="">
-                                            <td>1</td>
-                                            <td>Maria Paula</td>
-                                            <td>Pino</td>
-                                            <td>18.223.456-2</td>
-                                            <td>Administrador</td>
-                                            <td>Mpino@gmail.com</td>
-                                            <td>(9)76892344</td>
-                                            <td>*********</td>
-                                            <td>
-                                                <button class='btn btn-sm btn-warning'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
-                                                <button class='btn btn-sm btn-danger' onclick='eliminar("${i.id}","${i.nombre}")'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
-                                            </td>
+                <div class="row">
+                    <div class="col-lg-12">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12" id="">
+                <div class="main-box clearfix">
+                    <div class="main-box-body clearfix">
+                        <div class="table-responsive">
+                            <table id="table-example-fixed" class="table table-hover">
+                                <thead>
 
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                                <tr class
+                                "">
+                                <th>N°</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Rut</th>
+                                <th>Perfil</th>
+                                <th>Correo</th>
+                                <th>Teléfono</th>
+                                <th>Contraseña</th>
+                                <th>Acción</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="">
+                                    <td>1</td>
+                                    <td>Maria Paula</td>
+                                    <td>Pino</td>
+                                    <td>18.223.456-2</td>
+                                    <td>Administrador</td>
+                                    <td>Mpino@gmail.com</td>
+                                    <td>(9)76892344</td>
+                                    <td>*********</td>
+                                    <td>
+                                        <button class='btn btn-sm btn-warning'><span
+                                                    class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                        </button>
+                                        <button class='btn btn-sm btn-danger'
+                                                onclick='eliminar("${i.id}","${i.nombre}")'><span
+                                                    class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                        </button>
+                                    </td>
+
+                                </tr>
+                                <tr class="">
+                                    <td>1</td>
+                                    <td>Maria Paula</td>
+                                    <td>Pino</td>
+                                    <td>18.223.456-2</td>
+                                    <td>Administrador</td>
+                                    <td>Mpino@gmail.com</td>
+                                    <td>(9)76892344</td>
+                                    <td>*********</td>
+                                    <td>
+                                        <button class='btn btn-sm btn-warning'><span
+                                                    class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                        </button>
+                                        <button class='btn btn-sm btn-danger'
+                                                onclick='eliminar("${i.id}","${i.nombre}")'><span
+                                                    class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                        </button>
+                                    </td>
+
+                                </tr>
+                                <tr class="">
+                                    <td>1</td>
+                                    <td>Maria Paula</td>
+                                    <td>Pino</td>
+                                    <td>18.223.456-2</td>
+                                    <td>Administrador</td>
+                                    <td>Mpino@gmail.com</td>
+                                    <td>(9)76892344</td>
+                                    <td>*********</td>
+                                    <td>
+                                        <button class='btn btn-sm btn-warning'><span
+                                                    class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                        </button>
+                                        <button class='btn btn-sm btn-danger'
+                                                onclick='eliminar("${i.id}","${i.nombre}")'><span
+                                                    class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                        </button>
+                                    </td>
+
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -229,12 +278,14 @@ $fecha_hoy = date("d-m-Y");
 </div>
 </div>
 </div>
+</div>
+</div>
 
 
-                <?php //include('footer.php');?>
-            </div>
-        </div>
-    </div>
+<?php //include('footer.php');?>
+</div>
+</div>
+</div>
 </div>
 <!-- global scripts -->
 <script src="js/demo-skin-changer.js"></script>
