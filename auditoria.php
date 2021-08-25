@@ -1,19 +1,8 @@
 <?php
+include('lib/support.php');
 session_start();
 $fecha_hoy = date("d-m-Y");
-$era_hoy = date('Y');
 ?>
-<style type="text/css">
-    .ocultar {
-        display: none;
-        visibility: hidden;
-    }
-
-    .mostrar {
-        display: block;
-        visibility: visible;
-    }
-</style>
 <!DOCTYPE html>
 <html>
 <?php include('head.php') ?>
@@ -28,259 +17,250 @@ $era_hoy = date('Y');
                     <div class="col-lg-12">
                         <div class="row">
                             <div class="col-lg-12">
-                                <div id="content-header" class="clearfix">
-                                </div>
+                                <ol class="breadcrumb">
+                                    <li><a href="index.php">Inicio</a></li>
+                                    <li class="active"><span>Auditoría</span></li>
+                                </ol>
+                                </br>
+                                <h1>Auditoría</h1>
                             </div>
                         </div>
+
+
+                        <div class="panel panel">
+                            <div class="panel-body">
+
+
                         <div class="row">
-                            <div class="col-lg-4 col-sm-6 col-xs-12">
-                                <div class="main-box infographic-box colored red-bg  graficos_click" id="alertas">
-                                    <i class="fa fa-bell"></i>
-                                    <span class="headline">Alertas  y Diferencias</span>
-                                    </br>
-                                    <span>Fecha de Facturación: 04-11-2018</span>
-                                    <span>Total EECC: $160.383</span><br/>
-                                    <span>Horario Término Malla: 09:00 hrs.</span>
-                                </div>
+                            <div class="col-lg-12">
                             </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12" id="">
+                        <div class="main-box clearfix">
+                            <div class="main-box-body clearfix">
+                                <div class="table-responsive">
+                                    <table id="table-example-fixed" class="table table-hover">
+                                        <thead>
 
-                            <div class="col-lg-4 col-sm-6 col-xs-12">
-                                <div class="main-box infographic-box colored yellow-bg graficos_click"
-                                     id="post_facturacion">
-                                    <i class="fa fa-user"></i>
-                                    <span class="headline">Post Facturación</span>
-                                    </br>
-                                    <span></span><br/>
-                                    <span>Usuarios afectados: 350</span>
-                                    <span></span><br/>
-                                    <span>&nbsp;</span>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-sm-6 col-xs-12">
-                                <div class="main-box infographic-box colored green-bg graficos_click" id="estadisticas">
-                                    <i class="fa fa-line-chart"></i>
-                                    <span class="headline">Estadísticas</span>
-                                    </br>
-                                    <span></span><br/>
-                                    <span>Meses: Sep. - Nov. 2018</span>
-                                    <span></span><br/>
-                                    <span>&nbsp;</span>
+                                        <tr class"">
+                                            <th>N°</th>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>Rut</th>
+                                            <th>Perfil</th>
+                                            <th>Correo</th>
+                                            <th>Teléfono</th>
+                                            <th>Contraseña</th>
+                                            <th>Acción</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr class="">
+                                            <td>1</td>
+                                            <td>Maria Paula</td>
+                                            <td>Pino</td>
+                                            <td>18.223.456-2</td>
+                                            <td>Administrador</td>
+                                            <td>Mpino@gmail.com</td>
+                                            <td>(9)76892344</td>
+                                            <td>*********</td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <button type="button" class="form-control" onclick="window.location.href=''"><i class="fa fa-search"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="">
+                                            <td>1</td>
+                                            <td>Maria Paula</td>
+                                            <td>Pino</td>
+                                            <td>18.223.456-2</td>
+                                            <td>Administrador</td>
+                                            <td>Mpino@gmail.com</td>
+                                            <td>(9)76892344</td>
+                                            <td>*********</td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <button type="button" class="form-control" onclick="window.location.href=''"><i class="fa fa-search"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="">
+                                            <td>1</td>
+                                            <td>Maria Paula</td>
+                                            <td>Pino</td>
+                                            <td>18.223.456-2</td>
+                                            <td>Administrador</td>
+                                            <td>Mpino@gmail.com</td>
+                                            <td>(9)76892344</td>
+                                            <td>*********</td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <button type="button" class="form-control" onclick="window.location.href=''"><i class="fa fa-search"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
-
-                        <table class="table table-hover">
-                            <tr>
-                                <td>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="main-box">
-                                                <header class="main-box-header clearfix">
-                                                    <h2 class="pull-left">Gráfico Barras - Total EECC</h2>
-                                                </header>
-                                                <div class="main-box-body clearfix">
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div id="bar-total-eecc" class="table-responsive"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="main-box">
-                                                <header class="main-box-header clearfix">
-                                                    <h2 class="pull-left">Gráfico Lineal - Total EECC</h2>
-                                                </header>
-                                                <div class="main-box-body clearfix">
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div id="line-total-eecc" class="table-responsive"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="main-box">
-                                                <header class="main-box-header clearfix">
-                                                    <h2 class="pull-left">Gráfico Circular - Total EECC</h2>
-                                                </header>
-                                                <div class="main-box-body clearfix">
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div id="donut-total-eecc" class="table-responsive"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-
-                        </table>
-
                     </div>
                 </div>
-                <?php include('footer.php'); ?>
             </div>
         </div>
     </div>
 </div>
-<?php include('personalizacion.php'); ?>
-<a href="" class="hidden fancybox fancybox.iframe" id="popup">popup</a>
-<div class="md-overlay"></div>
+</div>
+</div>
+
+
+                <?php //include('footer.php');?>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- global scripts -->
 <script src="js/demo-skin-changer.js"></script>
 
 <script src="components/jquery/dist/jquery.min.js"></script>
 <script src="components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="components/nanoscroller/bin/javascripts/jquery.nanoscroller.min.js"></script>
 
-<script src="js/demo.js"></script>
+<!-- this page specific scripts -->
+<script src="components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="components/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script src="components/datatables.net-rowgroup/js/dataTables.rowGroup.min.js"></script>
+<script src="components/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<script src="components/datatables.net-select/js/dataTables.select.min.js"></script>
 
-<script src="components/jquery-knob/dist/jquery.knob.min.js"></script>
-<script src="components/raphael/raphael.min.js"></script>
-<script src="components/morrisjs/morris.min.js"></script>
-
-<script src="components-custom/modal-animations/modernizr.custom.js"></script>
-<script src="components-custom/modal-animations//classie.js"></script>
-<script src="components-custom/modal-animations//modalEffects.js"></script>
+<script src="components/jquery.maskedinput/dist/jquery.maskedinput.min.js"></script>
+<script src="components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="components/moment/min/moment.min.js"></script>
+<script src="components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="components/pw-bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
 <script src="components/select2/dist/js/select2.min.js"></script>
+<script src="components/hogan/web/builds/3.0.2/hogan-3.0.2.min.js"></script>
+<script src="components/typeahead.js/dist/typeahead.js"></script>
+<script src="components/jquery.pwstrength/jquery.pwstrength.min.js"></script>
+<script src="components/pwstrength-bootstrap/dist/pwstrength-bootstrap.min.js"></script>
+<script src="components/va-clockpicker/dist/bootstrap-clockpicker.min.js"></script>
 
-<!-- Add mousewheel plugin (this is optional) -->
-<script type="text/javascript" src="fancyBox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
-
-<!-- Add fancyBox main JS and CSS files -->
-<script type="text/javascript" src="fancyBox/source/jquery.fancybox.js?v=2.1.5"></script>
-<link rel="stylesheet" type="text/css" href="fancyBox/source/jquery.fancybox.css?v=2.1.5" media="screen"/>
-
-<!-- Add Button helper (this is optional) -->
-<link rel="stylesheet" type="text/css" href="fancyBox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5"/>
-<script type="text/javascript" src="fancyBox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
-
-<!-- Add Thumbnail helper (this is optional) -->
-<link rel="stylesheet" type="text/css" href="fancyBox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7"/>
-<script type="text/javascript" src="fancyBox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
-
-<!-- Add Media helper (this is optional) -->
-<script type="text/javascript" src="fancyBox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script src="components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="components/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
 
 <!-- theme scripts -->
 <script src="js/scripts.js"></script>
 <script src="components/PACE/pace.min.js"></script>
 
-<script>
-    $(document).ready(function () {
+<script src="components/PACE/pace.min.js"></script>
+<script src="components/jquery-ui-1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="components/jquery-ui-1.12.1/jquery-ui.css">
 
-        $('body').on('click', '#alertas', function () {
-            window.location = "alertas_diferencias.php";
+<!-- this page specific inline scripts -->
+<script type="text/javascript">
+    $(function () {
+
+        var tableFixed = $('#table-example-fixed').dataTable({
+            // info: false,
+            pageLength: 10,
+            fixedHeader: {
+                header: true,
+                headerOffset: $('body.fixed-header #header-navbar').height()
+            }
         });
 
-        $('body').on('click', '#post_facturacion', function () {
-            window.location = "post_facturacion.php";
+        var data = [];
+        for (var i = 0; i < 50000; i++) {
+            data.push([i, i, i, i, i]);
+        }
+
+        $('#datepickerDate').datepicker({
+            format: 'dd-mm-yyyy',
+            autoclose: true
         });
 
-        $('body').on('click', '#estadisticas', function () {
-            window.location = "estadisticas.php";
+        $('#datepickerDate2').datepicker({
+            format: 'dd-mm-yyyy',
+            autoclose: true
         });
 
-
-        $(".fancybox").fancybox({
-            'modal': false,
-            'type': 'iframe',
-            'width': 1200,
-            'height': 600,
-            'transitionIn': 'none',
-            'transitionOut': 'none',
-            'overlayShow': true,
-            'hideOnOverlayClick': 'true',
-            'hideOnContentClick': 'false',
-            'enableEscapeButton': true,
-            'showCloseButton': true
+        $('#datepickerDate3').datepicker({
+            format: 'dd-mm-yyyy',
+            autoclose: true
         });
 
-        //CHARTS
-        graphBar = Morris.Bar({
-            element: 'bar-total-eecc',
-            data: [
-                {y: '04-09', a: 159382, b: 158889, c: 493},
-                {y: '04-10', a: 159032, b: 158319, c: 713},
-                {y: '04-11', a: 160383, b: 159625, c: 758}
-            ],
-            xkey: 'y',
-            ykeys: ['a', 'b', 'c'],
-            labels: ['SATIF', 'EECC', 'Diferencia'],
-            formatter: function (y) {
-                return y
-            },
-            resize: true
+        $(':file').change(function () {
+            //alert('fds');
+            //obtenemos un array con los datos del archivo
+            var file = $(this).prop('files')[0];//$("#fileInput").prop('files')[0];
+            //obtenemos el nombre del archivo
+            fileName = file.name;
+            //obtenemos la extensión del archivo
+            fileExtension = fileName.substring(fileName.lastIndexOf('.') + 1);
+            //alert(fileExtension);
+            //obtenemos el tamaño del archivo
+            fileSize = file.size;
+            //obtenemos el tipo de archivo image/png ejemplo
+            fileType = file.type;
+            //mensaje con la información del archivo
+            //showMessage("<span class='info'>Archivo para subir: "+fileName+", peso total: "+fileSize+" bytes.</span>");
+            //alert(fileSize);
         });
 
-        graphBar2 = Morris.Line({
-            element: 'line-total-eecc',
-            data: [
-                {y: '04-09', a: 493},
-                {y: '04-10', a: 713},
-                {y: '04-11', a: 758}
-            ],
-            xkey: 'y',
-            ykeys: ['a'],
-            labels: ['Diferencia SATIF v/s EECC'],
-            formatter: function (y) {
-                return y
-            },
-            resize: true
+        $('body').on('click', '.btn_guardar', function () {
+            var file = $('#foto').val();
+            fileMax = 5000000;
+            if (fileExtension == 'orf' || fileExtension == 'ORF') {
+                if (fileSize > fileMax) {
+                    swal("Supera el máximo", "El archivo no debe superar 5MB como máximo", "error");
+                } else {
+                    var estado = 0;
+                    if (file != '') {
+                        estado = 1;
+                    } else {
+                        estado = 0;
+                    }
+                    if (estado == 1) {
+                        swal({
+                            title: "Archivo Cargado",
+                            text: "Los datos se han cargado exitosamente!!",
+                            type: "success",
+                            showCancelButton: false,
+                            confirmButtonColor: "#7ac144",
+                            confirmButtonText: "Ok",
+                            closeOnConfirm: true
+                        }, function (isConfirm) {
+                            if (isConfirm) {
+                                $("#preview").removeClass("ocultar_formato").addClass('mostrar');
+                            }
+                        });
+                    } else {
+                        swal("ERROR", "No hay archivo para guardar", "error");
+                    }
+                }
+            } else {
+                swal("La extensión no es permitida", "La carga permite las siguientes extensiones: orf", "error");
+            }
         });
 
-        graphBar3 = Morris.Donut({
-            element: 'donut-total-eecc',
-            data: [
-                {label: "Diferencia Porcentual SATIF v/s EECC", value: 0.31},
-                {label: "Procesamiento Exitoso", value: 99.69},
-            ],
-
-            colors: ['#e84e40', '#03a9f4'],
-            formatter: function (y) {
-                return y
-            },
-            resize: true
+        $('body').on('click', '.btn_preview', function () {
+            $("#tabla").removeClass("ocultar_formato").addClass('mostrar');
         });
 
+        var availableTags = [
+            "T1",
+            "T2",
+            "T3",
+            "T4",
+            "T5"
 
-        graphBar4 = Morris.Bar({
-            element: 'bar-cargos-mes',
-            data: [
-                {y: '2018-09-04', a: 27086238279, b: 27070941551, c: 15296728},
-                {y: '2018-10-04', a: 26501542896, b: 26490563442, c: 10979454},
-                {y: '2018-11-04', a: 27477999994, b: 27471084137, c: 6915857}
-            ],
-            xkey: 'y',
-            ykeys: ['a', 'b', 'c'],
-            labels: ['SATIF', 'EECC', 'Diferencia']
+        ];
+        $("#tags").autocomplete({
+            source: availableTags
         });
-
-        graphBar5 = Morris.Line({
-            element: 'line-cargos-mes',
-            data: [
-                {y: '2018-09-04', a: 15296728},
-                {y: '2018-10-04', a: 10979454},
-                {y: '2018-11-04', a: 6915857}
-            ],
-            xkey: 'y',
-            ykeys: ['a'],
-            labels: ['Diferencia SATIF v/s EECC']
-        });
-
 
     });
 </script>
