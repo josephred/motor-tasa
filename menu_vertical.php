@@ -57,6 +57,15 @@ $pagina = str_replace("/", "", $url);
                         </li>
                     <?php } ?>
 
+                    <?php if ($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Auditor") { ?>
+                        <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
+                            <a href="pendientes_autorizar.php">
+                                <i class="fa fa-line-chart"></i>
+                                <div style="margin-left: 50px;">Pendientes de Autorizar</div>
+                            </a>
+                        </li>
+                    <?php } ?>
+
                     <?php if ($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Monitor") { ?>
                         <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
                             <a href="monitoreo.php">
