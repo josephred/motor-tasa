@@ -43,7 +43,7 @@ $storeTasas = [
 ];
 $storeVariables = [
     ['id' => 1, 'nombre' => 'Sueldo', 'descripcion' => 'Sueldo del cliente', 'tipo' => 'OBLIGATORIA'],
-    ['id' => 2, 'nombre' => 'Edad Minima', 'descripcion' => 'Edad cliente', 'tipo' => 'OBLIGATORIA'],
+    ['id' => 2, 'nombre' => 'Edad Mínima', 'descripcion' => 'Edad cliente', 'tipo' => 'OBLIGATORIA'],
     ['id' => 3, 'nombre' => 'Zona Sur', 'descripcion' => 'Zona de Chile', 'tipo' => 'OPCIONAL'],
     ['id' => 4, 'nombre' => 'Comuna Excluida', 'descripcion' => 'Excluir', 'tipo' => 'OPCIONAL'],
 ];
