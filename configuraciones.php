@@ -159,6 +159,8 @@ $fecha_hoy = date("d-m-Y");
                                                             <div class="panel-body">
                                                                 <div class="col-gl-6 col-md-6 col-sm-12">
                                                                     Seleccione Logo Ingreso: <input type="file" class="form-control">
+                                                                    <br>
+                                                                    <button class="btn btn-primary btn-sm pull-right  col-lg-4 col-md-4">Subir</button>
                                                                 </div>
                                                                 <div class="col-gl-6 col-md-6 col-sm-12">
                                                                     Previsualizar:
@@ -177,6 +179,8 @@ $fecha_hoy = date("d-m-Y");
                                                             <div class="panel-body">
                                                                 <div class="col-gl-6 col-md-6 col-sm-12">
                                                                     Seleccione Logo Menu: <input type="file" class="form-control">
+                                                                    <br>
+                                                                    <button class="btn btn-primary btn-sm pull-right col-lg-4 col-md-4">Subir</button>
                                                                 </div>
                                                                 <div class="col-gl-6 col-md-6 col-sm-12">
                                                                     Previsualizar:
@@ -224,7 +228,7 @@ $fecha_hoy = date("d-m-Y");
                                                                         <div class="col-lg-6">
                                                                             <div class="input-group">
                                                                                 <span class="input-group-addon">
-                                                                                    <input type="radio" checked name="zoom" id="zoom75" aria-label="...">
+                                                                                    <input type="radio" checked name="zoom" id="zoom75" onclick="document.body.style.zoom = '75%';" aria-label="...">
                                                                                 </span>
                                                                                 <input readonly type="text" class="form-control" onfocus="$('#zoom75').click()" onclick="$('#zoom75').click()" aria-label="..." value='75%'>
                                                                             </div><!-- /input-group -->
@@ -234,7 +238,7 @@ $fecha_hoy = date("d-m-Y");
                                                                         <div class="col-lg-6">
                                                                             <div class="input-group">
                                                                                 <span class="input-group-addon">
-                                                                                    <input type="radio" name="zoom" id="zoom87" aria-label="...">
+                                                                                    <input type="radio" name="zoom" id="zoom87" onclick="document.body.style.zoom = '87%';" aria-label="...">
                                                                                 </span>
                                                                                 <input readonly type="text" class="form-control" onfocus="$('#zoom87').click()" onclick="$('#zoom87').click()" aria-label="..." value='87%'>
                                                                             </div><!-- /input-group -->
@@ -245,7 +249,7 @@ $fecha_hoy = date("d-m-Y");
                                                                         <div class="col-lg-6">
                                                                             <div class="input-group">
                                                                                 <span class="input-group-addon">
-                                                                                    <input type="radio" name="zoom" id="zoom100" aria-label="...">
+                                                                                    <input type="radio" name="zoom" id="zoom100" onclick="document.body.style.zoom = '100%';" aria-label="...">
                                                                                 </span>
                                                                                 <input readonly type="text" class="form-control" onfocus="$('#zoom100').click()" onclick="$('#zoom100').click()" aria-label="..." value='100%'>
                                                                             </div><!-- /input-group -->
@@ -255,7 +259,7 @@ $fecha_hoy = date("d-m-Y");
                                                                         <div class="col-lg-6">
                                                                             <div class="input-group">
                                                                                 <span class="input-group-addon">
-                                                                                    <input type="radio" name="zoom" id="zoom125" aria-label="...">
+                                                                                    <input type="radio" name="zoom" id="zoom125" onclick="document.body.style.zoom = '125%';" aria-label="...">
                                                                                 </span>
                                                                                 <input readonly type="text" class="form-control" onfocus="$('#zoom125').click()" onclick="$('#zoom125').click()" aria-label="..." value='125%'>
                                                                             </div><!-- /input-group -->
@@ -265,7 +269,7 @@ $fecha_hoy = date("d-m-Y");
                                                                         <div class="col-lg-6">
                                                                             <div class="input-group">
                                                                                 <span class="input-group-addon">
-                                                                                    <input type="radio" name="zoom" id="zoon150" aria-label="...">
+                                                                                    <input type="radio" name="zoom" id="zoon150" onclick="document.body.style.zoom = '150%';" aria-label="...">
                                                                                 </span>
                                                                                 <input readonly type="text" class="form-control" onfocus="$('#zoon150').click()" onclick="$('#zoon150').click()" aria-label="..." value='150%'>
                                                                             </div><!-- /input-group -->
