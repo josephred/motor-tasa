@@ -22,7 +22,7 @@ $pagina = str_replace("/", "", $url);
                     <li class="<?php echo $pagina == 'index.php' ? 'active' : ''; ?>">
                         <a href="index.php">
                             <i class="fa fa-home"></i>
-                            <span>Panel</span>
+                            <div style="margin-left: 50px;">Panel</div>
                         </a>
                     </li>
 
@@ -31,7 +31,7 @@ $pagina = str_replace("/", "", $url);
                         <li class="<?php echo $pagina == 'post_facturacion.php' ? 'active' : ''; ?>">
                             <a href="reglas_de_negocio.php">
                                 <i class="fa fa-user"></i>
-                                <div style="margin-left: 30px;">Administración de Reglas de Negocio<br></div>
+                                <div style="margin-left: 50px;">Administración de Reglas de Negocio<br></div>
                             </a>
                         </li>
                     <?php } ?>
@@ -40,7 +40,7 @@ $pagina = str_replace("/", "", $url);
                         <li class="<?php echo $pagina == 'frecuencia_gasto_administracion.php' ? 'active' : ''; ?>">
                             <a href="administracion_tasas.php">
                                 <i class="fa fa-money"></i>
-                                <div style="margin-left: 30px;">Administración de Tasas</div>
+                                <div style="margin-left: 50px;">Administración de Tasas</div>
                             </a>
                         </li>
                     <?php } ?>
@@ -52,7 +52,7 @@ $pagina = str_replace("/", "", $url);
                         <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
                             <a href="auditoria.php">
                                 <i class="fa fa-line-chart"></i>
-                                <div style="margin-left: 30px;">Auditoría</div>
+                                <div style="margin-left: 50px;">Auditoría</div>
                             </a>
                         </li>
                     <?php } ?>
@@ -61,7 +61,7 @@ $pagina = str_replace("/", "", $url);
                         <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
                             <a href="monitoreo.php">
                                 <i class="fa fa-pie-chart"></i>
-                                <div style="margin-left: 30px;">Monitoreo</div>
+                                <div style="margin-left: 50px;">Monitoreo</div>
                             </a>
                         </li>
                     <?php } ?>
@@ -71,7 +71,7 @@ $pagina = str_replace("/", "", $url);
                         <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
                             <a href="pendientes_autorizar.php">
                                 <i class="fa fa-cog"></i>
-                                <div style="margin-left: 30px;">Pendientes de Autorizar</div>
+                                <div style="margin-left: 50px;">Pendientes de Autorizar</div>
                             </a>
                         </li>
                     <?php } ?>
@@ -80,7 +80,7 @@ $pagina = str_replace("/", "", $url);
                         <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
                             <a href="configuraciones.php">
                                 <i class="fa fa-cog"></i>
-                                <div style="margin-left: 30px;">Configuraciones</div>
+                                <div style="margin-left: 50px;">Configuraciones</div>
                             </a>
                         </li>
                     <?php } ?>
@@ -89,7 +89,7 @@ $pagina = str_replace("/", "", $url);
                         <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
                             <a href="administracion_de_usuarios.php">
                                 <i class="fa fa-users"></i>
-                                <div style="margin-left: 30px;">Administración de <br>Usuarios</div>
+                                <div style="margin-left: 50px;">Administración de <br>Usuarios</div>
                             </a>
                         </li>
                     <?php } ?>
@@ -97,7 +97,7 @@ $pagina = str_replace("/", "", $url);
                     <li>
                         <a href="salir.php">
                             <i class="fa fa-power-off"></i>
-                            <span>Cerrar Sesión</span>
+                            <div style="margin-left: 50px;">Cerrar Sesión</div>
                         </a>
                     </li>
 

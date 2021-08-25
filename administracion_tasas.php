@@ -26,10 +26,6 @@ $fecha_hoy = date("d-m-Y");
 										<h1>Administración de Tasas</h1>
 									</div>
 									<div class="col-lg-6 col-md-6 col-sm-12" style="margin-top: 20px;">
-
-										<!-- <button class="btn btn-success pull-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-											Nueva Regla
-										</button> -->
 									</div>
 								</div>
 							</div>
@@ -59,7 +55,7 @@ $fecha_hoy = date("d-m-Y");
 											<br>
 											Cargados : 978
 											<br>
-											Erroneos : 2 &nbsp; &nbsp; &nbsp; &nbsp; <a href="#"><span class="label label-info">Ver</span></a>
+											Erroneos : 2 &nbsp; &nbsp; &nbsp; &nbsp; <a href="#" data-toggle="modal" data-target="#ModalTasaVer"><span class="label label-info">Ver</span></a>
 											<br>
 											Lineas con Error: 12, 114
 											<br>
@@ -136,6 +132,42 @@ $fecha_hoy = date("d-m-Y");
 		</div>
 	</div>
 	</div>
+	</div>
+
+
+
+
+	
+	<div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="ModalTasaVer">
+		<div class="modal-dialog modal-md" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="gridSystemModalLabel">Información de Importación</h4>
+				</div>
+				<div class="modal-body" style="overflow-y: scroll;"> 
+					<div class="row">
+						<div class="col-md-2">
+							Linea 12
+						</div>
+						<div class="col-md-10">
+							Tasa_1 ; 0.32 ; 20210810 ; 12333444-5
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-2">
+							Linea 114
+						</div>
+						<div class="col-md-10">
+							Tasa_21 ; 1.21 ; 20210810 ; 12333444-5
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default btn-sm pull-left" data-dismiss="modal" aria-label="Close">Cerrar</button>
+				</div>
+			</div>
+		</div>
 	</div>
 	<!-- global scripts -->
 	<script src="js/demo-skin-changer.js"></script>

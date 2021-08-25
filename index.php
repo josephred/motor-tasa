@@ -27,6 +27,7 @@ $era_hoy = date('Y');
             <?php include('menu_vertical.php') ?>
             <div id="content-wrapper">
                 <div class="row">
+                  xx
                     <div class="col-lg-12">
                         <div class="row">
                             <div class="col-lg-12">
