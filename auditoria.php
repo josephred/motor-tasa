@@ -14,20 +14,20 @@ $fecha_hoy = date("d-m-Y");
             <?php include('menu_vertical.php') ?>
             <div id="content-wrapper">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <br class="col-lg-12">
                         <div class="row">
                             <div class="col-lg-12">
                                 <ol class="breadcrumb">
                                     <li><a href="index.php">Inicio</a></li>
                                     <li class="active"><span>Auditoría</span></li>
                                 </ol>
-                                </br>
+
                                 <h1>Auditoría</h1>
                             </div>
                         </div>
 
+                    </br>
 
-                        <div class="panel panel">
                             <div class="panel-body">
 
 
@@ -43,63 +43,81 @@ $fecha_hoy = date("d-m-Y");
                                     <table id="table-example-fixed" class="table table-hover">
                                         <thead>
 
+                                        <tr>
+                                            <td colspan="9"><h2>Registro de acciones realizadas</h2></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pull-right">
+                                                <div class="form-group">
+
+
+                                                </div>
+                                            </td>
+
+                                        </tr>
+
                                         <tr class"">
-                                            <th>N°</th>
                                             <th>Nombre</th>
-                                            <th>Apellido</th>
-                                            <th>Rut</th>
                                             <th>Perfil</th>
-                                            <th>Correo</th>
-                                            <th>Teléfono</th>
-                                            <th>Contraseña</th>
                                             <th>Acción</th>
+                                            <th>Fecha creación</th>
+
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr class="">
-                                            <td>1</td>
+
                                             <td>Maria Paula</td>
-                                            <td>Pino</td>
-                                            <td>18.223.456-2</td>
                                             <td>Administrador</td>
-                                            <td>Mpino@gmail.com</td>
-                                            <td>(9)76892344</td>
-                                            <td>*********</td>
-                                            <td>
-                                                <div class="form-group">
-                                                    <button type="button" class="form-control" onclick="window.location.href=''"><i class="fa fa-search"></i></button>
-                                                </div>
+                                            <td>Agregar usuario</td>
+                                            <td>24-08-2021 15:40:33</td>
+
+
                                             </td>
                                         </tr>
                                         <tr class="">
-                                            <td>1</td>
                                             <td>Maria Paula</td>
-                                            <td>Pino</td>
-                                            <td>18.223.456-2</td>
                                             <td>Administrador</td>
-                                            <td>Mpino@gmail.com</td>
-                                            <td>(9)76892344</td>
-                                            <td>*********</td>
-                                            <td>
-                                                <div class="form-group">
-                                                    <button type="button" class="form-control" onclick="window.location.href=''"><i class="fa fa-search"></i></button>
-                                                </div>
-                                            </td>
+                                            <td>Modificar usuario</td>
+                                            <td>24-08-2021 15:42:38</td>
+
+
                                         </tr>
                                         <tr class="">
-                                            <td>1</td>
-                                            <td>Maria Paula</td>
-                                            <td>Pino</td>
-                                            <td>18.223.456-2</td>
+
+                                            <td>Patricio Arroyo</td>
                                             <td>Administrador</td>
-                                            <td>Mpino@gmail.com</td>
-                                            <td>(9)76892344</td>
-                                            <td>*********</td>
-                                            <td>
-                                                <div class="form-group">
-                                                    <button type="button" class="form-control" onclick="window.location.href=''"><i class="fa fa-search"></i></button>
-                                                </div>
-                                            </td>
+                                            <td>Iniciar sesión</td>
+                                            <td>23-08-2021 08:40:23</td>
+
+
+                                        </tr>
+
+                                        <tr class="">
+
+                                            <td>Patricio Arroyo</td>
+                                            <td>Administrador</td>
+                                            <td>Iniciar sesión</td>
+                                            <td>23-08-2021 08:40:23</td>
+
+
+                                        </tr>
+                                        <tr class="">
+
+                                            <td>Patricio Arroyo</td>
+                                            <td>Administrador</td>
+                                            <td>Iniciar sesión</td>
+                                            <td>23-08-2021 08:40:23</td>
+
+
+                                        </tr>       <tr class="">
+
+                                            <td>Patricio Arroyo</td>
+                                            <td>Administrador</td>
+                                            <td>Iniciar sesión</td>
+                                            <td>23-08-2021 08:40:23</td>
+
+
                                         </tr>
                                         </tbody>
                                     </table>
@@ -107,7 +125,7 @@ $fecha_hoy = date("d-m-Y");
                             </div>
                         </div>
                     </div>
-                </div>
+
             </div>
         </div>
     </div>

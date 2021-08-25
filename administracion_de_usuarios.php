@@ -21,7 +21,7 @@ $fecha_hoy = date("d-m-Y");
                                     <li><a href="index.php">Inicio</a></li>
                                     <li class="active"><span>Administración de usuarios</span></li>
                                 </ol>
-                                </br>
+
                                 <h1>Administración de usuarios</h1>
                             </div>
                         </div>
@@ -181,10 +181,10 @@ $fecha_hoy = date("d-m-Y");
                                             <td>(9)76892344</td>
                                             <td>*********</td>
                                             <td>
-                                                <div class="form-group">
-                                                    <button type="button" class="form-control" onclick="window.location.href=''"><i class="fa fa-search"></i></button>
-                                                </div>
+                                                <button class='btn btn-sm btn-warning'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+                                                <button class='btn btn-sm btn-danger' onclick='eliminar("${i.id}","${i.nombre}")'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
                                             </td>
+                                        
                                         </tr>
                                         <tr class="">
                                             <td>1</td>
@@ -196,10 +196,10 @@ $fecha_hoy = date("d-m-Y");
                                             <td>(9)76892344</td>
                                             <td>*********</td>
                                             <td>
-                                                <div class="form-group">
-                                                    <button type="button" class="form-control" onclick="window.location.href=''"><i class="fa fa-search"></i></button>
-                                                </div>
+                                                <button class='btn btn-sm btn-warning'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+                                                <button class='btn btn-sm btn-danger' onclick='eliminar("${i.id}","${i.nombre}")'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
                                             </td>
+
                                         </tr>
                                         <tr class="">
                                             <td>1</td>
@@ -211,10 +211,10 @@ $fecha_hoy = date("d-m-Y");
                                             <td>(9)76892344</td>
                                             <td>*********</td>
                                             <td>
-                                                <div class="form-group">
-                                                    <button type="button" class="form-control" onclick="window.location.href=''"><i class="fa fa-search"></i></button>
-                                                </div>
+                                                <button class='btn btn-sm btn-warning'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+                                                <button class='btn btn-sm btn-danger' onclick='eliminar("${i.id}","${i.nombre}")'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
                                             </td>
+
                                         </tr>
                                         </tbody>
                                     </table>

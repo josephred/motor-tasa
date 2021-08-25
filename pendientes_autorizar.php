@@ -32,55 +32,91 @@ $fecha_hoy = date("d-m-Y");
                     <div class="col-lg-12" id="">
                         <div class="main-box clearfix">
                             <div class="main-box-body clearfix">
-                                <div class="table-responsive">
-                                    <table id="table-example-fixed" class="table table-hover">
-                                        <thead>
-                                        <tr>
-                                            <td>
-                                                <div class="form-group">
-                                                    <label for="datepickerDate">Fecha Inicio</label>
-                                                    <input type="text" class="form-control" id="datepickerDate"
-                                                           value="04-11-2014">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="form-group">
-                                                    <label for="datepickerDate2">Fecha Fin</label>
-                                                    <input type="text" class="form-control" id="datepickerDate2"
-                                                           value="31-12-2015">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="form-group">
-                                                    <label for="datepickerDate3">Fecha de Facturación</label>
-                                                    <input type="text" class="form-control" id="datepickerDate3"
-                                                           value="04-10-2018">
-                                                </div>
-                                            </td>
-                                            </td>
-                                            <td>
-                                                <div class="form-group">
-                                                    <label for="tags">Producto</label>
-                                                    <input id="tags">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="form-group">
-                                                    <button type="button" class="form-control"
-                                                            onclick="window.location.href='frecuencia_gasto_administracion_detalle.php'">
-                                                        <i class="fa fa-search"></i></button>
-                                                </div>
-                                            </td>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12" id="">
+                                <div class="main-box clearfix">
+                                    <div class="main-box-body clearfix">
+                                        <div class="table-responsive">
+                                            <table id="table-example-fixed" class="table table-hover">
+                                                <thead>
 
-                                        </tr>
+                                                <tr class"">
+                                                <th>N°</th>
+                                                <th>Nombre</th>
+                                                <th>Apellido</th>
+                                                <th>Rut</th>
+                                                <th>Perfil</th>
+                                                <th>Correo</th>
+                                                <th>Teléfono</th>
+                                                <th>Contraseña</th>
+                                                <th>Acción</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr class="">
+                                                    <td>1</td>
+                                                    <td>Maria Paula</td>
+                                                    <td>Pino</td>
+                                                    <td>18.223.456-2</td>
+                                                    <td>Administrador</td>
+                                                    <td>Mpino@gmail.com</td>
+                                                    <td>(9)76892344</td>
+                                                    <td>*********</td>
+                                                    <td>
+                                                        <button class='btn btn-sm btn-warning'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+                                                        <button class='btn btn-sm btn-danger' onclick='eliminar("${i.id}","${i.nombre}")'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <button type="button" class="form-control" onclick="window.location.href=''"><i class="fa fa-search"></i></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="">
+                                                    <td>1</td>
+                                                    <td>Maria Paula</td>
+                                                    <td>Pino</td>
+                                                    <td>18.223.456-2</td>
+                                                    <td>Administrador</td>
+                                                    <td>Mpino@gmail.com</td>
+                                                    <td>(9)76892344</td>
+                                                    <td>*********</td>
+                                                    <td>
+                                                        <button class='btn btn-sm btn-warning'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+                                                        <button class='btn btn-sm btn-danger' onclick='eliminar("${i.id}","${i.nombre}")'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                                    </td>
 
+                                                </tr>
+                                                <tr class="">
+                                                    <td>1</td>
+                                                    <td>Maria Paula</td>
+                                                    <td>Pino</td>
+                                                    <td>18.223.456-2</td>
+                                                    <td>Administrador</td>
+                                                    <td>Mpino@gmail.com</td>
+                                                    <td>(9)76892344</td>
+                                                    <td>*********</td>
+                                                    <td>
+                                                        <button class='btn btn-sm btn-warning'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+                                                        <button class='btn btn-sm btn-danger' onclick='eliminar("${i.id}","${i.nombre}")'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                                    </td>
 
-                                    </table>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
             </div>
         </div>
         <?php //include('footer.php');?>
