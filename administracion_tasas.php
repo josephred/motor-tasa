@@ -148,6 +148,9 @@ $fecha_hoy = date("d-m-Y");
 							</div>
 						</div>
 						<div class="col-lg-12" id="">
+							<button class="btn btn-success pull-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+										Nueva Tasa
+									</button>
 							<div class="main-box clearfix">
 								<div class="main-box-body clearfix">
 									<div class="table-responsive">
