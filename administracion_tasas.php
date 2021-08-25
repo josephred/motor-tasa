@@ -21,107 +21,57 @@ $fecha_hoy = date("d-m-Y");
 									<div class="col-lg-6 col-md-6 col-sm-12">
 										<ol class="breadcrumb">
 											<li><a href="index.php">Panel</a></li>
-											<li class="active"><span>Administración de Reglas de Negocio</span></li>
+											<li class="active"><span>Administración de Tasas</span></li>
 										</ol>
-										<h1>Administración de Reglas de Negocio</h1>
+										<h1>Administración de Tasas</h1>
 									</div>
 									<div class="col-lg-6 col-md-6 col-sm-12" style="margin-top: 20px;">
-										<button class="btn btn-primary pull-right " style='margin-left: 16px; ;' type="button"> Administración de Variables
-										</button>
-										<button class="btn btn-success pull-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+
+										<!-- <button class="btn btn-success pull-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 											Nueva Regla
-										</button>
+										</button> -->
 									</div>
 								</div>
 							</div>
 
-							<div class="collapse" id="collapseExample">
-								<div class="well">
 
-									<div class="panel panel-default">
-										<div class="panel-body">
-											<div class="row">
-												<div class="col-lg-6 col-md-6 col-sm-12">
-													<dl class="dl-horizontal">
-														<dt class="pt-15">Nombres</dt>
-														<dd>
-															<div class="fg-line">
-																<input type="text" class="form-control" name="nombres" id="nombres" value="" />
-															</div>
-														</dd>
-													</dl>
-												</div>
-												<div class="col-lg-6 col-md-6 col-sm-12">
-													<dl class="dl-horizontal">
-														<dt class="pt-15">Vigencia</dt>
-														<dd>
-															<div class="row">
-																<input type="text" class="form-control hasDatepicker " name="fechaVigencia" id="fechaVigencia" value="" />
-															</div>
-														</dd>
-													</dl>
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-lg-12 col-md-12 col-sm-12">
-													<dl class="dl-horizontal">
-														<dt class="pt-15">Variables</dt>
-														<dd>
-															<div class="panel panel-default">
-																<div class="panel-body">
-																	<div>
-																		<?php
-																		foreach ($_SESSION["store_variables"] as $var) {
-																			if ($var['tipo'] == 'OBLIGATORIA') {
-																		?>
-																				<div class="row">
 
-																					<div class="col-lg-3 col-md-3 col-sm-3">
-																						<input readonly type="text" class="form-control" id="<?php echo $var['id'] ?>" value="<?php echo $var['nombre'] ?>" />
-																					</div>
-
-																					<div class="col-lg-3 col-md-3 col-sm-3">
-																						<?php
-																						$html = "<select id='cmbCondicion_" . $var['id'] . "' class='form-control' >";
-																						foreach ($_SESSION["store_condiciones"] as $con) {
-																							$html .= "<option value='" . $con['id'] . "' >" . $con['nombre'] . "</option>";
-																						}
-																						$html .= "</select>";
-																						echo $html;
-																						?>
-																					</div>
-
-																					<div class="col-lg-1 col-md-1 col-sm-3">
-																						<span style="float: right; margin-top: 8px;">valor</span>
-																					</div>
-																					<div class="col-lg-1 col-md-1 col-sm-3">
-																						<input type='text' class="form-control" id="txtValor_<?php echo $var['id']; ?>" value='' />
-																					</div>
-																				</div>
-																		<?php }
-																		} ?>
-																	</div>
-																	<div id="variablesOpcionales">
-
-																	</div>
-																</div>
-															</div>
-														</dd>
-													</dl>
-												</div>
-												<div class="col-lg-4 col-md-4 col-sm-12">
-
-												</div>
-											</div>
+							<div class="panel panel-default">
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-lg-6 col-md-6 col-sm-12">
+											<input type="file">
+										</div>
+										<div class="col-lg-6 col-md-6 col-sm-12">
+											<button class="btn btn-primary btn-sm " style='margin-left: 16px; ;' type="button"> Importar</button>
 										</div>
 									</div>
+									<br />
+									<div class="row ">
+										<div class="alert alert-success" role="alert">
+											información
+											<br>
+											<br>
+											Archivo : archivo.csv
+											<br>
+											Nº registros : 980
+											<br>
+											<br>
+											Cargados : 978
+											<br>
+											Erroneos : 2 &nbsp; &nbsp; &nbsp; &nbsp; <a href="#"><span class="label label-info">Ver</span></a>
+											<br>
+											Lineas con Error: 12, 114
+											<br>
 
-									<button class="btn btn-primary pull-right col-3" style='margin-left: 16px; ;' type="button">Guardar
-									</button>
-									<br>
-									<br>
+
+										</div>
+									</div>
 								</div>
 							</div>
+
+
+
 
 							<!--
                                                         <div class="story-content">
@@ -202,42 +152,6 @@ $fecha_hoy = date("d-m-Y");
 								<div class="main-box-body clearfix">
 									<div class="table-responsive">
 										<table id="table-example-fixed" class="table table-hover">
-											<thead>
-												<tr>
-													<td>
-														<div class="form-group">
-															<label for="datepickerDate">Nº</label>
-															<input type="text" class="form-control" id="datepickerDate" value="04-11-2014">
-														</div>
-													</td>
-													<td>
-														<div class="form-group">
-															<label for="datepickerDate2">Fecha Fin</label>
-															<input type="text" class="form-control" id="datepickerDate2" value="31-12-2015">
-														</div>
-													</td>
-													<td>
-														<div class="form-group">
-															<label for="datepickerDate3">Fecha de Facturación</label>
-															<input type="text" class="form-control" id="datepickerDate3" value="04-10-2018">
-														</div>
-													</td>
-													</td>
-													<td>
-														<div class="form-group">
-															<label for="tags">Producto</label>
-															<input id="tags">
-														</div>
-													</td>
-													<td>
-														<div class="form-group">
-															<button type="button" class="form-control" onclick="window.location.href='frecuencia_gasto_administracion_detalle.php'">
-																<i class="fa fa-search"></i></button>
-														</div>
-													</td>
-
-												</tr>
-
 
 										</table>
 									</div>
@@ -412,61 +326,58 @@ $fecha_hoy = date("d-m-Y");
 		const tablaReglas = document.querySelector("#table-example-fixed");
 		const divVariablesOpcionales = document.querySelector("#variablesOpcionales");
 		const storeReglas = JSON.parse('<?php echo json_encode($_SESSION["store_reglas"]) ?>');
+		const storeTasas = JSON.parse('<?php echo json_encode($_SESSION["store_tasas"]) ?>');
 		const storeVariables = JSON.parse('<?php echo json_encode($_SESSION["store_variables"]) ?>');
 		const storeCondciones = JSON.parse('<?php echo json_encode($_SESSION["store_condiciones"]) ?>');
 
 
 
 		const loadTablaReglas = () => {
-			// $('#table-example-fixed').DataTable().clear().destroy();
 			tablaReglas.innerHTML = '';
-			let html = `<tr>
+			let html = `<thead><tr>
 							<td>Nº</td>
 							<td>Nombre</td>
-							<td>Variables</td>
-							<td>Tasas</td>
+							<td>Valor</td>
 							<td>Vigencia</td>
 							<td>Estado</td>
 							<td>Fecha Creacion</td>
+							<td>Origen</td>
 							<td>Acción</td>
-						</tr>`;
+						</tr></thead>`;
 			let n = 0;
 
-			storeReglas.forEach((i) => {
-				let html2 = '';
-				i.variables.split(' ').forEach((v) => {
-					for (let j = 0; j < storeVariables.length; j++) {
-						if (v == storeVariables[j].id) {
-							html2 += ` &nbsp; <span class="label label-info">${storeVariables[j].nombre}</span>`;
-						}
-					}
+			storeTasas.forEach((i) => {
+				// let html2 = '';
+				// i.variables.split(' ').forEach((v) => {
+				// 	for (let j = 0; j < storeVariables.length; j++) {
+				// 		if (v == storeVariables[j].id) {
+				// 			html2 += ` &nbsp; <span class="label label-info">${storeVariables[j].nombre}</span>`;
+				// 		}
+				// 	}
 
-				});
-
-				html += `<tr>
+				// });
+				console.log(i);
+				html += `<tbody><tr>
 							<td>${++n}</td>
 							<td>${i.nombre}</td>
-							<td>${html2}</td>
-							<td>${i.tasa}</td>
+							<td>${i.valor}</td>
 							<td>${i.vigencia}</td>
-							<td>${i.estado}</td>
-							<td>${i.fecha_creacion}</td>
+							<td> - </td>
+							<td>${i.fecha}</td>
+							<td>${i.origen}</td>
 							<td> 
 								<button class='btn btn-sm btn-warning'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
 								<button class='btn btn-sm btn-danger' onclick='eliminar("${i.id}","${i.nombre}")'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
 							</td>
-						</tr>`;
+						</tr></tbody>`;
 			});
 			tablaReglas.innerHTML = html;
-			
-			// var tableFixed = $('#table-example-fixed').dataTable({
-			// 	// info: false,
-			// 	pageLength: 10,
-			// 	fixedHeader: {
-			// 		header: true,
-			// 		headerOffset: $('body.fixed-header #header-navbar').height()
-			// 	}
-			// });
+
+			// $('#table-example-fixed').dataTable().fnClearTable();
+			// $('#table-example-fixed').dataTable().fnDestroy();
+			// var tableFixed = $('#table-example-fixed').dataTable();
+			// $('#table-example-fixed').DataTable().clear().destroy();
+
 		};
 
 
@@ -479,12 +390,12 @@ $fecha_hoy = date("d-m-Y");
 		const eliminar = (id, nom) => {
 			if (confirm(`¿Seguro desea eliminar el registro "${nom}" ?`)) {
 				let indice = -1;
-				for (let i = 0; i < storeReglas.length; i++) {
-					if (id == storeReglas[i].id) {
+				for (let i = 0; i < storeTasas.length; i++) {
+					if (id == storeTasas[i].id) {
 						indice = i;
 					}
 				}
-				storeReglas.splice(indice, 1);
+				storeTasas.splice(indice, 1);
 				swal('Registro eliminado!', '', 'success');
 				loadTablaReglas();
 			}

@@ -36,10 +36,10 @@ $storeReglas = [
     ['id' => 3, 'nombre' => 'Navidad 2021', 'variables' => "1 2", 'tasa' => 3, 'vigencia' => ['2021-12-01', '2021-12-31'], 'fecha_creacion' => '2021-11-28'],
 ];
 $storeTasas = [
-    ['id' => 1, 'nombre' => 'Tasa 1', 'valor' => '0.3', 'vigencia' => ['2021-08-01', '2021-08-15'], 'fecha' => '2021-08-15', 'origen' => 'SAT'],
-    ['id' => 2, 'nombre' => 'Tasa 2', 'valor' => '4.5', 'vigencia' => ['2021-08-01', '2021-08-15'], 'fecha' => '2021-08-15', 'origen' => 'LOCAL'],
-    ['id' => 3, 'nombre' => 'Tasa 3', 'valor' => '7.8', 'vigencia' => ['2021-08-01', '2021-08-15'], 'fecha' => '2021-08-15', 'origen' => 'SAT'],
-    ['id' => 4, 'nombre' => 'Tasa 4', 'valor' => '1.1', 'vigencia' => ['2021-08-01', '2021-08-15'], 'fecha' => '2021-08-15', 'origen' => 'LOCAL'],
+    ['id' => 1, 'nombre' => 'Tasa 1', 'valor' => '0.3', 'vigencia' => '2021-08-01,2021-08-15' , 'fecha' => '2021-08-15', 'origen' => 'SAT'],
+    ['id' => 2, 'nombre' => 'Tasa 2', 'valor' => '4.5', 'vigencia' => '2021-08-01,2021-08-15' , 'fecha' => '2021-08-15', 'origen' => 'LOCAL'],
+    ['id' => 3, 'nombre' => 'Tasa 3', 'valor' => '7.8', 'vigencia' => '2021-08-01,2021-08-15' , 'fecha' => '2021-08-15', 'origen' => 'SAT'],
+    ['id' => 4, 'nombre' => 'Tasa 4', 'valor' => '1.1', 'vigencia' => '2021-08-01,2021-08-15' , 'fecha' => '2021-08-15', 'origen' => 'LOCAL'],
 ];
 $storeVariables = [
     ['id' => 1, 'nombre' => 'Sueldo', 'descripcion' => 'Sueldo del cliente', 'tipo' => 'OBLIGATORIA'],
