@@ -26,8 +26,7 @@ $fecha_hoy = date("d-m-Y");
 										<h1>Administración de Reglas de Negocio</h1>
 									</div>
 									<div class="col-lg-6 col-md-6 col-sm-12" style="margin-top: 20px;">
-										<button class="btn btn-primary pull-right " style='margin-left: 16px; ;' type="button"> Administración de Variables
-										</button>
+										<button class="btn btn-primary pull-right " style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"> Administración de Variables</button>
 										<button class="btn btn-success pull-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 											Nueva Regla
 										</button>
@@ -122,6 +121,8 @@ $fecha_hoy = date("d-m-Y");
 									<br>
 								</div>
 							</div>
+
+
 
 							<!--
                                                         <div class="story-content">
@@ -253,6 +254,44 @@ $fecha_hoy = date("d-m-Y");
 	</div>
 	</div>
 	</div>
+
+
+
+	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="ModalAdminVar">
+		<div class="modal-dialog modal-md" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="gridSystemModalLabel">Administración de Variables</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-2">Nombre</div>
+						<div class="col-md-4"> <input type="text" class="form-control"> </div>
+						<div class="col-md-2"> <button class="btn btn-primary btn-sm"> Guardar </button> </div>
+					</div>
+					<div class="row">
+						<div class="col-md-2">Descripción</div>
+						<div class="col-md-4"> <input type="text" class="form-control"> </div>
+						<div class="col-md-2"></div>
+					</div>
+					<hr>
+					<table id="tblAdmVar" class="table" style="width: 100%;">
+						<thead></thead>
+						<tbody>
+
+						</tbody>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default btn-sm pull-left" data-dismiss="modal" aria-label="Close">Cerrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
 	<!-- global scripts -->
 	<script src="js/demo-skin-changer.js"></script>
 
@@ -296,6 +335,14 @@ $fecha_hoy = date("d-m-Y");
 		$(function() {
 
 			var tableFixed = $('#table-example-fixed').dataTable({
+				// info: false,
+				pageLength: 10,
+				fixedHeader: {
+					header: true,
+					headerOffset: $('body.fixed-header #header-navbar').height()
+				}
+			});
+			var tableFixed2 = $('#tblAdmVar').dataTable({
 				// info: false,
 				pageLength: 10,
 				fixedHeader: {
@@ -410,17 +457,39 @@ $fecha_hoy = date("d-m-Y");
 		});
 
 		const tablaReglas = document.querySelector("#table-example-fixed");
+		const tablaVariables = document.querySelector("#tblAdmVar");
 		const divVariablesOpcionales = document.querySelector("#variablesOpcionales");
 		const storeReglas = JSON.parse('<?php echo json_encode($_SESSION["store_reglas"]) ?>');
 		const storeVariables = JSON.parse('<?php echo json_encode($_SESSION["store_variables"]) ?>');
 		const storeCondciones = JSON.parse('<?php echo json_encode($_SESSION["store_condiciones"]) ?>');
 
+		const loadTablaVariables = ()=>{
+			let html = `<thead><tr>
+							<td>Nº</td>
+							<td>Nombre</td>
+							<td>Descripción</td>
+							<td>Acción</td>
+						</tr></thead>`;
+			let n = 0;
+			storeVariables.forEach((i) => {
+				html += `<tbody><tr>
+							<td>${++n}</td>
+							<td>${i.nombre}</td>
+							<td>${i.descripcion}</td>
+							<td> 
+								<button class='btn btn-sm btn-warning'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+								<button class='btn btn-sm btn-danger' onclick='eliminarVar("${i.id}","${i.nombre}")'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+							</td>
+						</tr></tbody>`;
+			});
+			tablaVariables.innerHTML = html;
+		}
 
 
 		const loadTablaReglas = () => {
 			// $('#table-example-fixed').DataTable().clear().destroy();
 			tablaReglas.innerHTML = '';
-			let html = `<tr>
+			let html = `<thead><tr>
 							<td>Nº</td>
 							<td>Nombre</td>
 							<td>Variables</td>
@@ -429,7 +498,7 @@ $fecha_hoy = date("d-m-Y");
 							<td>Estado</td>
 							<td>Fecha Creacion</td>
 							<td>Acción</td>
-						</tr>`;
+						</tr></thead>`;
 			let n = 0;
 
 			storeReglas.forEach((i) => {
@@ -443,22 +512,22 @@ $fecha_hoy = date("d-m-Y");
 
 				});
 
-				html += `<tr>
+				html += `<tbody><tr>
 							<td>${++n}</td>
 							<td>${i.nombre}</td>
 							<td>${html2}</td>
 							<td>${i.tasa}</td>
 							<td>${i.vigencia}</td>
-							<td>${i.estado}</td>
+							<td> - </td>
 							<td>${i.fecha_creacion}</td>
 							<td> 
 								<button class='btn btn-sm btn-warning'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
 								<button class='btn btn-sm btn-danger' onclick='eliminar("${i.id}","${i.nombre}")'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
 							</td>
-						</tr>`;
+						</tr></tbody>`;
 			});
 			tablaReglas.innerHTML = html;
-			
+
 			// var tableFixed = $('#table-example-fixed').dataTable({
 			// 	// info: false,
 			// 	pageLength: 10,
@@ -490,7 +559,22 @@ $fecha_hoy = date("d-m-Y");
 			}
 		}
 
+		const eliminarVar = (id, nom) => {
+			if (confirm(`¿Seguro desea eliminar el registro "${nom}" ?`)) {
+				let indice = -1;
+				for (let i = 0; i < storeVariables.length; i++) {
+					if (id == storeVariables[i].id) {
+						indice = i;
+					}
+				}
+				storeVariables.splice(indice, 1);
+				swal('Registro eliminado!', '', 'success');
+				loadTablaVariables();
+			}
+		}
 
+		
+		loadTablaVariables();
 		loadTablaReglas();
 	</script>
 </body>
