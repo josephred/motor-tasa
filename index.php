@@ -64,7 +64,7 @@ $era_hoy = date('Y');
                 </div> -->
 
                 <div class="col-lg-4 col-sm-6 col-xs-12" >
-                  <div class="main-box infographic-box colored orange-bg graficos_click" id="estadisticas">
+                  <div class="main-box infographic-box colored orange-bg graficos_click" id="estadisticas" style="height: 160px;">
                   <i class="fa fa-desktop " ></i>
                     <span class="headline">Canal WEB &nbsp; &nbsp; &nbsp; &nbsp; </span>
                     <span style="font-size: 48px; text-align: right; "> &nbsp; &nbsp; &nbsp; &nbsp;  49</span><br />
@@ -75,7 +75,7 @@ $era_hoy = date('Y');
                 </div>
 
                 <div class="col-lg-4 col-sm-6 col-xs-12">
-                  <div class="main-box infographic-box colored green-bg graficos_click" id="estadisticas">
+                  <div class="main-box infographic-box colored green-bg graficos_click" id="estadisticas" style="height: 160px;">
                     <i class="fa fa-mobile"></i>
                     <span class="headline">Canal APP Móvil &nbsp; &nbsp; </span>
                     <span style="font-size: 48px; text-align: right; "> &nbsp; &nbsp; &nbsp; &nbsp;  64</span><br />
@@ -85,15 +85,16 @@ $era_hoy = date('Y');
                   </div>
                 </div>
 
-                <div class="col-lg-4 col-sm-6 col-xs-12">
-                  <div class="main-box infographic-box colored red-bg  graficos_click" id="alertas">
+                <div class="col-lg-4 col-sm-6 col-xs-12" >
+                  <div class="main-box infographic-box colored red-bg  graficos_click" id="alertas" style="height: 160px;">
                     <i class="fa fa-bell"></i>
+                    <br>
                     <span class="headline">Alertas y Diferencias</span>
-                    </br>
+                    <br>
                     <span>Fecha de Facturación: 04-11-2018</span>
                     <span>Total EECC: $160.383</span><br />
                     <span>Horario Término Malla: 09:00 hrs. <br></span>
-
+                    <span>&nbsp;</span>
                   </div>
                 </div>
               </div>
