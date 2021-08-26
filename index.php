@@ -156,12 +156,12 @@ $era_hoy = date('Y');
                                         <div class="col-md-12">
                                             <div class="main-box">
                                                 <header class="main-box-header clearfix">
-                                                    <h2 class="pull-left">Gráfico Barras - Total EECC</h2>
+                                                    <!-- <h2 class="pull-left">Gráfico Barras - Total EECC</h2> -->
                                                 </header>
                                                 <div class="main-box-body clearfix">
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <div id="bar-total-eecc" class="table-responsive"></div>
+                                                            <!-- <div id="bar-total-eecc" class="table-responsive"></div> -->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -199,7 +199,7 @@ $era_hoy = date('Y');
         </div>
     </div>
 </div>
-<?php include('footer.php'); ?>
+
 <?php include('personalizacion.php'); ?>
 <a href="" class="hidden fancybox fancybox.iframe" id="popup">popup</a>
 <div class="md-overlay"></div>
@@ -274,35 +274,35 @@ $era_hoy = date('Y');
 
 
         //CHARTS
-        graphBar = Morris.Bar({
-            element: 'bar-total-eecc',
-            data: [{
-                y: '04-09',
-                a: 159382,
-                b: 158889,
-                c: 493
-            },
-                {
-                    y: '04-10',
-                    a: 159032,
-                    b: 158319,
-                    c: 713
-                },
-                {
-                    y: '04-11',
-                    a: 160383,
-                    b: 159625,
-                    c: 758
-                }
-            ],
-            xkey: 'y',
-            ykeys: ['a', 'b', 'c'],
-            labels: ['SATIF', 'EECC', 'Diferencia'],
-            formatter: function (y) {
-                return y
-            },
-            resize: true
-        });
+        // graphBar = Morris.Bar({
+        //     element: 'bar-total-eecc',
+        //     data: [{
+        //         y: '04-09',
+        //         a: 159382,
+        //         b: 158889,
+        //         c: 493
+        //     },
+        //         {
+        //             y: '04-10',
+        //             a: 159032,
+        //             b: 158319,
+        //             c: 713
+        //         },
+        //         {
+        //             y: '04-11',
+        //             a: 160383,
+        //             b: 159625,
+        //             c: 758
+        //         }
+        //     ],
+        //     xkey: 'y',
+        //     ykeys: ['a', 'b', 'c'],
+        //     labels: ['SATIF', 'EECC', 'Diferencia'],
+        //     formatter: function (y) {
+        //         return y
+        //     },
+        //     resize: true
+        // });
 
         graphBar2 = Morris.Line({
             element: 'line-total-eecc',
@@ -336,7 +336,7 @@ $era_hoy = date('Y');
             },
                 {
                     label: "Tasa Navidad",
-                    value: 69.69
+                    value: 68.63
                 },
                 {
                     label: "Tasa 3",
@@ -403,6 +403,7 @@ $era_hoy = date('Y');
 
 
 </script>
+<?php //include('footer.php'); ?>
 </body>
 
 </html>
