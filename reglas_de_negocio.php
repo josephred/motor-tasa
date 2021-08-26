@@ -133,7 +133,7 @@ $fecha_hoy = date("d-m-Y");
 													</dl> -->
 												</div>
 											</div>
-											<button class="btn btn-primary pull-right col-3" style='margin-left: 16px; ;' type="button">Guardar</button>
+											<button class="btn btn-primary pull-right col-3" style='margin-left: 16px; ;' type="button"> <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
 										</div>
 									</div>
 
@@ -219,7 +219,7 @@ $fecha_hoy = date("d-m-Y");
 					<div class="row">
 						<div class="col-md-2">Nombre</div>
 						<div class="col-md-4"> <input type="text" class="form-control"> </div>
-						<div class="col-md-2"> <button class="btn btn-primary btn-sm"> Guardar </button> </div>
+						<div class="col-md-2"> <button class="btn btn-primary btn-sm"> <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar </button> </div>
 					</div>
 					<div class="row">
 						<div class="col-md-2">Descripción</div>
@@ -235,7 +235,7 @@ $fecha_hoy = date("d-m-Y");
 					</table>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default btn-sm pull-left" data-dismiss="modal" aria-label="Close">Cerrar</button>
+					<button type="button" class="btn btn-default btn-sm pull-left" data-dismiss="modal" aria-label="Close"> <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Cerrar</button>
 				</div>
 			</div>
 		</div>
