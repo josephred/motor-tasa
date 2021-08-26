@@ -59,9 +59,9 @@ $fecha_hoy = date("d-m-Y");
                                                         <tr class="danger">
 
                                                             <td>Maria Paula</td>
-                                                            <td>Administrador</td>
-                                                            <td>Creo nueva tasa</td>
-                                                            <td>2021-08-21 18:21:23</td>
+                                                            <td>Analista</td>
+                                                            <td>Crear nueva regla</td>
+                                                            <td>21-08-2021 08:21:23</td>
                                                             <td>
                                                                 <button class="btn btn-light" style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"><i class="fa fa-eye" aria-hidden="true"></i>
                                                                 </button>
@@ -69,9 +69,9 @@ $fecha_hoy = date("d-m-Y");
                                                         </tr>
                                                         <tr class="danger">
                                                             <td>Maria Paula</td>
-                                                            <td>Administrador</td>
-                                                            <td>Creo nueva tasa</td>
-                                                            <td>2021-08-21 18:21:23</td>
+                                                            <td>Analista</td>
+                                                            <td>Crear nueva tasa</td>
+                                                            <td>21-08-2021 18:21:23</td>
                                                             <td>
                                                                 <button class="btn btn-light" style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"><i class="fa fa-eye" aria-hidden="true"></i>
                                                                 </button>
@@ -80,9 +80,9 @@ $fecha_hoy = date("d-m-Y");
                                                         </tr>
                                                         <tr class="danger">
                                                             <td>Maria Paula</td>
-                                                            <td>Administrador</td>
-                                                            <td>Creo nueva tasa</td>
-                                                            <td>2021-08-21 18:21:23</td>
+                                                            <td>Analista</td>
+                                                            <td>Crear nueva tasa</td>
+                                                            <td>24-08-2021 15:21:23</td>
                                                             <td>
                                                                 <button class="btn btn-light" style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"><i class="fa fa-eye" aria-hidden="true"></i>
                                                                 </button>
@@ -140,9 +140,9 @@ $fecha_hoy = date("d-m-Y");
                                                             <tr class="danger">
 
                                                                 <td>Maria Paula</td>
-                                                                <td>Administrador</td>
-                                                                <td>Creo nueva tasa</td>
-                                                                <td>2021-08-21 18:21:23</td>
+                                                                <td>Analista</td>
+                                                                <td>Crear nueva regla</td>
+                                                                <td>24-08-2021 19:21:23</td>
                                                                 <td>Rechazada</td>
                                                                 <td>
                                                                     <button class="btn btn-light" style='margin-left: 16px; ' type="button" data-toggle="modal"><i class="fa fa-refresh" aria-hidden="true"></i></button>
@@ -151,25 +151,25 @@ $fecha_hoy = date("d-m-Y");
                                                             </tr>
                                                             <tr class="danger">
                                                                 <td>Maria Paula</td>
-                                                                <td>Administrador</td>
-                                                                <td>Creo nueva tasa</td>
-                                                                <td>2021-08-21 18:21:23</td>
-                                                                <td>Rechazada</td>
+                                                                <td>Analista</td>
+                                                                <td>Crear nueva tasa</td>
+                                                                <td>24-08-2021 18:21:23</td>
+                                                                <td>Autorizada</td>
                                                                 <td>
                                                                     <button class="btn btn-light" style='margin-left: 16px; ' type="button" data-toggle="modal"><i class="fa fa-refresh" aria-hidden="true"></i></button>
                                                                 </td>
-                                                                <td>No cumple con las normas básicas </td>
+                                                                <td>cumple con las normas básicas </td>
                                                             </tr>
                                                             <tr class="danger">
                                                                 <td>Maria Paula</td>
                                                                 <td>Administrador</td>
-                                                                <td>Creo nueva tasa</td>
-                                                                <td>2021-08-21 18:21:23</td>
-                                                                <td>Rechazada</td>
+                                                                <td>Crear nueva tasa</td>
+                                                                <td>24-08-2021 15:26:23</td>
+                                                                <td>Autorizada</td>
                                                                 <td>
                                                                     <button class="btn btn-light" style='margin-left: 16px; ' type="button" data-toggle="modal"><i class="fa fa-refresh" aria-hidden="true"></i></button>
                                                                 </td>
-                                                                <td>No cumple con las normas básicas </td>
+                                                                <td>cumple con las normas básicas </td>
 
                                                             </tr>
                                                         </tbody>
