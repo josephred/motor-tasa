@@ -35,17 +35,19 @@ $fecha_hoy = date("d-m-Y");
 							<div class="panel panel-default">
 								<div class="panel-body">
 									<div class="row">
+										<h4> &nbsp;  Importación de tasas</h4>
 										<div class="col-lg-6 col-md-6 col-sm-12">
 											<input type="file">
 										</div>
 										<div class="col-lg-6 col-md-6 col-sm-12">
-											<button class="btn btn-primary btn-sm " data-toggle="modal" data-target="#ModalTasaImportar" style='margin-left: 16px; ;' type="button"> Importar</button>
+											<button class="btn btn-primary btn-sm " data-toggle="modal" data-target="#ModalTasaImportar" 
+											style='margin-left: 16px; ;' type="button"> <span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> Importar</button>
 										</div>
 									</div>
 									<br />
 									<div class="row ">
-										<div class="alert alert-success" role="alert">
-											información
+										<div class="alert alert-warning " role="alert" id="infoImportar">
+											Última carga realizada
 											<br>
 											<br>
 											Archivo : archivo.csv
@@ -55,7 +57,9 @@ $fecha_hoy = date("d-m-Y");
 											<br>
 											Cargados : 978
 											<br>
-											Erroneos : 2 &nbsp; &nbsp; &nbsp; &nbsp; <a href="#" data-toggle="modal" data-target="#ModalTasaVer"><span class="label label-info">Ver</span></a>
+											<span class="text-red" style="color: red; font-weight:  bolder;">Erroneos : 2</span>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="#" data-toggle="modal" data-target="#ModalTasaVer">
+																						<span class="label label-info">
+																						<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Ver</span></a>
 											<br>
 											Lineas con Error: 12, 114
 											<br>
@@ -65,7 +69,10 @@ $fecha_hoy = date("d-m-Y");
 									</div>
 									<div class="row">
 										<div class="col-lg-12">
-											<button class="btn btn-success pull-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin: 10px;">Nueva Tasa</button>
+											<button class="btn btn-success pull-left" type="button" data-toggle="collapse" 
+													data-target="#collapseExample" aria-expanded="false" 
+													aria-controls="collapseExample" style="margin: 10px;">
+													<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nueva Tasa</button>
 										</div>
 										<div class="collapse" id="collapseExample">
 											<div class="well">
@@ -78,11 +85,15 @@ $fecha_hoy = date("d-m-Y");
 														Valor <input type="text" class="form-control" id="txtTasaValor">
 													</div>
 													<div class="col-lg-4">
-														Vigencia <input type="text" class="form-control" id="txtTasaVigencia">
+														Vigencia <input readonly type="text" class="form-control" id="txtTasaVigencia">
 													</div>
 													<div class="col-lg-2">
 														&nbsp; <br>
-														<button class="btn btn-primary pull-right col-3" style='margin-left: 16px; margin-bottom: 3px;' type="button">Guardar </button>
+														<button class="btn btn-primary pull-right col-3" 
+																style='margin-left: 16px; margin-bottom: 3px;' 
+																type="button"
+																onclick="guardaNuevaTasa(); "
+																> <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar </button>
 													</div>
 												</div>
 
@@ -127,7 +138,7 @@ $fecha_hoy = date("d-m-Y");
 	<div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="ModalTasaVer">
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header bg-primary">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<h4 class="modal-title" id="gridSystemModalLabel">Información de Importación</h4>
 				</div>
@@ -150,7 +161,7 @@ $fecha_hoy = date("d-m-Y");
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default btn-sm pull-left" data-dismiss="modal" aria-label="Close">Cerrar</button>
+					<button type="button" class="btn btn-default btn-sm pull-left" data-dismiss="modal" aria-label="Close"> <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Cerrar</button>
 				</div>
 			</div>
 		</div>
@@ -159,7 +170,7 @@ $fecha_hoy = date("d-m-Y");
 	<div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="ModalTasaImportar">
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
-				<div class="modal-header " >
+				<div class="modal-header bg-primary" >
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<h4 class="modal-title" id="gridSystemModalLabel">Información de Importación</h4>
 				</div>
@@ -191,8 +202,11 @@ $fecha_hoy = date("d-m-Y");
 					Ingrese el origen de datos: <input type="text" class="form-control">
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary btn-sm pull-right col-lg-3 col-md-3" data-dismiss="modal" aria-label="Close">Guardar</button>
-					<button type="button" class="btn btn-danger btn-sm pull-left" data-dismiss="modal" aria-label="Close">Cancelar</button>
+					<button type="button" class="btn btn-primary btn-sm pull-right col-lg-3 col-md-3" 
+							data-dismiss="modal" aria-label="Close"
+							onclick="$('#infoImportar').toggle(); swal('¡Perfecto!','Importado con exito','success') ;"
+							> <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
+					<button type="button" class="btn btn-danger btn-sm pull-left" data-dismiss="modal" aria-label="Close"> <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Cancelar</button>
 				</div>
 			</div>
 		</div>
@@ -238,6 +252,7 @@ $fecha_hoy = date("d-m-Y");
 	<!-- this page specific inline scripts -->
 	<script type="text/javascript">
 		$(function() {
+			$('#infoImportar').toggle();
 
 			$('input[id="txtTasaVigencia"]').daterangepicker({
 				opens: 'left',
@@ -377,30 +392,23 @@ $fecha_hoy = date("d-m-Y");
 
 		const loadTablaReglas = () => {
 			tablaReglas.innerHTML = '';
-			let html = `<thead><tr>
-							<td>Nº</td>
-							<td>Nombre</td>
-							<td>Valor</td>
-							<td>Vigencia</td>
-							<td>Estado</td>
-							<td>Fecha Creacion</td>
-							<td>Origen</td>
-							<td>Acción</td>
-						</tr></thead>`;
+			let htmlHead = `<thead>
+								<tr>
+									<th>Nº</th>
+									<th>Nombre</th>
+									<th>Valor</th>
+									<th>Vigencia</th>
+									<th>Estado</th>
+									<th>Fecha Creacion</th>
+									<th>Origen</th>
+									<th>Acción</th>
+								</tr></thead>`;
 			let n = 0;
 
+			let html='';
 			storeTasas.forEach((i) => {
-				// let html2 = '';
-				// i.variables.split(' ').forEach((v) => {
-				// 	for (let j = 0; j < storeVariables.length; j++) {
-				// 		if (v == storeVariables[j].id) {
-				// 			html2 += ` &nbsp; <span class="label label-info">${storeVariables[j].nombre}</span>`;
-				// 		}
-				// 	}
-
-				// });
-				console.log(i);
-				html += `<tbody><tr>
+				
+				html += `<tr class='danger'>
 							<td>${++n}</td>
 							<td>${i.nombre}</td>
 							<td>${i.valor}</td>
@@ -412,9 +420,9 @@ $fecha_hoy = date("d-m-Y");
 								<button class='btn btn-sm btn-warning'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
 								<button class='btn btn-sm btn-danger' onclick='eliminar("${i.id}","${i.nombre}")'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
 							</td>
-						</tr></tbody>`;
+						</tr>`;
 			});
-			tablaReglas.innerHTML = html;
+			tablaReglas.innerHTML = htmlHead + `<tbody> ${html} <tbody>` ;
 
 			// $('#table-example-fixed').dataTable().fnClearTable();
 			// $('#table-example-fixed').dataTable().fnDestroy();
@@ -444,11 +452,41 @@ $fecha_hoy = date("d-m-Y");
 			}
 		}
 
+		const guardaNuevaTasa = ()=>{
+			let msj = '';
+			if( document.querySelector("#txtTasaNombre").value == '' ){
+				msj += ' El nombre no puede ser vacío ;  ';
+			}
+			if( document.querySelector("#txtTasaValor").value == '' ){
+				msj += ' El valor no puede ser vacío ;  ';
+			}
+			if( document.querySelector("#txtTasaVigencia").value == '' ){
+				msj += ' El valor no puede ser vacío ;  ';
+			}
+			if( msj !='' ){
+				swal('Atención','Por favor verifique:  ' + msj,'danger');
+				return false;
+			}
 
+			swal('¡Perfecto!','Guardado con exito','success');
+
+			storeTasas.push({
+				id: 1,
+				fecha: new Date().toISOString().split('T')[0] ,
+				nombre:  document.querySelector("#txtTasaNombre").value ,
+				origen: "LOCAL",
+				valor: document.querySelector("#txtTasaValor").value,
+				vigencia: document.querySelector("#txtTasaVigencia").value,
+			});
+
+			loadTablaReglas();
+			document.querySelector("#txtTasaNombre").value = '';
+			document.querySelector("#txtTasaValor").value = '';
+			document.querySelector("#txtTasaVigencia").value = '8/26 06:00 PM - 8/28 02:00 AM';
+		}
+		
 		loadTablaReglas();
 	</script>
 </body>
 
 </html>
-<?php echo "<pre>";
-print_r($_SESSION); ?>
