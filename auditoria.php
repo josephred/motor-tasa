@@ -62,7 +62,7 @@ $fecha_hoy = date("d-m-Y");
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr class="">
+                                                <tr class="danger">
 
                                                     <td>Maria Paula</td>
                                                     <td>Administrador</td>
@@ -72,7 +72,7 @@ $fecha_hoy = date("d-m-Y");
 
                                                     </td>
                                                 </tr>
-                                                <tr class="">
+                                                <tr class="danger">
                                                     <td>Maria Paula</td>
                                                     <td>Administrador</td>
                                                     <td>Modificar usuario</td>
@@ -80,7 +80,7 @@ $fecha_hoy = date("d-m-Y");
 
 
                                                 </tr>
-                                                <tr class="">
+                                                <tr class="danger">
 
                                                     <td>Patricio Arroyo</td>
                                                     <td>Administrador</td>
@@ -90,7 +90,7 @@ $fecha_hoy = date("d-m-Y");
 
                                                 </tr>
 
-                                                <tr class="">
+                                                <tr class="danger">
 
                                                     <td>Patricio Arroyo</td>
                                                     <td>Administrador</td>

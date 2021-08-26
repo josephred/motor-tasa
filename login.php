@@ -98,7 +98,7 @@ $_SESSION["LoginError"] = 0;
                                     <br>
                                     <br>
                                     <br>
-                                    <div>
+                                    <div style="overflow-y: scroll; height: 200px;">
                                         Usuarios <br><br>
                                         usuario : admin@gmail.com <br>
                                         rut_empresa : 88888888-8 <br>
@@ -110,7 +110,7 @@ $_SESSION["LoginError"] = 0;
 
                                         usuario : auditor@gmail.com <br>
                                         rut_empresa : 88888888-8 <br>
-                                        password : 123456 <br>
+                                        password : 123456 <br> <br>
 
                                         usuario : analista@gmail.com <br>
                                         rut_empresa : 88888888-8 <br>

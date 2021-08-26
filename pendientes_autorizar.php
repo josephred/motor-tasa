@@ -41,7 +41,7 @@ $fecha_hoy = date("d-m-Y");
                                 <div class="col-lg-12" id="">
                                     <div class="main-box clearfix">
                                         <div class="main-box-body clearfix">
-                                        <h2>Solicitudes pendientes</h2>
+                                            <h2>Solicitudes pendientes</h2>
                                             <div class="table-responsive">
                                                 <table id="table-example-fixed" class="table table-hover">
                                                     <thead>
@@ -218,8 +218,8 @@ $fecha_hoy = date("d-m-Y");
                         <div class="row" style="text-align: center">
 
                             <div class="col-md-3"></div>
-                            <div class="col-md-3"><input type="checkbox"> &nbsp; Rechazar</div>
-                            <div class="col-md-3"><input type="checkbox"> &nbsp; Autorizar</div>
+                            <div class="col-md-3"><input type="radio" name="auto"> &nbsp; Autorizar</div>
+                            <div class="col-md-3"><input type="radio" name="auto"> &nbsp; Rechazar</div>
                             <div class="col-md-3"></div>
                         </div>
 

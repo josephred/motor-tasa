@@ -26,9 +26,9 @@ $fecha_hoy = date("d-m-Y");
 										<h1>Administración de Reglas de Negocio</h1>
 									</div>
 									<div class="col-lg-6 col-md-6 col-sm-12" style="margin-top: 20px;">
-										<button class="btn btn-primary pull-right " style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"> Administración de Variables</button>
+										<button class="btn btn-primary pull-right " style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"> <span class="glyphicon glyphicon-list" aria-hidden="true"></span> Administración de Variables</button>
 										<button class="btn btn-success pull-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-											Nueva Regla
+											<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nueva Regla
 										</button>
 									</div>
 								</div>
@@ -111,19 +111,23 @@ $fecha_hoy = date("d-m-Y");
 												</div>
 
 											</div>
-											<button class="btn btn-primary pull-right col-3" style='margin-left: 16px; ;' type="button">Guardar</button>
+											<div class="row">
+												<div class="col-lg-6 col-md-6 col-sm-12">
+													<dl class="dl-horizontal">
+														<dt class="pt-15">Tasa</dt>
+														<dd>
+															<div class="fg-line">
+																<input type="text" class="form-control" name="nombres" id="nombres" value="" />
+															</div>
+														</dd>
+													</dl>
+												</div>
+												<div class="col-lg-6 col-md-6 col-sm-12">
+													<button class="btn btn-primary pull-right col-3" style='margin-left: 16px; ;' type="button"> <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
+												</div>
+											</div>
 										</div>
 									</div>
-
-									<br>
-									<br>
-								</div>
-							</div>
-
-
-
-							<div class="row">
-								<div class="col-lg-12">
 								</div>
 							</div>
 						</div>
@@ -134,37 +138,36 @@ $fecha_hoy = date("d-m-Y");
 										<table id="table-example-fixed" class="table table-hover">
 											<thead>
 												<tr>
-													<td>
+													<th>
 														<div class="form-group">
 															<label for="datepickerDate">Nº</label>
 															<input type="text" class="form-control" id="datepickerDate" value="04-11-2014">
 														</div>
-													</td>
-													<td>
+													</th>
+													<th>
 														<div class="form-group">
 															<label for="datepickerDate2">Fecha Fin</label>
 															<input type="text" class="form-control" id="datepickerDate2" value="31-12-2015">
 														</div>
-													</td>
-													<td>
+													</th>
+													<th>
 														<div class="form-group">
 															<label for="datepickerDate3">Fecha de Facturación</label>
 															<input type="text" class="form-control" id="datepickerDate3" value="04-10-2018">
 														</div>
-													</td>
-													</td>
-													<td>
+													</th>
+													<th>
 														<div class="form-group">
 															<label for="tags">Producto</label>
 															<input id="tags">
 														</div>
-													</td>
-													<td>
+													</th>
+													<th>
 														<div class="form-group">
 															<button type="button" class="form-control" onclick="window.location.href='frecuencia_gasto_administracion_detalle.php'">
 																<i class="fa fa-search"></i></button>
 														</div>
-													</td>
+													</th>
 
 												</tr>
 
@@ -189,31 +192,33 @@ $fecha_hoy = date("d-m-Y");
 	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="ModalAdminVar">
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header bg-primary">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<h4 class="modal-title" id="gridSystemModalLabel">Administración de Variables</h4>
 				</div>
 				<div class="modal-body">
+					<h4>
+						Crea nueva Variable
+					</h4> 
 					<div class="row">
 						<div class="col-md-2">Nombre</div>
-						<div class="col-md-4"> <input type="text" class="form-control"> </div>
-						<div class="col-md-2"> <button class="btn btn-primary btn-sm"> Guardar </button> </div>
+						<div class="col-md-8"> <input type="text" class="form-control"> </div>
+						<div class="col-md-2"> <button class="btn btn-primary btn-sm"> <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar </button> </div>
 					</div>
 					<div class="row">
 						<div class="col-md-2">Descripción</div>
-						<div class="col-md-4"> <input type="text" class="form-control"> </div>
+						<div class="col-md-8"> <input type="text" class="form-control"> </div>
 						<div class="col-md-2"></div>
 					</div>
 					<hr>
-					<table id="tblAdmVar" class="table" style="width: 100%;">
+					<table id="tblAdmVar" class="table table-hover" style="width: 100%;">
 						<thead></thead>
 						<tbody>
-
 						</tbody>
 					</table>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default btn-sm pull-left" data-dismiss="modal" aria-label="Close">Cerrar</button>
+					<button type="button" class="btn btn-default btn-sm pull-left" data-dismiss="modal" aria-label="Close"> <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Cerrar</button>
 				</div>
 			</div>
 		</div>
@@ -393,15 +398,10 @@ $fecha_hoy = date("d-m-Y");
 		const storeCondciones = JSON.parse('<?php echo json_encode($_SESSION["store_condiciones"]) ?>');
 
 		const loadTablaVariables = () => {
-			let html = `<thead><tr>
-							<td>Nº</td>
-							<td>Nombre</td>
-							<td>Descripción</td>
-							<td>Acción</td>
-						</tr></thead>`;
+			let html = ``;
 			let n = 0;
 			storeVariables.forEach((i) => {
-				html += `<tbody><tr>
+				html += `<tr class='danger'>
 							<td>${++n}</td>
 							<td>${i.nombre}</td>
 							<td>${i.descripcion}</td>
@@ -409,8 +409,15 @@ $fecha_hoy = date("d-m-Y");
 								<button class='btn btn-sm btn-warning'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
 								<button class='btn btn-sm btn-danger' onclick='eliminarVar("${i.id}","${i.nombre}")'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
 							</td>
-						</tr></tbody>`;
+						</tr>`;
 			});
+			html = `<thead><tr>
+							<th>Nº</th>
+							<th>Nombre</th>
+							<th>Descripción</th>
+							<th>Acción</th>
+						</tr></thead> <tbody>${html}<t/body> `;
+
 			tablaVariables.innerHTML = html;
 		}
 
@@ -418,18 +425,19 @@ $fecha_hoy = date("d-m-Y");
 		const loadTablaReglas = () => {
 			// $('#table-example-fixed').DataTable().clear().destroy();
 			tablaReglas.innerHTML = '';
-			let html = `<thead><tr>
-							<td>Nº</td>
-							<td>Nombre</td>
-							<td>Variables</td>
-							<td>Tasas</td>
-							<td>Vigencia</td>
-							<td>Estado</td>
-							<td>Fecha Creacion</td>
-							<td>Acción</td>
+			let htmlHead = `<thead><tr>
+							<th>Nº</th>
+							<th>Nombre</th>
+							<th>Variables</th>
+							<th>Tasas</th>
+							<th>Vigencia</th>
+							<th>Estado</th>
+							<th>Fecha Creacion</th>
+							<th>Acción</th>
 						</tr></thead>`;
 			let n = 0;
 
+			let htmlBody = '';
 			storeReglas.forEach((i) => {
 				let html2 = '';
 				i.variables.split(' ').forEach((v) => {
@@ -441,7 +449,7 @@ $fecha_hoy = date("d-m-Y");
 
 				});
 
-				html += `<tbody><tr>
+				htmlBody += `<tr class='danger'>
 							<td>${++n}</td>
 							<td>${i.nombre}</td>
 							<td>${html2}</td>
@@ -453,9 +461,9 @@ $fecha_hoy = date("d-m-Y");
 								<button class='btn btn-sm btn-warning'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
 								<button class='btn btn-sm btn-danger' onclick='eliminar("${i.id}","${i.nombre}")'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
 							</td>
-						</tr></tbody>`;
+						</tr>`;
 			});
-			tablaReglas.innerHTML = html;
+			tablaReglas.innerHTML = `${htmlHead} <tbody> ${htmlBody} </tbody>`;
 
 			// var tableFixed = $('#table-example-fixed').dataTable({
 			// 	// info: false,
