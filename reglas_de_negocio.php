@@ -111,6 +111,28 @@ $fecha_hoy = date("d-m-Y");
 												</div>
 
 											</div>
+											<div class="row">
+												<div class="col-lg-6 col-md-6 col-sm-12">
+													<dl class="dl-horizontal">
+														<dt class="pt-15">Tasa</dt>
+														<dd>
+															<div class="fg-line">
+																<input type="text" class="form-control" name="nombres" id="nombres" value="" />
+															</div>
+														</dd>
+													</dl>
+												</div>
+												<div class="col-lg-6 col-md-6 col-sm-12">
+													<!-- <dl class="dl-horizontal">
+														<dt class="pt-15">Vigencia</dt>
+														<dd>
+															<div class="row">
+																<input type="text" class="form-control hasDatepicker " name="fechaVigencia" id="fechaVigencia" value="" />
+															</div>
+														</dd>
+													</dl> -->
+												</div>
+											</div>
 											<button class="btn btn-primary pull-right col-3" style='margin-left: 16px; ;' type="button">Guardar</button>
 										</div>
 									</div>
