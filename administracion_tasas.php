@@ -156,8 +156,6 @@ $fecha_hoy = date("d-m-Y");
 		</div>
 	</div>
 
-
-
 	<div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="ModalTasaImportar">
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
