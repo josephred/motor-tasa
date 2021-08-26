@@ -101,14 +101,15 @@ $fecha_hoy = date("d-m-Y");
 																		} ?>
 																	</div>
 																	<div id="variablesOpcionales">
-
+																		
 																	</div>
+																	<button class='btn btn-success btn-sm' style="margin-top: 10px;" onclick="addVariable()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Agregar Varible Opcional </button>
 																</div>
 															</div>
 														</dd>
 													</dl>
 												</div>
-												
+
 											</div>
 											<button class="btn btn-primary pull-right col-3" style='margin-left: 16px; ;' type="button">Guardar</button>
 										</div>
@@ -391,7 +392,7 @@ $fecha_hoy = date("d-m-Y");
 		const storeVariables = JSON.parse('<?php echo json_encode($_SESSION["store_variables"]) ?>');
 		const storeCondciones = JSON.parse('<?php echo json_encode($_SESSION["store_condiciones"]) ?>');
 
-		const loadTablaVariables = ()=>{
+		const loadTablaVariables = () => {
 			let html = `<thead><tr>
 							<td>Nº</td>
 							<td>Nombre</td>
@@ -501,37 +502,71 @@ $fecha_hoy = date("d-m-Y");
 			}
 		}
 
+
 		let storeVariablesOpcionales = [];
 
-		const addVariable = ()=>{
-
-			let optionCondiciones = '';
-			storeCondciones.forEach((c)=>{
-				optionCondiciones += `<option value='${c.id}' >${c.nombre}</option>`;
+		const addVariable = () => {
+			storeVariablesOpcionales.push({
+				id: 1
 			});
+			loadVariablesTmp();
+		}
 
-			let componente = `
-			<div class="row">
-				<div class="col-lg-3 col-md-3 col-sm-3">
-					<input readonly type="text" class="form-control" id="${0}" value="" />
+		const loadVariablesTmp = () => {
+			let componente = '';
+			let html = '';
+			storeVariablesOpcionales.forEach((v) => {
+				let optionCondiciones = '';
+				storeCondciones.forEach((c) => {
+					optionCondiciones += `<option value='${c.id}' >${c.nombre}</option>`;
+				});
+				let optionVariables = '';
+				storeVariables.forEach((v) => {
+					optionVariables += `<option value='${v.id}' >${v.nombre}</option>`;
+				});
+				componente = `
+				<div class="row">
+					<div class="col-lg-3 col-md-3 col-sm-3">
+						<select id='cmbCondicion_${0}' class='form-control' >
+							${optionVariables}
+						</select>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-3">
+						<select id='cmbCondicion_${0}' class='form-control' >
+							${optionCondiciones}
+						</select>
+					</div>
+					<div class="col-lg-1 col-md-1 col-sm-3">
+						<span style="float: right; margin-top: 8px;">valor</span>
+					</div>
+					<div class="col-lg-1 col-md-1 col-sm-3">
+						<input type='text' class="form-control" id="txtValor_${0}" value='' />
+					</div>
+					<div class="col-lg-1 col-md-1 col-sm-3">
+						<button class='btn btn-danger btn-sm' onclick='eliminarVarTmp(${v.id})'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+					</div>
 				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3">
-					<select id='cmbCondicion_${0}' class='form-control' >
-						${optionCondiciones}
-					</select>
-				</div>
-				<div class="col-lg-1 col-md-1 col-sm-3">
-					<span style="float: right; margin-top: 8px;">valor</span>
-				</div>
-				<div class="col-lg-1 col-md-1 col-sm-3">
-					<input type='text' class="form-control" id="txtValor_${0}" value='' />
-				</div>
-			</div>
-			`;
+				`;
+				html += componente;
+			});
+			document.querySelector("#variablesOpcionales").innerHTML = html;
 		}
 
 
-		
+		const eliminarVarTmp = (id, nom) => {
+			if (confirm(`¿Seguro desea eliminar el registro "${nom}" ?`)) {
+				let indice = -1;
+				for (let i = 0; i < storeVariablesOpcionales.length; i++) {
+					if (id == storeVariablesOpcionales[i].id) {
+						indice = i;
+					}
+				}
+				storeVariablesOpcionales.splice(indice, 1);
+				loadVariablesTmp();
+				// swal('Registro eliminado!', '', 'success');
+			}
+		}
+
 		loadTablaVariables();
 		loadTablaReglas();
 	</script>
