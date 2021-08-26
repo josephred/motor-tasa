@@ -36,13 +36,18 @@ $fecha_hoy = date("d-m-Y");
                                             </div>
                                             <img src="img/samples/icono_mujer.png" width="98%">
                                             <div class="profile-label">
-                                                <span class="label label-danger"><?php echo $_SESSION['perfil']; ?></span>
+                                                <span class="label label-danger"><?php echo $_SESSION['cargo']; ?> </span> <br>
+                                                <span class="label label-default"><?php echo $_SESSION['perfil']; ?></span>
                                             </div>
                                             <div class="profile-details">
-                                                Usuario desde: 01-10-2018
+                                                Usuario desde: 01-07-<?php echo date('Y')?>
                                             </div>
                                             <div class="profile-details">
-                                                Última conexión : 02-10-2018 10:00:00
+                                                Última conexión : 
+                                                <?php 
+                                                    $n = rand(1,date('d')) ;
+                                                    echo (strlen($n)==1 ? '0'.$n:$n ).'-'. date('m-Y H:i:s');
+                                                ?>
                                             </div>
                                         </div>
                                     </div>
@@ -317,6 +322,30 @@ $fecha_hoy = date("d-m-Y");
                                                                             <dd>
                                                                                 <div class="fg-line">
                                                                                     <input type="text" class="form-control" name="apellidos" id="apellidos" value="<?php echo explode(' ', $_SESSION['nombre'])[1] ?>" />
+                                                                                </div>
+                                                                            </dd>
+                                                                        </dl>
+                                                                        <dl class="dl-horizontal">
+                                                                            <dt class="p-t-10">RUT</dt>
+                                                                            <dd>
+                                                                                <div class="fg-line">
+                                                                                    <input type="text" class="form-control" name="rut" id="rut" value="<?php echo $_SESSION['rut'];?>" />
+                                                                                </div>
+                                                                            </dd>
+                                                                        </dl>
+                                                                        <dl class="dl-horizontal">
+                                                                            <dt class="p-t-10">Fecha Nacimiento</dt>
+                                                                            <dd>
+                                                                                <div class="fg-line">
+                                                                                    <input type="text" class="form-control" name="fechaNacimiento" id="fechaNacimiento" value="" />
+                                                                                </div>
+                                                                            </dd>
+                                                                        </dl>
+                                                                        <dl class="dl-horizontal">
+                                                                            <dt class="p-t-10">Cargo</dt>
+                                                                            <dd>
+                                                                                <div class="fg-line">
+                                                                                    <input type="text" class="form-control" name="cargo" id="cargo" value="<?php echo $_SESSION['cargo'];?>" />
                                                                                 </div>
                                                                             </dd>
                                                                         </dl>

@@ -111,6 +111,10 @@ $_SESSION["LoginError"] = 0;
                                         usuario : auditor@gmail.com <br>
                                         rut_empresa : 88888888-8 <br>
                                         password : 123456 <br>
+
+                                        usuario : analista@gmail.com <br>
+                                        rut_empresa : 88888888-8 <br>
+                                        password : 123456 <br>
                                     </div>
                                 </div>
                             </div>

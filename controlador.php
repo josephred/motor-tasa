@@ -9,6 +9,7 @@ $storeUsuarios = [
         'rut_empresa' => "88888888-8",
         'perfil' => "Administrador",
         'password' => "123456",
+        'cargo' => "Gerente Gral.",
     ],
     [
         'id' => "2",
@@ -18,6 +19,7 @@ $storeUsuarios = [
         'rut_empresa' => "88888888-8",
         'perfil' => "Monitor",
         'password' => "123456",
+        'cargo' => "Operador",
     ],
     [
         'id' => "3",
@@ -27,6 +29,17 @@ $storeUsuarios = [
         'rut_empresa' => "88888888-8",
         'perfil' => "Auditor",
         'password' => "123456",
+        'cargo' => "Sub Gerente",
+    ],
+    [
+        'id' => "4",
+        'email' => "analista@gmail.com",
+        'nombre' => "Monica Smith",
+        'rut' => "44444444-4",
+        'rut_empresa' => "88888888-8",
+        'perfil' => "Analista",
+        'password' => "123456",
+        'cargo' => "Analista Finanzas",
     ]
 ];
 
@@ -71,6 +84,7 @@ foreach ($storeUsuarios as $u) {
         $_SESSION['rut'] = $u['rut'];
         $_SESSION['rut_empresa'] = $u['rut_empresa'];
         $_SESSION['perfil'] = $u['perfil'];
+        $_SESSION['cargo'] = $u['cargo'];
         $_SESSION['store_reglas'] = $storeReglas;
         $_SESSION['store_tasas'] = $storeTasas;
         $_SESSION['store_variables'] = $storeVariables;

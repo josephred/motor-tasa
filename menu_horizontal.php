@@ -23,7 +23,7 @@
                     <li class="dropdown profile-dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="img/samples/icono_mujer.png" width="">
-                            <span class="hidden-xs"><?php echo $_SESSION['nombre'] ?> / <?php echo $_SESSION['perfil'] ?></span>
+                            <span class="hidden-xs"><?php echo $_SESSION['nombre'] ?> (<?php echo $_SESSION['cargo']  ?>) / <?php echo $_SESSION['perfil'] ?></span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right">
