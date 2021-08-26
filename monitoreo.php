@@ -32,57 +32,69 @@ $era_hoy = date('Y');
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel panel-body">
                         <div class="row">
-                            <div class="col-lg-4 col-sm-6 col-xs-12">
-                                <div class="main-box infographic-box colored red-bg  graficos_click" id="alertas">
-                                    <i class="fa fa-bell"></i>
-                                    <span class="headline">Alertas  y Diferencias</span>
-                                    </br>
-                                    <span>Fecha de Facturación: 04-11-2018</span>
-                                    <span>Total EECC: $160.383</span><br/>
-                                    <span>Horario Término Malla: 09:00 hrs.</span>
-                                </div>
-                            </div>
+                            <div class="col-lg-6 col-lg-6">
+                                <div class="main-box infographic-box colored red-bg graficos_click"
+                                     id="">
+                                    <i class="fa fa-wifi" aria-hidden="true"></i>
+                                    <span style="font-size: 48px; text-align: right; "> &nbsp; &nbsp; &nbsp; &nbsp;  139.8 MB</span>
 
-                            <div class="col-lg-4 col-sm-6 col-xs-12">
-                                <div class="main-box infographic-box colored yellow-bg graficos_click"
-                                     id="post_facturacion">
-                                    <i class="fa fa-user"></i>
-                                    <span class="headline">Post Facturación</span>
-                                    </br>
                                     <span></span><br/>
-                                    <span>Usuarios afectados: 350</span>
+                                    <span>Ancho de banda ahorrado</span>
                                     <span></span><br/>
                                     <span>&nbsp;</span>
                                 </div>
                             </div>
 
-                            <div class="col-lg-4 col-sm-6 col-xs-12">
-                                <div class="main-box infographic-box colored green-bg graficos_click" id="estadisticas">
-                                    <i class="fa fa-line-chart"></i>
-                                    <span class="headline">Estadísticas</span>
-                                    </br>
+                            <div class="col-lg-6 col-lg-6">
+                                <div class="main-box infographic-box colored red-bg graficos_click"
+                                >
+                                    <i class="fa fa-desktop" aria-hidden="true"></i>
+                                    <span style="font-size: 48px; text-align: right; "> &nbsp; &nbsp; &nbsp; &nbsp;  80% </span>
+
                                     <span></span><br/>
-                                    <span>Meses: Sep. - Nov. 2018</span>
+                                    <span>CPU utilizado</span>
                                     <span></span><br/>
                                     <span>&nbsp;</span>
                                 </div>
                             </div>
                         </div>
 
+
                         <table class="table table-hover">
-                            <tr>
-                                <td>
-                                    <div class="row">
-                                        <div class="col-md-12">
+                            <tr ">
+                                <td class="col-lg-6 col-lg-6">
+                                    <div class="row" class="col-lg-6 col-lg-6">
+                                        <div>
                                             <div class="main-box">
                                                 <header class="main-box-header clearfix">
-                                                    <h2 class="pull-left">Gráfico Barras - Total EECC</h2>
+                                                    <h2 class="pull-left">Variación Tasa</h2>
                                                 </header>
                                                 <div class="main-box-body clearfix">
                                                     <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div id="bar-total-eecc" class="table-responsive"></div>
+                                                        <div >
+                                                            <div id="line-total" class="table-responsive"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </td>
+                                <td>
+                                    <div class="row" class="col-lg-6 col-lg-6">
+                                        <div >
+                                            <div class="main-box">
+                                                <header class="main-box-header clearfix">
+                                                    <h2 class="pull-left">Variación canal de conexión</h2>
+                                                </header>
+                                                <div class="main-box-body clearfix">
+                                                    <div class="row">
+                                                        <div >
+                                                            <div id="area-chart" class="table-responsive"></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -90,47 +102,54 @@ $era_hoy = date('Y');
                                         </div>
                                     </div>
                                 </td>
-                                <td>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="main-box">
-                                                <header class="main-box-header clearfix">
-                                                    <h2 class="pull-left">Gráfico Lineal - Total EECC</h2>
-                                                </header>
-                                                <div class="main-box-body clearfix">
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div id="line-total-eecc" class="table-responsive"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="main-box">
-                                                <header class="main-box-header clearfix">
-                                                    <h2 class="pull-left">Gráfico Circular - Total EECC</h2>
-                                                </header>
-                                                <div class="main-box-body clearfix">
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div id="donut-total-eecc" class="table-responsive"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
+
                             </tr>
 
                         </table>
+                        <table class="table table-hover">
+                            <tr>
+                                <td class="col-lg-6 col-lg-6">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="main-box">
+                                                <header class="main-box-header clearfix">
+                                                    <h2 class="pull-left">Usuarios conectados actualmente</h2>
+                                                </header>
+                                                <div class="main-box-body clearfix">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div id="donut-total" class="table-responsive"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </td>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="main-box">
+                                                <header class="main-box-header clearfix">
+                                                    <h2 class="pull-left">Reglas de negocio más utilizadas</h2>
+                                                </header>
+                                                <div class="main-box-body clearfix">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div id="bar-total" class="table-responsive"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
 
+                            </tr>
+
+                        </table>
                     </div>
+
+
                 </div>
                 <?php include('footer.php'); ?>
             </div>
@@ -211,31 +230,56 @@ $era_hoy = date('Y');
 
         //CHARTS
         graphBar = Morris.Bar({
-            element: 'bar-total-eecc',
+            element: 'bar-total',
             data: [
-                {y: '04-09', a: 159382, b: 158889, c: 493},
-                {y: '04-10', a: 159032, b: 158319, c: 713},
-                {y: '04-11', a: 160383, b: 159625, c: 758}
+                {y: '04-09', a: 152, b: 189, c: 493},
+                {y: '04-10', a: 132, b: 159, c: 713},
+                {y: '04-11', a: 183, b: 155, c: 758}
             ],
             xkey: 'y',
             ykeys: ['a', 'b', 'c'],
-            labels: ['SATIF', 'EECC', 'Diferencia'],
+            labels: ['aniversario 2021', 'día del niño 2021', 'navidad 2020'],
+            lineColors: ['#f36c6c','#ff3321','#e84040'],
+
             formatter: function (y) {
                 return y
             },
             resize: true
         });
 
+
+         graphBar1= Morris.Area({
+                element: 'area-chart',
+                data: [
+                    { y: '2006', a: 30, b: 90 ,c:100},
+                    { y: '2007', a: 75,  b: 65 ,c:89 },
+                    { y: '2008', a: 50,  b: 40  ,c:68},
+                    { y: '2009', a: 75,  b: 65  ,c:70},
+                    { y: '2010', a: 50,  b: 40 ,c:76 },
+                    { y: '2011', a: 75,  b: 65  ,c:90},
+                    { y: '2012', a: 100, b: 90 ,c:95 }
+                ],
+                xkey: 'y',
+                ykeys: ['a', 'b','c'],
+                labels: ['Computador', 'Celular','Tablet'],
+                lineColors: ['#800404','#ff3321','#f36c6c'],
+                lineWidth: '3px',
+                resize: true,
+                redraw: true
+            });
+
+
         graphBar2 = Morris.Line({
-            element: 'line-total-eecc',
+            element: 'line-total',
             data: [
-                {y: '04-09', a: 493},
-                {y: '04-10', a: 713},
-                {y: '04-11', a: 758}
+
+                {y: '08', a: 193},
+                {y: '09', a: 413},
+                {y: '10', a: 358}
             ],
             xkey: 'y',
             ykeys: ['a'],
-            labels: ['Diferencia SATIF v/s EECC'],
+            labels: ['Diferencia tasa'],
             formatter: function (y) {
                 return y
             },
@@ -243,42 +287,17 @@ $era_hoy = date('Y');
         });
 
         graphBar3 = Morris.Donut({
-            element: 'donut-total-eecc',
+            element: 'donut-total',
             data: [
-                {label: "Diferencia Porcentual SATIF v/s EECC", value: 0.31},
-                {label: "Procesamiento Exitoso", value: 99.69},
+                {label: "WEB", value: 73.31},
+                {label: "APP", value: 26.69},
             ],
 
-            colors: ['#e84e40', '#03a9f4'],
+            colors: ['#800404', '#f36c6c'],
             formatter: function (y) {
                 return y
             },
             resize: true
-        });
-
-
-        graphBar4 = Morris.Bar({
-            element: 'bar-cargos-mes',
-            data: [
-                {y: '2018-09-04', a: 27086238279, b: 27070941551, c: 15296728},
-                {y: '2018-10-04', a: 26501542896, b: 26490563442, c: 10979454},
-                {y: '2018-11-04', a: 27477999994, b: 27471084137, c: 6915857}
-            ],
-            xkey: 'y',
-            ykeys: ['a', 'b', 'c'],
-            labels: ['SATIF', 'EECC', 'Diferencia']
-        });
-
-        graphBar5 = Morris.Line({
-            element: 'line-cargos-mes',
-            data: [
-                {y: '2018-09-04', a: 15296728},
-                {y: '2018-10-04', a: 10979454},
-                {y: '2018-11-04', a: 6915857}
-            ],
-            xkey: 'y',
-            ykeys: ['a'],
-            labels: ['Diferencia SATIF v/s EECC']
         });
 
 
