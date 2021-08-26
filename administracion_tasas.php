@@ -39,7 +39,7 @@ $fecha_hoy = date("d-m-Y");
 											<input type="file">
 										</div>
 										<div class="col-lg-6 col-md-6 col-sm-12">
-											<button class="btn btn-primary btn-sm " style='margin-left: 16px; ;' type="button"> Importar</button>
+											<button class="btn btn-primary btn-sm " data-toggle="modal" data-target="#ModalTasaImportar" style='margin-left: 16px; ;' type="button"> Importar</button>
 										</div>
 									</div>
 									<br />
@@ -89,23 +89,9 @@ $fecha_hoy = date("d-m-Y");
 												<br>
 											</div>
 										</div>
-
-										<!-- <div class="panel panel-default">
-												<div class="panel-body">
-													
-												</div>
-											</div> -->
-
-
-
-
-
 									</div>
 								</div>
-
 							</div>
-
-
 
 						</div>
 						<div class="col-lg-12" id="">
@@ -137,7 +123,7 @@ $fecha_hoy = date("d-m-Y");
 
 
 
-	
+
 	<div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="ModalTasaVer">
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
@@ -145,7 +131,7 @@ $fecha_hoy = date("d-m-Y");
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<h4 class="modal-title" id="gridSystemModalLabel">Información de Importación</h4>
 				</div>
-				<div class="modal-body" style="overflow-y: scroll;"> 
+				<div class="modal-body" style="overflow-y: scroll;">
 					<div class="row">
 						<div class="col-md-2">
 							Linea 12
@@ -165,6 +151,50 @@ $fecha_hoy = date("d-m-Y");
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default btn-sm pull-left" data-dismiss="modal" aria-label="Close">Cerrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="ModalTasaImportar">
+		<div class="modal-dialog modal-md" role="document">
+			<div class="modal-content">
+				<div class="modal-header " >
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="gridSystemModalLabel">Información de Importación</h4>
+				</div>
+				<div class="modal-body" style="overflow-y: scroll;">
+					<h4 class="text-center">
+						El proceso de carga informa de algunos errores. <br>
+						¿Desea guardar los datos de todas formas?
+					</h4> 
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-2">
+									Linea 12
+								</div>
+								<div class="col-md-10">
+									Tasa_1 ; 0.32 ; 20210810 ; 12333444-5
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-2">
+									Linea 114
+								</div>
+								<div class="col-md-10">
+									Tasa_21 ; 1.21 ; 20210810 ; 12333444-5
+								</div>
+							</div>
+						</div>
+					</div>
+					Ingrese el origen de datos: <input type="text" class="form-control">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary btn-sm pull-right col-lg-3 col-md-3" data-dismiss="modal" aria-label="Close">Guardar</button>
+					<button type="button" class="btn btn-danger btn-sm pull-left" data-dismiss="modal" aria-label="Close">Cancelar</button>
 				</div>
 			</div>
 		</div>
