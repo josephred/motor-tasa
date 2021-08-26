@@ -407,7 +407,11 @@ $fecha_hoy = date("d-m-Y");
 
 			let html='';
 			storeTasas.forEach((i) => {
-				
+				let arrVigencia = i.vigencia.split(',');
+				let f1 = new Date(arrVigencia[0]);
+				let f2 = new Date(arrVigencia[1]);
+				let ahora = new Date();
+				let estado = ( f1 < ahora && f2 > ahora )?
 				html += `<tr class='danger'>
 							<td>${++n}</td>
 							<td>${i.nombre}</td>
@@ -417,7 +421,7 @@ $fecha_hoy = date("d-m-Y");
 							<td>${i.fecha}</td>
 							<td>${i.origen}</td>
 							<td> 
-								<button class='btn btn-sm btn-warning'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+								<button class='btn btn-sm btn-warning' onclick='editarTasa("${i.id}")'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
 								<button class='btn btn-sm btn-danger' onclick='eliminar("${i.id}","${i.nombre}")'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
 							</td>
 						</tr>`;
@@ -485,6 +489,19 @@ $fecha_hoy = date("d-m-Y");
 			document.querySelector("#txtTasaVigencia").value = '8/26 06:00 PM - 8/28 02:00 AM';
 		}
 		
+		let idEditado = '';
+		const editarTasa = (id)=>{
+			for( let i=0 ; i< storeTasas.length ; i++ ){
+				if( id == storeTasas[i].id ){
+					idEditado = id;
+					document.querySelector("#txtTasaNombre").value = storeTasas[i].nombre ;
+					document.querySelector("#txtTasaValor").value = storeTasas[i].valor ;
+					document.querySelector("#txtTasaVigencia").value = storeTasas[i].vigencia ;
+					break;
+				}
+			}
+		}
+
 		loadTablaReglas();
 	</script>
 </body>
