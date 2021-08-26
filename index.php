@@ -63,9 +63,9 @@ $era_hoy = date('Y');
                   </div>
                 </div> -->
 
-                <div class="col-lg-4 col-sm-6 col-xs-12">
+                <div class="col-lg-4 col-sm-6 col-xs-12" >
                   <div class="main-box infographic-box colored orange-bg graficos_click" id="estadisticas">
-                  <i class="fa fa-desktop fa-lg"></i>
+                  <i class="fa fa-desktop " ></i>
                     <span class="headline">Canal WEB &nbsp; &nbsp; &nbsp; &nbsp; </span>
                     <span style="font-size: 48px; text-align: right; "> &nbsp; &nbsp; &nbsp; &nbsp;  49</span><br />
                     <span style="float: right;">Usuarios conectados &nbsp; &nbsp; </span>
@@ -92,7 +92,8 @@ $era_hoy = date('Y');
                     </br>
                     <span>Fecha de Facturación: 04-11-2018</span>
                     <span>Total EECC: $160.383</span><br />
-                    <span>Horario Término Malla: 09:00 hrs.</span>
+                    <span>Horario Término Malla: 09:00 hrs. <br></span>
+
                   </div>
                 </div>
               </div>
@@ -211,17 +212,17 @@ $era_hoy = date('Y');
   <script>
     $(document).ready(function() {
 
-      $('body').on('click', '#alertas', function() {
-        window.location = "alertas_diferencias.php";
-      });
+      // $('body').on('click', '#alertas', function() {
+      //   window.location = "alertas_diferencias.php";
+      // });
 
-      $('body').on('click', '#post_facturacion', function() {
-        window.location = "post_facturacion.php";
-      });
+      // $('body').on('click', '#post_facturacion', function() {
+      //   window.location = "post_facturacion.php";
+      // });
 
-      $('body').on('click', '#estadisticas', function() {
-        window.location = "estadisticas.php";
-      });
+      // $('body').on('click', '#estadisticas', function() {
+      //   window.location = "estadisticas.php";
+      // });
 
 
       $(".fancybox").fancybox({

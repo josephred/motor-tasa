@@ -36,7 +36,7 @@ $fecha_hoy = date("d-m-Y");
                                             </div>
                                             <img src="img/samples/icono_mujer.png" width="98%">
                                             <div class="profile-label">
-                                                <span class="label label-danger"><?php echo $_SESSION['perfil']; ?></span>
+                                                <span class="label label-danger"><?php echo $_SESSION['Cargo']; ?> <br><?php echo $_SESSION['perfil']; ?></span>
                                             </div>
                                             <div class="profile-details">
                                                 Usuario desde: 01-10-2018
