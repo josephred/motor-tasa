@@ -56,7 +56,7 @@ $fecha_hoy = date("d-m-Y");
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr class="">
+                                                        <tr class="danger">
 
                                                             <td>Maria Paula</td>
                                                             <td>Administrador</td>
@@ -67,7 +67,7 @@ $fecha_hoy = date("d-m-Y");
                                                                 </button>
                                                             </td>
                                                         </tr>
-                                                        <tr class="">
+                                                        <tr class="danger">
                                                             <td>Maria Paula</td>
                                                             <td>Administrador</td>
                                                             <td>Creo nueva tasa</td>
@@ -78,7 +78,7 @@ $fecha_hoy = date("d-m-Y");
                                                             </td>
 
                                                         </tr>
-                                                        <tr class="">
+                                                        <tr class="danger">
                                                             <td>Maria Paula</td>
                                                             <td>Administrador</td>
                                                             <td>Creo nueva tasa</td>
@@ -137,7 +137,7 @@ $fecha_hoy = date("d-m-Y");
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <tr class="">
+                                                            <tr class="danger">
 
                                                                 <td>Maria Paula</td>
                                                                 <td>Administrador</td>
@@ -149,7 +149,7 @@ $fecha_hoy = date("d-m-Y");
                                                                 </td>
                                                                 <td>No cumple con las normas básicas </td>
                                                             </tr>
-                                                            <tr class="">
+                                                            <tr class="danger">
                                                                 <td>Maria Paula</td>
                                                                 <td>Administrador</td>
                                                                 <td>Creo nueva tasa</td>
@@ -160,7 +160,7 @@ $fecha_hoy = date("d-m-Y");
                                                                 </td>
                                                                 <td>No cumple con las normas básicas </td>
                                                             </tr>
-                                                            <tr class="">
+                                                            <tr class="danger">
                                                                 <td>Maria Paula</td>
                                                                 <td>Administrador</td>
                                                                 <td>Creo nueva tasa</td>

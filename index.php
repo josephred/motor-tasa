@@ -61,10 +61,9 @@ $era_hoy = date('Y');
 
                     <div class="col-lg-6 col-sm-6  ">
                       <div class="main-box infographic-box colored yellow-bg graficos_click" id="estadisticas" style="height: 160px;">
-                        <i class="fa fa-desktop "></i>
-                        <span class="headline">Canal WEB &nbsp; &nbsp; &nbsp; &nbsp; </span>
-                        <span style="font-size: 48px; text-align: right; "> &nbsp; &nbsp; &nbsp; &nbsp; 49</span><br />
-                        <span style="float: right;">Usuarios conectados &nbsp; &nbsp; </span>
+                       <br> <i class="fa fa-desktop " style="font-size: 90px; text-align: left; "></i>
+                        <span class="headline"   style="font-size: 40px; text-align: center; ">49 &nbsp; &nbsp; &nbsp; &nbsp;Canal web </span>
+                         <span style="float: right;">Usuarios conectados &nbsp; &nbsp; </span>
                         <span></span>
                         <span>&nbsp;</span>
                       </div>
@@ -72,9 +71,8 @@ $era_hoy = date('Y');
 
                     <div class="col-lg-6 col-sm-5 ">
                       <div class="main-box infographic-box colored purple-bg graficos_click" id="estadisticas" style="height: 160px;">
-                        <i class="fa fa-mobile"></i>
-                        <span class="headline">Canal APP Móvil &nbsp; &nbsp; </span>
-                        <span style="font-size: 48px; text-align: right; "> &nbsp; &nbsp; &nbsp; &nbsp; 64</span><br />
+                       <br> <i class="fa fa-mobile"  style="font-size: 100px; text-align: left; "></i>
+                        <span class="headline"  style="font-size: 40px; text-align: center; ">68 &nbsp; &nbsp; Canal APP Móvil  </span>
                         <span style="float: right;">Usuarios conectados &nbsp; &nbsp; </span>
                         <span></span>
                         <span>&nbsp;</span>
@@ -87,9 +85,9 @@ $era_hoy = date('Y');
 
                     <div class="col-lg-4 col-sm-6 col-xs-12">
                       <div class="main-box infographic-box colored green-bg graficos_click" id="estadisticas" style="height: 160px;">
-
-
-                        <span style="font-size: 38px; text-align: right; ">Dolar &nbsp; &nbsp; &nbsp; &nbsp; 785,21</span><br />
+<br>
+                          <i class="fa fa-usd" aria-hidden="true"  style="font-size: 90px; text-align: left; "></i>
+                        <span style="font-size: 35px; text-align: right; ">&nbsp; &nbsp; &nbsp; &nbsp; 785,21 USD</span><br />
 
                         <span></span>
                         <span>&nbsp;</span>
@@ -100,8 +98,9 @@ $era_hoy = date('Y');
 
                     <div class=" col-lg-4 col-sm-6 col-xs-12">
                       <div class="main-box infographic-box colored orange-bg graficos_click" id="estadisticas" style="height: 160px;">
-
-                        <span style="font-size: 38px; text-align: right; ">Euro &nbsp; &nbsp; &nbsp; &nbsp; 923,72</span><br />
+                        <br>
+                          <i class="fa fa-eur" aria-hidden="true"  style="font-size: 90px; text-align: left; "></i>
+                        <span style="font-size: 35px; text-align: right; "> &nbsp; &nbsp; &nbsp; &nbsp;  923,72 EUR</span><br />
 
                         <span></span>
                         <span>&nbsp;</span>
@@ -117,9 +116,8 @@ $era_hoy = date('Y');
                         <br>
                         <span class="headline">Alertas y Diferencias</span>
                         <br>
-                        <span>Fecha de Facturación: 04-11-2018</span>
-                        <span>Total EECC: $160.383</span><br />
-                        <span>Horario Término Malla: 09:00 hrs. <br></span>
+                        <span>No existen alertas por mostrar</span>
+
                         <span>&nbsp;</span>
                       </div>
                     </div>

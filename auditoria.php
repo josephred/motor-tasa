@@ -64,59 +64,90 @@ $fecha_hoy = date("d-m-Y");
                                             <tbody>
                                                 <tr class="danger">
 
-                                                    <td>Maria Paula</td>
+                                                    <td>Patricio Arroyo</td>
                                                     <td>Administrador</td>
                                                     <td>Agregar usuario</td>
-                                                    <td>24-08-2021 15:40:33</td>
+                                                    <td>23-08-2021 15:40:33</td>
 
 
                                                     </td>
                                                 </tr>
                                                 <tr class="danger">
-                                                    <td>Maria Paula</td>
-                                                    <td>Administrador</td>
-                                                    <td>Modificar usuario</td>
-                                                    <td>24-08-2021 15:42:38</td>
 
-
-                                                </tr>
-                                                <tr class="danger">
-
-                                                    <td>Patricio Arroyo</td>
-                                                    <td>Administrador</td>
-                                                    <td>Iniciar sesión</td>
-                                                    <td>23-08-2021 08:40:23</td>
+                                                    <td>Joan Clark</td>
+                                                    <td>Auditor</td>
+                                                    <td>Autorizar regla</td>
+                                                    <td>23-08-2021 12:55:33</td>
 
 
                                                 </tr>
 
                                                 <tr class="danger">
+                                                    <td>Jennifer Kennedy</td>
+                                                    <td>Analista</td>
+                                                    <td>Crear regla</td>
+                                                    <td>23-08-2021 12:42:38</td>
+
+
+                                                </tr>
+                                                <tr class="danger">
+
+                                                    <td>Jennifer Kennedy</td>
+                                                    <td>Analista</td>
+                                                    <td>Iniciar sesión</td>
+                                                    <td>23-08-2021 11:40:23</td>
+
+
+                                                </tr>
+
+
+                                                <tr class="danger">
+
+                                                    <td>Patricio Arroyo</td>
+                                                    <td>Administrador</td>
+                                                    <td>Autorizar tasa</td>
+                                                    <td>23-08-2021 10:55:33</td>
+
+
+                                                </tr>
+                                                <tr class="danger">
+
+                                                    <td>Joan Clark</td>
+                                                    <td>Auditor</td>
+                                                    <td>Iniciar sesión</td>
+                                                    <td>23-08-2021 10:50:04</td>
+
+
+                                                </tr>
+
+                                                <tr class="danger">
 
                                                     <td>Patricio Arroyo</td>
                                                     <td>Administrador</td>
                                                     <td>Iniciar sesión</td>
+                                                    <td>23-08-2021 08:49:30</td>
+
+
+                                                </tr>
+
+                                                <tr class="danger">
+
+                                                    <td>Jonny kennedy</td>
+                                                    <td>Analista</td>
+                                                    <td>Crear tasa</td>
                                                     <td>23-08-2021 08:40:23</td>
 
 
                                                 </tr>
-                                                <tr class="">
+                                                <tr class="danger">
 
-                                                    <td>Patricio Arroyo</td>
-                                                    <td>Administrador</td>
+                                                    <td>Jonny Kennedy</td>
+                                                    <td>Analista</td>
                                                     <td>Iniciar sesión</td>
-                                                    <td>23-08-2021 08:40:23</td>
+                                                    <td>23-08-2021 08:30:50</td>
 
 
-                                                </tr>
-                                                <tr class="">
-
-                                                    <td>Patricio Arroyo</td>
-                                                    <td>Administrador</td>
-                                                    <td>Iniciar sesión</td>
-                                                    <td>23-08-2021 08:40:23</td>
-
-
-                                                </tr>
+                                                </tr
                                             </tbody>
                                         </table>
                                     </div>
