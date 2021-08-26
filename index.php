@@ -238,6 +238,8 @@ $era_hoy = date('Y');
         'showCloseButton': true
       });
 
+
+
       //CHARTS
       graphBar = Morris.Bar({
         element: 'bar-total-eecc',

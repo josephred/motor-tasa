@@ -36,7 +36,7 @@ $fecha_hoy = date("d-m-Y");
                                             <dd>
                                                 <div class="fg-line">
                                                     <input type="text" class="form-control" name="nombres" id="nombres"
-                                                           value=""/>
+                                                           value="" placeholder="Ingrese nombre"/>
                                                 </div>
                                             </dd>
                                         </dl>
@@ -47,7 +47,7 @@ $fecha_hoy = date("d-m-Y");
                                             <dd>
                                                 <div class="fg-line">
                                                     <input type="text" class="form-control hasDatepicker " name="rut"
-                                                           id="rut" value=""/>
+                                                           id="rut" value="" placeholder="11.111.111-1"/>
                                                 </div>
                                             </dd>
                                         </dl>
@@ -60,7 +60,7 @@ $fecha_hoy = date("d-m-Y");
                                             <dd>
                                                 <div class="fg-line">
                                                     <input type="text" class="form-control" name="apellidos"
-                                                           id="apellidos" value=""/>
+                                                           id="apellidos" value="" placeholder="Ingrese Apellido"/>
                                                 </div>
                                             </dd>
                                         </dl>
@@ -72,7 +72,7 @@ $fecha_hoy = date("d-m-Y");
                                                 <dd>
                                                     <div class="fg-line">
                                                         <input type="date" class="form-control" name="fechana"
-                                                               id="apellidos" value="" placeholder="opcional"/>
+                                                               id="fechana" value="" placeholder="opcional"/>
                                                     </div>
                                                 </dd>
                                             </dl>
@@ -118,7 +118,7 @@ $fecha_hoy = date("d-m-Y");
                                             <dd>
                                                 <div class="fg-line">
                                                     <input type="text" class="form-control" name="correo"
-                                                           id="correo" value=""/>
+                                                           id="correo" value="" placeholder="Ingrese correo"/>
                                                 </div>
                                             </dd>
                                         </dl>
@@ -129,7 +129,7 @@ $fecha_hoy = date("d-m-Y");
                                             <dd>
                                                 <div class="fg-line">
                                                     <input type="text" class="form-control hasDatepicker "
-                                                           name="telefono" id="telefono" value="" placeholder="">
+                                                           name="telefono" id="telefono" value="" placeholder="(9) 64728833">
                                                 </div>
                                             </dd>
                                         </dl>
@@ -142,8 +142,8 @@ $fecha_hoy = date("d-m-Y");
                                             <dt class="pt-10">Contraseña</dt>
                                             <dd>
                                                 <div class="fg-line">
-                                                    <input type="password" class="form-control" name="correo"
-                                                           id="correo" value=""
+                                                    <input type="password" class="form-control" name="contraseña"
+                                                           id="contraseña" value=""
                                                            placeholder=" Ingrese una contraseña">
                                                 </div>
                                             </dd>
@@ -155,7 +155,7 @@ $fecha_hoy = date("d-m-Y");
                                             <dd>
                                                 <div class="fg-line">
                                                     <input type="password" class="form-control hasDatepicker "
-                                                           name="telefono" id="telefono" value=""
+                                                           name="rpcontraseña" id="rpcontraseña" value=""
                                                            placeholder=" Repita la contraseña">
                                                 </div>
                                             </dd>

@@ -411,6 +411,8 @@ $fecha_hoy = date("d-m-Y");
                     });
 
                 });
+
+                
             </script>
 </body>
 </html>
