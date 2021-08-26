@@ -326,6 +326,30 @@ $fecha_hoy = date("d-m-Y");
                                                                             </dd>
                                                                         </dl>
                                                                         <dl class="dl-horizontal">
+                                                                            <dt class="p-t-10">RUT</dt>
+                                                                            <dd>
+                                                                                <div class="fg-line">
+                                                                                    <input type="text" class="form-control" name="rut" id="rut" value="<?php echo $_SESSION['rut'];?>" />
+                                                                                </div>
+                                                                            </dd>
+                                                                        </dl>
+                                                                        <dl class="dl-horizontal">
+                                                                            <dt class="p-t-10">Fecha Nacimiento</dt>
+                                                                            <dd>
+                                                                                <div class="fg-line">
+                                                                                    <input type="text" class="form-control" name="fechaNacimiento" id="fechaNacimiento" value="" />
+                                                                                </div>
+                                                                            </dd>
+                                                                        </dl>
+                                                                        <dl class="dl-horizontal">
+                                                                            <dt class="p-t-10">Cargo</dt>
+                                                                            <dd>
+                                                                                <div class="fg-line">
+                                                                                    <input type="text" class="form-control" name="cargo" id="cargo" value="<?php echo $_SESSION['cargo'];?>" />
+                                                                                </div>
+                                                                            </dd>
+                                                                        </dl>
+                                                                        <dl class="dl-horizontal">
                                                                             <dt class="p-t-10">Teléfono Fijo</dt>
                                                                             <dd>
                                                                                 <div class="fg-line">
