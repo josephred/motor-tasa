@@ -34,7 +34,7 @@ $storeUsuarios = [
     [
         'id' => "4",
         'email' => "analista@gmail.com",
-        'nombre' => "Joan Clark",
+        'nombre' => "Monica Smith",
         'rut' => "44444444-4",
         'rut_empresa' => "88888888-8",
         'perfil' => "Analista",

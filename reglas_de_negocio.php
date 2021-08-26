@@ -108,15 +108,12 @@ $fecha_hoy = date("d-m-Y");
 														</dd>
 													</dl>
 												</div>
-												<div class="col-lg-4 col-md-4 col-sm-12">
-
-												</div>
+												
 											</div>
+											<button class="btn btn-primary pull-right col-3" style='margin-left: 16px; ;' type="button">Guardar</button>
 										</div>
 									</div>
 
-									<button class="btn btn-primary pull-right col-3" style='margin-left: 16px; ;' type="button">Guardar
-									</button>
 									<br>
 									<br>
 								</div>
@@ -503,6 +500,36 @@ $fecha_hoy = date("d-m-Y");
 				loadTablaVariables();
 			}
 		}
+
+		let storeVariablesOpcionales = [];
+
+		const addVariable = ()=>{
+
+			let optionCondiciones = '';
+			storeCondciones.forEach((c)=>{
+				optionCondiciones += `<option value='${c.id}' >${c.nombre}</option>`;
+			});
+
+			let componente = `
+			<div class="row">
+				<div class="col-lg-3 col-md-3 col-sm-3">
+					<input readonly type="text" class="form-control" id="${0}" value="" />
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3">
+					<select id='cmbCondicion_${0}' class='form-control' >
+						${optionCondiciones}
+					</select>
+				</div>
+				<div class="col-lg-1 col-md-1 col-sm-3">
+					<span style="float: right; margin-top: 8px;">valor</span>
+				</div>
+				<div class="col-lg-1 col-md-1 col-sm-3">
+					<input type='text' class="form-control" id="txtValor_${0}" value='' />
+				</div>
+			</div>
+			`;
+		}
+
 
 		
 		loadTablaVariables();
