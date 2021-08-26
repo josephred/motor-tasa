@@ -27,7 +27,7 @@ $pagina = str_replace("/", "", $url);
                     </li>
 
 
-                    <?php if ($_SESSION["perfil"] == "Administrador") { ?>
+                    <?php if ($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Analista" ) { ?>
                         <li class="<?php echo $pagina == 'post_facturacion.php' ? 'active' : ''; ?>">
                             <a href="reglas_de_negocio.php">
                                 <i class="fa fa-user"></i>
@@ -36,7 +36,7 @@ $pagina = str_replace("/", "", $url);
                         </li>
                     <?php } ?>
 
-                    <?php if ($_SESSION["perfil"] == "Administrador") { ?>
+                    <?php if ($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Analista" ) { ?>
                         <li class="<?php echo $pagina == 'frecuencia_gasto_administracion.php' ? 'active' : ''; ?>">
                             <a href="administracion_tasas.php">
                                 <i class="fa fa-money"></i>
@@ -48,7 +48,7 @@ $pagina = str_replace("/", "", $url);
 
 
 
-                    <?php if ($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Auditor") { ?>
+                    <?php if ($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Auditor" || $_SESSION["perfil"] == "Analista") { ?>
                         <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
                             <a href="auditoria.php">
                                 <i class="fa fa-line-chart"></i>
@@ -66,7 +66,7 @@ $pagina = str_replace("/", "", $url);
                         </li>
                     <?php } ?>
 
-                    <?php if ($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Monitor") { ?>
+                    <?php if ($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Monitor" || $_SESSION["perfil"] == "Analista") { ?>
                         <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
                             <a href="monitoreo.php">
                                 <i class="fa fa-pie-chart"></i>
@@ -85,7 +85,7 @@ $pagina = str_replace("/", "", $url);
                         </li>
                     <?php //} ?> -->
 
-                    <?php if ($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Auditor" || $_SESSION["perfil"] == "Monitor") { ?>
+                    <?php if ($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Auditor" || $_SESSION["perfil"] == "Monitor" || $_SESSION["perfil"] == "Analista" ) { ?>
                         <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
                             <a href="configuraciones.php">
                                 <i class="fa fa-cog"></i>
