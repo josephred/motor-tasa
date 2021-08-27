@@ -2,8 +2,9 @@
 session_start();
 $fecha_hoy = date("d-m-Y");
 $era_hoy = date('Y');
-// echo "<pre>";
-// print_r($_SESSION);
+if( !array_key_exists('perfil', $_SESSION) ){  
+  header("Location: login.php");
+}
 ?>
 <style type="text/css">
   .ocultar {
