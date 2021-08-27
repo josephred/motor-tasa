@@ -40,13 +40,13 @@ $fecha_hoy = date("d-m-Y");
                                                 <span class="label label-default"><?php echo $_SESSION['perfil']; ?></span>
                                             </div>
                                             <div class="profile-details">
-                                                Usuario desde: 01-07-<?php echo date('Y')?>
+                                                Usuario desde: 01-07-<?php echo date('Y') ?>
                                             </div>
                                             <div class="profile-details">
-                                                Última conexión : 
-                                                <?php 
-                                                    $n = rand(1,date('d')) ;
-                                                    echo (strlen($n)==1 ? '0'.$n:$n ).'-'. date('m-Y H:i:s');
+                                                Última conexión :
+                                                <?php
+                                                $n = rand(1, date('d'));
+                                                echo (strlen($n) == 1 ? '0' . $n : $n) . '-' . date('m-Y H:i:s');
                                                 ?>
                                             </div>
                                         </div>
@@ -148,8 +148,33 @@ $fecha_hoy = date("d-m-Y");
                                                         </div>
                                                     </div>
 
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-body">
+                                                            Variables Estaticas :
+                                                            <?php 
+                                                                $checked = '';
+                                                                foreach( $_SESSION['store_variables'] as $var ){ 
+                                                                    // print_r($var);
+                                                                    if( $var['tipo'] == 'OBLIGATORIA' ){ $checked='checked'; } else{ $checked='';}
+                                                                ?>
+                                                            <div class="row">
+                                                                <div class="col-lg-6">
+                                                                    <div class="input-group">
+                                                                        <span class="input-group-addon">
+                                                                            <input type="checkbox" <?php echo $checked;?> name="modoCarga" id="var<?php echo $var['id'] ?>" aria-label="...">
+                                                                        </span>
+                                                                        <input readonly type="text" class="form-control" onclick="$('#var<?php echo $var['id'] ?>').click()" aria-label="..." value='<?php echo $var['nombre'] ?>'>
+                                                                    </div><!-- /input-group -->
+                                                                </div><!-- /.col-lg-6 -->
+                                                            </div>
+                                                            <?php } ?>
+                                                        </div>
+                                                    </div>
                                                     <div class="row">
-                                                        <button class="btn btn-primary btn-sm pull-right col-lg-3 col-md-3 col-sm-6">Guardar</button>
+                                                        <button class="btn btn-primary btn-sm pull-right col-lg-3 col-md-3 col-sm-6"
+                                                            onclick="swal('¡Perfecto!','Datos guardados con exito.','success');"
+                                                            >
+                                                                <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
                                                     </div>
 
                                                 </div>
@@ -165,7 +190,7 @@ $fecha_hoy = date("d-m-Y");
                                                                 <div class="col-gl-6 col-md-6 col-sm-12">
                                                                     Seleccione Logo Ingreso: <input type="file" class="form-control">
                                                                     <br>
-                                                                    <button class="btn btn-primary btn-sm pull-right  col-lg-4 col-md-4">Subir</button>
+                                                                    <button class="btn btn-primary btn-sm pull-right  col-lg-4 col-md-4">  <span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span>  Subir</button>
                                                                 </div>
                                                                 <div class="col-gl-6 col-md-6 col-sm-12">
                                                                     Previsualizar:
@@ -185,7 +210,7 @@ $fecha_hoy = date("d-m-Y");
                                                                 <div class="col-gl-6 col-md-6 col-sm-12">
                                                                     Seleccione Logo Menu: <input type="file" class="form-control">
                                                                     <br>
-                                                                    <button class="btn btn-primary btn-sm pull-right col-lg-4 col-md-4">Subir</button>
+                                                                    <button class="btn btn-primary btn-sm pull-right col-lg-4 col-md-4">  <span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span>  Subir</button>
                                                                 </div>
                                                                 <div class="col-gl-6 col-md-6 col-sm-12">
                                                                     Previsualizar:
@@ -288,8 +313,10 @@ $fecha_hoy = date("d-m-Y");
                                                     </div>
                                                     <br>
                                                     <div class="col-lg-12">
-                                                        <button class="btn btn-sm btn-primary pull-right col-md-3">Guardar</button>
-                                                        <button class="btn btn-sm btn-default pull-left">Restablecer</button>
+                                                        <button class="btn btn-sm btn-primary pull-right col-md-3"
+                                                            onclick="swal('¡Perfecto!','Datos guardados con exito.','success');"
+                                                            > <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
+                                                        <button class="btn btn-sm btn-default pull-left"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> Restablecer</button>
                                                     </div>
                                                     <br>
                                                 </div>
@@ -329,7 +356,7 @@ $fecha_hoy = date("d-m-Y");
                                                                             <dt class="p-t-10">RUT</dt>
                                                                             <dd>
                                                                                 <div class="fg-line">
-                                                                                    <input type="text" class="form-control" name="rut" id="rut" value="<?php echo $_SESSION['rut'];?>" />
+                                                                                    <input type="text" class="form-control" name="rut" id="rut" value="<?php echo $_SESSION['rut']; ?>" />
                                                                                 </div>
                                                                             </dd>
                                                                         </dl>
@@ -345,7 +372,7 @@ $fecha_hoy = date("d-m-Y");
                                                                             <dt class="p-t-10">Cargo</dt>
                                                                             <dd>
                                                                                 <div class="fg-line">
-                                                                                    <input type="text" class="form-control" name="cargo" id="cargo" value="<?php echo $_SESSION['cargo'];?>" />
+                                                                                    <input type="text" class="form-control" name="cargo" id="cargo" value="<?php echo $_SESSION['cargo']; ?>" />
                                                                                 </div>
                                                                             </dd>
                                                                         </dl>
@@ -390,8 +417,10 @@ $fecha_hoy = date("d-m-Y");
                                                                             </dd>
                                                                         </dl>
                                                                         <div class="m-t-30" style="text-align:center;">
-                                                                            <button class="btn btn-primary btn-sm pull-right col-lg-3" id="btnEditar">Guardar</button>
-                                                                            <button data-pmb-action="reset" class="btn btn-danger btn-sm pull-left">Cancelar</button>
+                                                                            <button class="btn btn-primary btn-sm pull-right col-lg-3" id="btnEditar"
+                                                                                onclick="swal('¡Perfecto!','Datos guardados con exito.','success');"
+                                                                                > <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
+                                                                            <button data-pmb-action="reset" class="btn btn-danger btn-sm pull-left"> <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Cancelar</button>
                                                                         </div>
                                                                     </div>
                                                                 </form>
@@ -413,8 +442,10 @@ $fecha_hoy = date("d-m-Y");
                                                                                     <input type="file" name="foto" id="foto" class="foto">
                                                                                 </span>
                                                                                 <br /><br />
-                                                                                <button type="button" class="btn btn-primary btn_guardar btn-lg">
-                                                                                    Guardar
+                                                                                <button type="button" class="btn btn-primary btn_guardar btn-lg"
+                                                                                    onclick="swal('¡Perfecto!','Datos guardados con exito.','success');"
+                                                                                    >
+                                                                                    <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar
                                                                                 </button>
                                                                             </div>
                                                                         </div>
@@ -636,7 +667,7 @@ $fecha_hoy = date("d-m-Y");
         });
 
 
-        const eliminarLogo = ()=>{
+        const eliminarLogo = () => {
             swal({
                 title: '¿Eliminar registro?',
                 text: "!No se podrá deshacer esta acción!",
