@@ -74,7 +74,7 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                                                 <div class="col-lg-6">
                                                                     <div class="input-group">
                                                                         <span class="input-group-addon">
-                                                                            <input type="radio" checked name="modoCarga" id="radioMonoOnline" aria-label="...">
+                                                                            <input type="checkbox" checked name="modoCarga" id="radioMonoOnline" aria-label="...">
                                                                         </span>
                                                                         <input readonly type="text" class="form-control" onfocus="$('#radioMonoOnline').click()" onclick="$('#radioMonoOnline').click()" aria-label="..." value='Online'>
                                                                     </div><!-- /input-group -->
@@ -83,7 +83,7 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                                                 <div class="col-lg-6">
                                                                     <div class="input-group">
                                                                         <span class="input-group-addon">
-                                                                            <input type="radio" name="modoCarga" id="modoMonoBatch" aria-label="...">
+                                                                            <input type="checkbox" name="modoCarga" id="modoMonoBatch" aria-label="...">
                                                                         </span>
                                                                         <input readonly type="text" class="form-control" onfocus="$('#modoMonoBatch').click()" onclick="$('#modoMonoBatch').click()" aria-label="..." value='Batch'>
                                                                     </div><!-- /input-group -->
