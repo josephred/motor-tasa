@@ -581,5 +581,3 @@ $fecha_hoy = date("d-m-Y");
 </body>
 
 </html>
-<?php echo "<pre>";
-print_r($_SESSION); ?>
