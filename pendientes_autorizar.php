@@ -63,7 +63,7 @@ $fecha_hoy = date("d-m-Y");
                                                             <td>Creo nueva tasa</td>
                                                             <td>2021-08-21 18:21:23</td>
                                                             <td>
-                                                                <button class="btn btn-light" style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"><i class="fa fa-eye" aria-hidden="true"></i>
+                                                                <button class="btn btn-primary" style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"><i class="fa fa-eye" aria-hidden="true"></i>
                                                                 </button>
                                                             </td>
                                                         </tr>
@@ -73,7 +73,7 @@ $fecha_hoy = date("d-m-Y");
                                                             <td>Creo nueva tasa</td>
                                                             <td>2021-08-21 18:21:23</td>
                                                             <td>
-                                                                <button class="btn btn-light" style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"><i class="fa fa-eye" aria-hidden="true"></i>
+                                                                <button class="btn btn-primary" style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"><i class="fa fa-eye" aria-hidden="true"></i>
                                                                 </button>
                                                             </td>
 
@@ -84,7 +84,7 @@ $fecha_hoy = date("d-m-Y");
                                                             <td>Creo nueva tasa</td>
                                                             <td>2021-08-21 18:21:23</td>
                                                             <td>
-                                                                <button class="btn btn-light" style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"><i class="fa fa-eye" aria-hidden="true"></i>
+                                                                <button class="btn btn-primary" style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"><i class="fa fa-eye" aria-hidden="true"></i>
                                                                 </button>
                                                             </td>
 
@@ -145,7 +145,7 @@ $fecha_hoy = date("d-m-Y");
                                                                 <td>2021-08-21 18:21:23</td>
                                                                 <td>Rechazada</td>
                                                                 <td>
-                                                                    <button class="btn btn-light" style='margin-left: 16px; ' type="button" data-toggle="modal"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                                                                    <button class="btn btn-danger" style='margin-left: 16px; ' type="button" data-toggle="modal"><i class="fa fa-refresh" aria-hidden="true"></i></button>
                                                                 </td>
                                                                 <td>No cumple con las normas básicas </td>
                                                             </tr>
@@ -156,7 +156,7 @@ $fecha_hoy = date("d-m-Y");
                                                                 <td>2021-08-21 18:21:23</td>
                                                                 <td>Rechazada</td>
                                                                 <td>
-                                                                    <button class="btn btn-light" style='margin-left: 16px; ' type="button" data-toggle="modal"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                                                                    <button class="btn btn-danger" style='margin-left: 16px; ' type="button" data-toggle="modal"><i class="fa fa-refresh" aria-hidden="true"></i></button>
                                                                 </td>
                                                                 <td>No cumple con las normas básicas </td>
                                                             </tr>
@@ -167,7 +167,7 @@ $fecha_hoy = date("d-m-Y");
                                                                 <td>2021-08-21 18:21:23</td>
                                                                 <td>Rechazada</td>
                                                                 <td>
-                                                                    <button class="btn btn-light" style='margin-left: 16px; ' type="button" data-toggle="modal"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                                                                    <button class="btn btn-danger" style='margin-left: 16px; ' type="button" data-toggle="modal"><i class="fa fa-refresh" aria-hidden="true"></i></button>
                                                                 </td>
                                                                 <td>No cumple con las normas básicas </td>
 
@@ -192,7 +192,7 @@ $fecha_hoy = date("d-m-Y");
         <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="ModalAdminVar">
             <div class="modal-dialog modal-md" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header bg-primary">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="gridSystemModalLabel">Detalle</h4>
                     </div>
@@ -238,8 +238,8 @@ $fecha_hoy = date("d-m-Y");
                         </table>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-primary btn-sm col-md-3 pull-right"> Guardar</button>
-                        <button type="button" class="btn btn-default btn-sm pull-left" data-dismiss="modal" aria-label="Close">Cerrar </button>
+                        <button class="btn btn-primary btn-sm col-md-3 pull-right">  <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>  Guardar</button>
+                        <button type="button" class="btn btn-default btn-sm pull-left" data-dismiss="modal" aria-label="Close"> <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Cerrar </button>
                     </div>
                 </div>
             </div>
