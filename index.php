@@ -2,8 +2,9 @@
 session_start();
 $fecha_hoy = date("d-m-Y");
 $era_hoy = date('Y');
-// echo "<pre>";
-// print_r($_SESSION);
+if (!array_key_exists('perfil', $_SESSION)) {
+  header("Location: login.php");
+}
 ?>
 <style type="text/css">
   .ocultar {
@@ -59,70 +60,37 @@ $era_hoy = date('Y');
                               </div>
                             </div> -->
 
-                    <div class="col-lg-6 col-sm-6  ">
+                    <div class="col-lg-4 col-md-4 col-sm-12  ">
                       <div class="main-box infographic-box colored yellow-bg graficos_click" id="estadisticas" style="height: 160px;">
-                       <br> <i class="fa fa-desktop " style="font-size: 90px; text-align: left; "></i>
-                        <span class="headline"   style="font-size: 40px; text-align: center; ">49 &nbsp; &nbsp; &nbsp; &nbsp;Canal web </span>
-                         <span style="float: right;">Usuarios conectados &nbsp; &nbsp; </span>
+                        <br> <i class="fa fa-desktop " style="font-size: 70px; text-align: left; "></i>
+                        <span class="headline" style="font-size: 30px; text-align: center; ">49 &nbsp;Canal Web </span>
+                        <span style="float: right;">Solicitudes de Clientes &nbsp; &nbsp; </span>
                         <span></span>
                         <span>&nbsp;</span>
                       </div>
                     </div>
 
-                    <div class="col-lg-6 col-sm-5 ">
+                    <div class="col-lg-4 col-md-4 col-sm-12 ">
                       <div class="main-box infographic-box colored purple-bg graficos_click" id="estadisticas" style="height: 160px;">
-                       <br> <i class="fa fa-mobile"  style="font-size: 100px; text-align: left; "></i>
-                        <span class="headline"  style="font-size: 40px; text-align: center; ">68 &nbsp; &nbsp; Canal APP Móvil  </span>
-                        <span style="float: right;">Usuarios conectados &nbsp; &nbsp; </span>
+                        <br> <i class="fa fa-mobile" style="font-size: 100px; text-align: left; "></i>
+                        <span class="headline" style="font-size: 30px; text-align: center; mar ">68 Canal App Móvil </span>
+                        <span style="float: right;">Solicitudes de Clientes &nbsp; &nbsp; </span>
                         <span></span>
                         <span>&nbsp;</span>
                       </div>
                     </div>
-                  </div>
-
-                  <div class="row">
-
-
-                    <div class="col-lg-4 col-sm-6 col-xs-12">
-                      <div class="main-box infographic-box colored green-bg graficos_click" id="estadisticas" style="height: 160px;">
-<br>
-                          <i class="fa fa-usd" aria-hidden="true"  style="font-size: 90px; text-align: left; "></i>
-                        <span style="font-size: 35px; text-align: right; ">&nbsp; &nbsp; &nbsp; &nbsp; 785,21 USD</span><br />
-
-                        <span></span>
-                        <span>&nbsp;</span>
-                      </div>
-                    </div>
-
-
-
-                    <div class=" col-lg-4 col-sm-6 col-xs-12">
-                      <div class="main-box infographic-box colored orange-bg graficos_click" id="estadisticas" style="height: 160px;">
-                        <br>
-                          <i class="fa fa-eur" aria-hidden="true"  style="font-size: 90px; text-align: left; "></i>
-                        <span style="font-size: 35px; text-align: right; "> &nbsp; &nbsp; &nbsp; &nbsp;  923,72 EUR</span><br />
-
-                        <span></span>
-                        <span>&nbsp;</span>
-                      </div>
-                    </div>
-
-
-
-
-                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                    <div class="col-lg-4 col-md-4 col-sm-12">
                       <div class="main-box infographic-box colored red-bg  graficos_click" id="alertas" style="height: 160px;">
                         <i class="fa fa-bell"></i>
                         <br>
                         <span class="headline">Alertas y Diferencias</span>
                         <br>
-                        <span>No existen alertas por mostrar</span>
+                        <span>- Error en carga bach del dia 26-08-2021</span> <br>
 
                         <span>&nbsp;</span>
                       </div>
                     </div>
                   </div>
-
 
 
 
@@ -154,22 +122,22 @@ $era_hoy = date('Y');
                       </div>
                     </td>
                     <td>
-                      <div class="row">
+                      <!-- <div class="row">
                         <div class="col-md-12">
                           <div class="main-box">
                             <header class="main-box-header clearfix">
-                              <!-- <h2 class="pull-left">Gráfico Barras - Total EECC</h2> -->
+                              <h2 class="pull-left">Gráfico Barras - Total EECC</h2>
                             </header>
                             <div class="main-box-body clearfix">
                               <div class="row">
                                 <div class="col-md-12">
-                                  <!-- <div id="bar-total-eecc" class="table-responsive"></div> -->
+                                  <div id="bar-total-eecc" class="table-responsive"></div>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> -->
                     </td>
                     <td>
                       <div class="row">
@@ -192,6 +160,39 @@ $era_hoy = date('Y');
                   </tr>
 
                 </table>
+
+
+                
+                <div class="row">
+
+
+<div class="col-lg-4 col-sm-6 col-xs-12">
+  <div class="main-box infographic-box colored green-bg graficos_click" id="estadisticas" style="height: 100px;">
+    <br>
+    <i class="fa fa-usd" aria-hidden="true" style="font-size: 40px; text-align: left; "></i>
+    <span style="font-size: 35px; text-align: right; ">&nbsp; &nbsp; &nbsp; &nbsp; 785,21 USD</span><br />
+
+    <span></span>
+    <span>&nbsp;</span>
+  </div>
+</div>
+
+
+
+<div class=" col-lg-4 col-sm-6 col-xs-12">
+  <div class="main-box infographic-box colored orange-bg graficos_click" id="estadisticas" style="height: 100px;">
+    <br>
+    <i class="fa fa-eur" aria-hidden="true" style="font-size: 40px; text-align: left; "></i>
+    <span style="font-size: 35px; text-align: right; "> &nbsp; &nbsp; &nbsp; &nbsp; 923,72 EUR</span><br />
+
+    <span></span>
+    <span>&nbsp;</span>
+  </div>
+</div>
+
+</div>
+
+
 
               </div>
             </div>

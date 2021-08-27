@@ -2,6 +2,7 @@
 include('lib/support.php');
 session_start();
 $fecha_hoy = date("d-m-Y");
+if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,7 +20,7 @@ $fecha_hoy = date("d-m-Y");
                             <div class="row">
                                 <div class="col-lg-12">
                                     <ol class="breadcrumb">
-                                        <li><a href="index.php">Inicio</a></li>
+                                        <li><a href="index.php">Panel</a></li>
                                         <li class="active"><span>Administración de usuarios</span></li>
                                     </ol>
 

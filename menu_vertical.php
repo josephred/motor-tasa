@@ -66,7 +66,7 @@ $pagina = str_replace("/", "", $url);
                         </li>
                     <?php } ?>
 
-                    <?php if ($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Monitor" || $_SESSION["perfil"] == "Analista") { ?>
+                    <?php if ($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Monitor" ) { ?>
                         <li class="<?php echo $pagina == 'estadisticas.php' ? 'active' : ''; ?>">
                             <a href="monitoreo.php">
                                 <i class="fa fa-pie-chart"></i>
