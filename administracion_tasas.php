@@ -46,7 +46,7 @@ $fecha_hoy = date("d-m-Y");
 									</div>
 									<br />
 									<div class="row ">
-										<div class="alert alert-warning " role="alert" id="infoImportar">
+										<div class="alert alert-warning " style="color:black;" role="alert" id="infoImportar">
 											Última carga realizada
 											<br>
 											<br>
@@ -69,9 +69,11 @@ $fecha_hoy = date("d-m-Y");
 									</div>
 									<div class="row">
 										<div class="col-lg-12">
-											<button class="btn btn-success pull-left" type="button" data-toggle="collapse" 
-													data-target="#collapseExample" aria-expanded="false" 
-													aria-controls="collapseExample" style="margin: 10px;">
+											<button class="btn btn-success pull-left" type="button" 
+													 aria-expanded="false" 
+													aria-controls="collapseExample" style="margin: 10px;"
+													onclick="$('#collapseExample').show()"
+													>
 													<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nueva Tasa</button>
 										</div>
 										<div class="collapse" id="collapseExample">
@@ -411,13 +413,13 @@ $fecha_hoy = date("d-m-Y");
 				let f1 = new Date(arrVigencia[0]);
 				let f2 = new Date(arrVigencia[1]);
 				let ahora = new Date();
-				let estado = ( f1 < ahora && f2 > ahora )?
+				let estado = ( f1 < ahora && f2 > ahora )? 'Vigente':'Caducado';
 				html += `<tr class='danger'>
 							<td>${++n}</td>
 							<td>${i.nombre}</td>
 							<td>${i.valor}</td>
 							<td>${i.vigencia}</td>
-							<td> - </td>
+							<td> ${estado} </td>
 							<td>${i.fecha}</td>
 							<td>${i.origen}</td>
 							<td> 
@@ -471,22 +473,36 @@ $fecha_hoy = date("d-m-Y");
 				swal('Atención','Por favor verifique:  ' + msj,'danger');
 				return false;
 			}
+			let txt = '';
+			if( idEditado != '' ){
+				txt = 'Registro modificado con exito.';
+				storeTasas.forEach((i)=>{
+					if( idEditado == i.id ){
+						i.nombre = document.querySelector("#txtTasaNombre").value ;
+						i.valor = document.querySelector("#txtTasaValor").value ;
+						i.vigencia = document.querySelector("#txtTasaVigencia").value ;
+					}
+				});
 
-			swal('¡Perfecto!','Guardado con exito','success');
+			} else{
+				txt = 'Guardado con exito.';
+				storeTasas.push({
+					id: 1,
+					fecha: new Date().toISOString().split('T')[0] ,
+					nombre:  document.querySelector("#txtTasaNombre").value ,
+					origen: "LOCAL",
+					valor: document.querySelector("#txtTasaValor").value,
+					vigencia: document.querySelector("#txtTasaVigencia").value,
+				});
+			}
 
-			storeTasas.push({
-				id: 1,
-				fecha: new Date().toISOString().split('T')[0] ,
-				nombre:  document.querySelector("#txtTasaNombre").value ,
-				origen: "LOCAL",
-				valor: document.querySelector("#txtTasaValor").value,
-				vigencia: document.querySelector("#txtTasaVigencia").value,
-			});
+			swal('¡Perfecto!', txt ,'success');
 
 			loadTablaReglas();
 			document.querySelector("#txtTasaNombre").value = '';
 			document.querySelector("#txtTasaValor").value = '';
 			document.querySelector("#txtTasaVigencia").value = '8/26 06:00 PM - 8/28 02:00 AM';
+			$("#collapseExample").hide();
 		}
 		
 		let idEditado = '';
@@ -497,6 +513,7 @@ $fecha_hoy = date("d-m-Y");
 					document.querySelector("#txtTasaNombre").value = storeTasas[i].nombre ;
 					document.querySelector("#txtTasaValor").value = storeTasas[i].valor ;
 					document.querySelector("#txtTasaVigencia").value = storeTasas[i].vigencia ;
+					$("#collapseExample").show();
 					break;
 				}
 			}
