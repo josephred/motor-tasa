@@ -1,6 +1,7 @@
 <?php
 session_start();
 $fecha_hoy = date("d-m-Y");
+if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 ?>
 <!DOCTYPE html>
 <html>
