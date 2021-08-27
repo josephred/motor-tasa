@@ -90,6 +90,34 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                                             </td>
 
                                                         </tr>
+
+                                                        <tr class="danger" id="rev1">
+                                                                <td>Maria Paula</td>
+                                                                <td>Administrador</td>
+                                                                <td>Creo nueva tasa</td>
+                                                                <td>2021-08-21 18:21:23</td>
+                                                                <td>
+                                                                    <button class="btn btn-primary" style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="danger" id="rev2">
+                                                                <td>Maria Paula</td>
+                                                                <td>Administrador</td>
+                                                                <td>Creo nueva tasa</td>
+                                                                <td>2021-08-21 18:21:23</td>
+                                                                <td>
+                                                                    <button class="btn btn-primary" style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="danger" id="rev3">
+                                                                <td>Maria Paula</td>
+                                                                <td>Administrador</td>
+                                                                <td>Creo nueva tasa</td>
+                                                                <td>2021-08-21 18:21:23</td>
+                                                                <td>
+                                                                    <button class="btn btn-primary" style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                                                                </td>
+                                                            </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -138,40 +166,38 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <tr class="danger">
-
+                                                            <tr class="danger" id="rev11">
                                                                 <td>Maria Paula</td>
                                                                 <td>Administrador</td>
                                                                 <td>Creo nueva tasa</td>
                                                                 <td>2021-08-21 18:21:23</td>
                                                                 <td>Rechazada</td>
                                                                 <td>
-                                                                    <button class="btn btn-danger" style='margin-left: 16px; ' type="button" data-toggle="modal"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                                                                    <button onclick='swap("rev11","rev1")' class="btn btn-danger" style='margin-left: 16px; ' type="button" data-toggle="modal"><i class="fa fa-refresh" aria-hidden="true"></i></button>
                                                                 </td>
                                                                 <td>No cumple con las normas básicas </td>
                                                             </tr>
-                                                            <tr class="danger">
+                                                            <tr class="danger" id="rev22">
                                                                 <td>Maria Paula</td>
                                                                 <td>Administrador</td>
                                                                 <td>Creo nueva tasa</td>
                                                                 <td>2021-08-21 18:21:23</td>
                                                                 <td>Rechazada</td>
                                                                 <td>
-                                                                    <button class="btn btn-danger" style='margin-left: 16px; ' type="button" data-toggle="modal"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                                                                    <button onclick='swap("rev22","rev2")' class="btn btn-danger" style='margin-left: 16px; ' type="button" data-toggle="modal"><i class="fa fa-refresh" aria-hidden="true"></i></button>
                                                                 </td>
                                                                 <td>No cumple con las normas básicas </td>
                                                             </tr>
-                                                            <tr class="danger">
+                                                            <tr class="danger" id="rev33">
                                                                 <td>Maria Paula</td>
                                                                 <td>Administrador</td>
                                                                 <td>Creo nueva tasa</td>
                                                                 <td>2021-08-21 18:21:23</td>
                                                                 <td>Rechazada</td>
                                                                 <td>
-                                                                    <button class="btn btn-danger" style='margin-left: 16px; ' type="button" data-toggle="modal"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                                                                    <button onclick='swap("rev33","rev3")' class="btn btn-danger" style='margin-left: 16px; ' type="button" data-toggle="modal"><i class="fa fa-refresh" aria-hidden="true"></i></button>
                                                                 </td>
                                                                 <td>No cumple con las normas básicas </td>
-
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -395,6 +421,14 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                 });
 
             });
+            const swap = (idOcultar, idMostrar)=>{
+                $(`#${idOcultar}`).hide();
+                $(`#${idMostrar}`).show();
+                swal('¡Perfecto!','Autorización reversada con exito.','success');
+            }
+            $("#rev1").hide();
+            $("#rev2").hide();
+            $("#rev3").hide();
         </script>
 </body>
 
