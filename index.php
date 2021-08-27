@@ -154,22 +154,22 @@ $era_hoy = date('Y');
                       </div>
                     </td>
                     <td>
-                      <div class="row">
+                      <!-- <div class="row">
                         <div class="col-md-12">
                           <div class="main-box">
                             <header class="main-box-header clearfix">
-                              <!-- <h2 class="pull-left">Gráfico Barras - Total EECC</h2> -->
+                              <h2 class="pull-left">Gráfico Barras - Total EECC</h2>
                             </header>
                             <div class="main-box-body clearfix">
                               <div class="row">
                                 <div class="col-md-12">
-                                  <!-- <div id="bar-total-eecc" class="table-responsive"></div> -->
+                                  <div id="bar-total-eecc" class="table-responsive"></div>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> -->
                     </td>
                     <td>
                       <div class="row">
