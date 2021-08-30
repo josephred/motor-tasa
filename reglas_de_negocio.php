@@ -2,7 +2,9 @@
 include('lib/support.php');
 session_start();
 $fecha_hoy = date("d-m-Y");
-if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
+if (!array_key_exists('perfil', $_SESSION)) {
+	header("Location: login.php");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -102,7 +104,7 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 																		} ?>
 																	</div>
 																	<div id="variablesOpcionales">
-																		
+
 																	</div>
 																	<button class='btn btn-success btn-sm' style="margin-top: 10px;" onclick="addVariable()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Agregar Variable Opcional </button>
 																</div>
@@ -190,6 +192,7 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 
 
 
+
 	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="ModalAdminVar">
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
@@ -200,15 +203,15 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 				<div class="modal-body">
 					<h4>
 						Crea nueva Variable
-					</h4> 
+					</h4>
 					<div class="row">
 						<div class="col-md-2">Nombre</div>
-						<div class="col-md-8"> <input type="text" class="form-control"> </div>
-						<div class="col-md-2"> <button class="btn btn-primary btn-sm"> <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar </button> </div>
+						<div class="col-md-8"> <input type="text" class="form-control" id="ModalVariablesNombre"> </div>
+						<div class="col-md-2"> <button class="btn btn-primary btn-sm" onclick="putVariable()"> <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar </button> </div>
 					</div>
 					<div class="row">
 						<div class="col-md-2">Descripción</div>
-						<div class="col-md-8"> <input type="text" class="form-control"> </div>
+						<div class="col-md-8"> <input type="text" class="form-control" id="ModalVariablesDescripcion"> </div>
 						<div class="col-md-2"></div>
 					</div>
 					<hr>
@@ -224,7 +227,6 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 			</div>
 		</div>
 	</div>
-
 
 
 	<!-- global scripts -->
@@ -407,7 +409,7 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 							<td>${i.nombre}</td>
 							<td>${i.descripcion}</td>
 							<td> 
-								<button class='btn btn-sm btn-warning'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+								<button class='btn btn-sm btn-warning' onclick='editVariable("${i.id}")' ><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
 								<button class='btn btn-sm btn-danger' onclick='eliminarVar("${i.id}","${i.nombre}")'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
 							</td>
 						</tr>`;
@@ -498,17 +500,37 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 		}
 
 		const eliminarVar = (id, nom) => {
-			if (confirm(`¿Seguro desea eliminar el registro "${nom}" ?`)) {
-				let indice = -1;
-				for (let i = 0; i < storeVariables.length; i++) {
-					if (id == storeVariables[i].id) {
-						indice = i;
+
+			Swal.fire({
+				title: '¡Atención!',
+				text: `¿Seguro desea eliminar el registro "${nom}" ?`,
+				icon: 'warning',
+				showCancelButton: true,
+				confirmButtonColor: '#3085d6',
+				cancelButtonColor: '#d33',
+				confirmButtonText: 'Sí, eliminar!',
+				cancelButtonText: 'Cancelar'
+			}).then((result) => {
+				if (result.isConfirmed) {
+					let indice = -1;
+					for (let i = 0; i < storeVariables.length; i++) {
+						if (id == storeVariables[i].id) {
+							indice = i;
+						}
 					}
+					storeVariables.splice(indice, 1);
+					Swal.fire({
+						icon: 'success',
+						title: '',
+						text: 'Registro eliminado con exito',
+						footer: '<!--<a href="">Why do I have this issue?</a>-->'
+					})
+					loadTablaVariables();					
 				}
-				storeVariables.splice(indice, 1);
-				swal('Registro eliminado!', '', 'success');
-				loadTablaVariables();
-			}
+			});
+
+			
+			
 		}
 
 
@@ -575,6 +597,82 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 				// swal('Registro eliminado!', '', 'success');
 			}
 		}
+
+		let idEditVariable = '';
+		const editVariable = (id)=>{
+			idEditVariable = id;
+			
+			storeVariables.forEach((i)=>{
+				if( i.id == id ){
+					document.querySelector("#ModalVariablesNombre").value = i.nombre ;
+					document.querySelector("#ModalVariablesDescripcion").value = i.descripcion;
+				}
+			});
+						
+		}
+
+		const putVariable = () => {
+			let msj = '';
+			if (document.querySelector("#ModalVariablesNombre").value == '') {
+				msj += '<li> El nombre no puede ser vacio.</li>';
+			}
+			if (document.querySelector("#ModalVariablesDescripcion").value == '') {
+				msj += '<li> La descripción no puede ser vacia.</li>';
+			}
+			if (msj != '') {
+				Swal.fire({
+					title: '¡Atención!',
+					icon: 'error',
+					html: `<div class='text-left'><ul>${msj}</ul></div>`,
+					showCloseButton: true,
+					showCancelButton: false,
+					focusConfirm: false,
+					confirmButtonText: '<i class=""></i> Aceptar',
+					confirmButtonColor: '#3085d6',
+					confirmButtonAriaLabel: 'Thumbs up, great!',
+					cancelButtonText: 'Cancelar',
+					cancelButtonAriaLabel: 'Thumbs down'
+				})
+				return false;
+			} else {
+				if( idEditVariable != '' ){
+					storeVariables.forEach((i)=>{
+						if( i.id == idEditVariable ){
+							i.nombre = document.querySelector("#ModalVariablesNombre").value ;
+							i.descripcion = document.querySelector("#ModalVariablesDescripcion").value ;
+						}
+					});
+					document.querySelector("#ModalVariablesNombre").value ='';
+					document.querySelector("#ModalVariablesDescripcion").value ='' ;
+						
+					loadTablaVariables();
+					Swal.fire({
+							icon: 'success',
+							title: '',
+							text: 'Registro modificado con exito',
+							footer: '<!--<a href="">Why do I have this issue?</a>-->'
+						})
+				} else {
+					storeVariables.push({
+						id: storeVariables.length + 1 ,
+						nombre: document.querySelector("#ModalVariablesNombre").value,
+						descripcion: document.querySelector("#ModalVariablesDescripcion").value,
+						tipo: "OPCIONAL"
+					});
+					loadTablaVariables();
+					document.querySelector("#ModalVariablesNombre").value = "";
+					document.querySelector("#ModalVariablesDescripcion").value = "";
+					Swal.fire({
+							icon: 'success',
+							title: '',
+							text: 'Registro creado con exito',
+							footer: '<!--<a href="">Why do I have this issue?</a>-->'
+						})
+				}
+			}
+			idEditVariable = '';
+		}
+
 
 		loadTablaVariables();
 		loadTablaReglas();

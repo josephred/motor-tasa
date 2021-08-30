@@ -44,9 +44,9 @@ $storeUsuarios = [
 ];
 
 $storeReglas = [
-    ['id' => 1, 'nombre' => 'Día del niño 2021', 'variables' => "1 2 3", 'tasa' => 1, 'vigencia' => ['2021-08-01', '2021-08-15'], 'fecha_creacion' => '2021-07-25'],
-    ['id' => 2, 'nombre' => 'Día madre 2020', 'variables' => "1", 'tasa' => 2, 'vigencia' => ['2021-08-01', '2021-08-15'], 'fecha_creacion' => '2021-07-25'],
-    ['id' => 3, 'nombre' => 'Navidad 2021', 'variables' => "1 2", 'tasa' => 3, 'vigencia' => ['2021-12-01', '2021-12-31'], 'fecha_creacion' => '2021-11-28'],
+    ['id' => 1, 'nombre' => 'Día del niño 2021', 'variables' => "1 2 3", 'tasa' => 1, 'vigencia' => '2021-08-01,2021-08-15', 'fecha_creacion' => '2021-07-25'],
+    ['id' => 2, 'nombre' => 'Día madre 2020', 'variables' => "1", 'tasa' => 2, 'vigencia' => '2021-08-01,2021-08-15', 'fecha_creacion' => '2021-07-25'],
+    ['id' => 3, 'nombre' => 'Navidad 2021', 'variables' => "1 2", 'tasa' => 3, 'vigencia' => '2021-12-01,2021-12-31', 'fecha_creacion' => '2021-11-28'],
 ];
 $storeTasas = [
     ['id' => 1, 'nombre' => 'Tasa 1', 'valor' => '0.3', 'vigencia' => '2021-08-01,2021-09-30' , 'fecha' => '2021-08-15', 'origen' => 'SAT'],

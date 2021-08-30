@@ -265,7 +265,9 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                         </table>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-primary btn-sm col-md-3 pull-right">  <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>  Guardar</button>
+                        <button class="btn btn-primary btn-sm pull-right col-lg-3" data-dismiss="modal" aria-label="Close"
+                                onclick="swal('¡Perfecto!','Datos guardados con exito.','success');"  > <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
+
                         <button type="button" class="btn btn-default btn-sm pull-left" data-dismiss="modal" aria-label="Close"> <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Cerrar </button>
                     </div>
                 </div>

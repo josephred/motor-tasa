@@ -167,7 +167,10 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                         <div class="row">
 
                                             <div class="m-t-30" style="text-align:center;">
-                                                <button class="btn btn-primary btn-sm pull-right col-lg-2 col-md-3" style="margin-right: 150px;" id="btn_guardar"> <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
+                                                <button class="btn btn-primary btn-sm " id="btnEditar"
+                                                        onclick="swal('¡Perfecto!','Datos guardados con exito.','success');"
+                                                > <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
+
                                                 <button data-pmb-action="reset" style="margin-left: 150px;" class="btn btn-danger btn-sm pull-left"> <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Cancelar</button>
                                             </div>
                                         </div>
