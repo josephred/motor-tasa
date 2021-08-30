@@ -89,6 +89,7 @@ foreach ($storeUsuarios as $u) {
         $_SESSION['store_tasas'] = $storeTasas;
         $_SESSION['store_variables'] = $storeVariables;
         $_SESSION['store_condiciones'] = $storeCondiciones;
+        $_SESSION['store_usuarios'] = $storeUsuarios;
         break;
     }
 }
