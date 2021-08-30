@@ -2,7 +2,9 @@
 include('lib/support.php');
 session_start();
 $fecha_hoy = date("d-m-Y");
-if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
+if (!array_key_exists('perfil', $_SESSION)) {
+    header("Location: login.php");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -95,12 +97,13 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                             <dl class="dl-horizontal">
                                                 <dt class="pt-15">Perfil</dt>
                                                 <dd>
-
-                                                    <select class="form-control" id="inputGroupSelect01">
+                                                    <!-- <input type="text" class="form-control" readonly id="inputGroupSelect01"> -->
+                                                    <select class="form-control" readonly id="perfil">
                                                         <option selected>Elija una opción</option>
-                                                        <option value="1">Administrador</option>
-                                                        <option value="2">Auditor</option>
-                                                        <option value="3">Monitor</option>
+                                                        <option value="Administrador">Administrador</option>
+                                                        <option value="Analista">Analista</option>
+                                                        <option value="Auditor">Auditor</option>
+                                                        <option value="Monitor">Monitor</option>
                                                     </select>
 
                                                 </dd>
@@ -167,9 +170,7 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                         <div class="row">
 
                                             <div class="m-t-30" style="text-align:center;">
-                                                <button class="btn btn-primary btn-sm " id="btnEditar"
-                                                        onclick="swal('¡Perfecto!','Datos guardados con exito.','success');"
-                                                > <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
+                                                <button class="btn btn-primary btn-sm " id="btnEditar" onclick="swal('¡Perfecto!','Datos guardados con exito.','success');"> <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
 
                                                 <button data-pmb-action="reset" style="margin-left: 150px;" class="btn btn-danger btn-sm pull-left"> <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Cancelar</button>
                                             </div>
@@ -193,7 +194,6 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                 <div class="table-responsive">
                                     <table id="table-example-fixed" class="table table-hover">
                                         <thead>
-
                                             <tr class="">
                                                 <th>N°</th>
                                                 <th>Nombre</th>
@@ -206,7 +206,7 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                                 <th>Acción</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="TblUsuarioBody">
                                             <tr class="danger">
                                                 <td>1</td>
                                                 <td>Maria Paula</td>
@@ -421,6 +421,100 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
             });
 
         });
+
+        const storeUsuarios = JSON.parse('<?php echo json_encode($_SESSION["store_usuarios"]) ?>');
+
+
+        const loadTblUsuario = () => {
+            let html = '';
+
+            storeUsuarios.forEach((i) => {
+                html += `<tr class="danger">
+                            <td>${i.id}</td>
+                            <td>${i.nombre.split(' ')[0]}</td>
+                            <td>${i.nombre.split(' ')[1]}</td>
+                            <td>${i.rut}</td>
+                            <td>${i.perfil}</td>
+                            <td>${i.email}</td>
+                            <td>(9) ${Math.floor(Math.random() * (99999999 - 11111111 + 1) ) + 11111111}</td>
+                            <td>*********</td>
+                            <td>
+                                <button class='btn btn-sm btn-warning' onclick='editar("${i.id}","${i.nombre}")' ><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                </button>
+                                <button class='btn btn-sm btn-danger' onclick='eliminar("${i.id}","${i.nombre}")' > <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                </button>
+                            </td>
+                        </tr>`;
+            });
+
+            document.querySelector("#TblUsuarioBody").innerHTML = html;
+        }
+        let idEditUsuario = '';
+        const editar = (id, nombre)=>{
+
+            storeUsuarios.forEach((i)=>{
+                if( i.id == id ){
+                    idEditUsuario = id;
+                    document.querySelector("#nombres").value = i.nombre.split(' ')[0];
+                    document.querySelector("#rut").value = i.rut;
+                    document.querySelector("#apellidos").value = i.nombre.split(' ')[1];
+                    document.querySelector("#fechana").value = i.fechana;
+                    document.querySelector("#cargo").value = i.cargo;
+                    document.querySelector("#perfil").value = i.perfil;
+                    document.querySelector("#correo").value = i.email;
+                    document.querySelector("#telefono").value = (9) + ' ' + ( Math.floor(Math.random() * (99999999 - 11111111 + 1) ) + parseInt(11111111) );
+                }
+            });
+        }
+
+        const push = ()=>{
+            let msj = '';
+            if( document.querySelector("#nombres") == '' ){ msj = '<li> El Nombre no puede ser vacío </li>'; }
+            if( document.querySelector("#rut") == '' ){ msj = '<li> El RUT no puede ser vacío </li>'; }
+            if( document.querySelector("#apellidos") == '' ){ msj = '<li> El Apellido no puede ser vacío </li>'; }
+            if( document.querySelector("#fechana") == '' ){ msj = '<li> La fecha de nacimiento no puede ser vacío </li>'; }
+            if( document.querySelector("#caargo") == '' ){ msj = '<li> El cargo no puede ser vacío </li>'; }
+            if( document.querySelector("#perfil") == '' ){ msj = '<li> El perfil no puede ser vacío </li>'; }
+            if( document.querySelector("#correo") == '' ){ msj = '<li> El correo no puede ser vacío </li>'; }
+            if( document.querySelector("#telefono") == '' ){ msj = '<li> El telefono no puede ser vacío </li>'; }
+
+        }
+
+        const eliminar = (id, nom) => {
+
+            Swal.fire({
+                title: '¡Atención!',
+                text: `¿Seguro desea eliminar el registro "${nom}" ?`,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminar!',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    let indice = -1;
+                    for (let i = 0; i < storeUsuarios.length; i++) {
+                        if (id == storeUsuarios[i].id) {
+                            indice = i;
+                        }
+                    }
+                    storeUsuarios.splice(indice, 1);
+                    Swal.fire({
+                        icon: 'success',
+                        title: '',
+                        text: 'Registro eliminado con exito',
+                        footer: '<!--<a href="">Why do I have this issue?</a>-->'
+                    })
+                    loadTblUsuario();
+                }
+            });
+
+
+        }
+
+
+        loadTblUsuario();
     </script>
 </body>
 
