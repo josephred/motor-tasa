@@ -85,7 +85,7 @@ if (!array_key_exists('perfil', $_SESSION)) {
                         <br>
                         <span class="headline">Alertas y Diferencias</span>
                         <br>
-                        <span>- Error en carga bach del dia 26-08-2021</span> <br>
+                        <span>- Error en carga batch del dia 26-08-2021</span> <br>
 
                         <span>&nbsp;</span>
                       </div>
@@ -144,7 +144,7 @@ if (!array_key_exists('perfil', $_SESSION)) {
                         <div class="col-md-12">
                           <div class="main-box">
                             <header class="main-box-header clearfix">
-                              <h2 class="pull-left">Trasacciones últimos meses</h2>
+                              <h2 class="pull-left">Transacciones últimos meses</h2>
                             </header>
                             <div class="main-box-body clearfix">
                               <div class="row">
@@ -280,19 +280,19 @@ if (!array_key_exists('perfil', $_SESSION)) {
       // graphBar = Morris.Bar({
       //     element: 'bar-total-eecc',
       //     data: [{
-      //         y: '04-09',
+      //         y: '2019',
       //         a: 159382,
       //         b: 158889,
       //         c: 493
       //     },
       //         {
-      //             y: '04-10',
+      //             y: '2020',
       //             a: 159032,
       //             b: 158319,
       //             c: 713
       //         },
       //         {
-      //             y: '04-11',
+      //             y: '2021',
       //             a: 160383,
       //             b: 159625,
       //             c: 758
@@ -310,15 +310,15 @@ if (!array_key_exists('perfil', $_SESSION)) {
       graphBar2 = Morris.Line({
         element: 'line-total-eecc',
         data: [{
-            y: '04-09',
+            y: '2019',
             a: 493
           },
           {
-            y: '04-10',
+            y: '2020',
             a: 713
           },
           {
-            y: '04-11',
+            y: '2021',
             a: 758
           }
         ],
@@ -334,7 +334,7 @@ if (!array_key_exists('perfil', $_SESSION)) {
       graphBar3 = Morris.Donut({
         element: 'donut-total-eecc',
         data: [{
-            label: "Tasas 3 ",
+            label: "Tasa 3 ",
             value: 10.31
           },
           {

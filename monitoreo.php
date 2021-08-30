@@ -72,10 +72,10 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                             </div>
 
 
-                            <table class="table table-hover">
-                                <tr ">
+                            <table class="table table-hover table-responsive">
+                                <tr >
                                 <td class=" col-lg-6 col-lg-6">
-                                    <div class="row" class="col-lg-6 col-lg-6">
+                                    <div class="row">
                                         <div>
                                             <div class="main-box">
                                                 <header class="main-box-header clearfix">
@@ -92,7 +92,7 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                         </div>
                                         </td>
                                         <td>
-                                            <div class="row" class="col-lg-6 col-lg-6">
+                                            <div class="row" >
                                                 <div>
                                                     <div class="main-box">
                                                         <header class="main-box-header clearfix">
@@ -113,7 +113,7 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                 </tr>
 
                             </table>
-                            <table class="table table-hover">
+                            <table class="table table-hover table-responsive">
                                 <tr>
                                     <td class="col-lg-6 col-lg-6">
                                         <div class="row">
@@ -137,8 +137,9 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                             <div class="col-md-12">
                                                 <div class="main-box">
                                                     <header class="main-box-header clearfix">
-                                                        <h2 class="pull-left">Reglas de negocio más utilizadas</h2>
-                                                    </header>
+                                                        <h2 class="pull-left">Reglas de negocio más utilizadas
+                                                        </h2>
+                                                        <header>
                                                     <div class="main-box-body clearfix">
                                                         <div class="row">
                                                             <div class="col-md-12">
@@ -146,6 +147,7 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                                             </div>
                                                         </div>
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -260,7 +262,7 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                 xkey: 'y',
                 ykeys: ['a', 'b', 'c'],
                 labels: ['aniversario 2021', 'día del niño 2021', 'navidad 2020'],
-                lineColors: ['#f36c6c', '#ff3321', '#e84040'],
+                lineColors: ['#800404', '#ff3321', '#f36c6c'],
 
                 formatter: function(y) {
                     return y
@@ -272,43 +274,26 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
             graphBar1 = Morris.Area({
                 element: 'area-chart',
                 data: [{
-                        y: '2006',
-                        a: 30,
-                        b: 90,
-                        c: 100
-                    },
-                    {
-                        y: '2007',
-                        a: 75,
-                        b: 65,
-                        c: 89
-                    },
-                    {
-                        y: '2008',
-                        a: 50,
-                        b: 40,
-                        c: 68
-                    },
-                    {
-                        y: '2009',
+
+                        y: '2018',
                         a: 75,
                         b: 65,
                         c: 70
                     },
                     {
-                        y: '2010',
+                        y: '2019',
                         a: 50,
                         b: 40,
                         c: 76
                     },
                     {
-                        y: '2011',
+                        y: '2020',
                         a: 75,
                         b: 65,
                         c: 90
                     },
                     {
-                        y: '2012',
+                        y: '2021',
                         a: 100,
                         b: 90,
                         c: 95
@@ -329,15 +314,15 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                 data: [
 
                     {
-                        y: '08',
+                        y: '2019',
                         a: 193
                     },
                     {
-                        y: '09',
+                        y: '2020',
                         a: 413
                     },
                     {
-                        y: '10',
+                        y: '2021',
                         a: 358
                     }
                 ],

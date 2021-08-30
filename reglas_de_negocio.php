@@ -43,7 +43,7 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 											<div class="row">
 												<div class="col-lg-6 col-md-6 col-sm-12">
 													<dl class="dl-horizontal">
-														<dt class="pt-15">Nombres</dt>
+														<dt class="pt-15">Nombre</dt>
 														<dd>
 															<div class="fg-line">
 																<input type="text" class="form-control" name="nombres" id="nombres" value="" />
@@ -104,7 +104,7 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 																	<div id="variablesOpcionales">
 																		
 																	</div>
-																	<button class='btn btn-success btn-sm' style="margin-top: 10px;" onclick="addVariable()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Agregar Varible Opcional </button>
+																	<button class='btn btn-success btn-sm' style="margin-top: 10px;" onclick="addVariable()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Agregar Variable Opcional </button>
 																</div>
 															</div>
 														</dd>
@@ -118,7 +118,7 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 														<dt class="pt-15">Tasa</dt>
 														<dd>
 															<div class="fg-line">
-																<input type="text" class="form-control" name="nombres" id="nombres" value="" />
+																<input type="text" class="form-control" name="nombre" id="nombre" value="" />
 															</div>
 														</dd>
 													</dl>

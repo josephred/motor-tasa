@@ -60,9 +60,9 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                                         <tr class="danger">
 
                                                             <td>Maria Paula</td>
-                                                            <td>Administrador</td>
-                                                            <td>Creo nueva tasa</td>
-                                                            <td>2021-08-21 18:21:23</td>
+                                                            <td>Analista</td>
+                                                            <td>Crear nueva regla</td>
+                                                            <td>21-08-2021 08:21:23</td>
                                                             <td>
                                                                 <button class="btn btn-primary" style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"><i class="fa fa-eye" aria-hidden="true"></i>
                                                                 </button>
@@ -70,9 +70,9 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                                         </tr>
                                                         <tr class="danger">
                                                             <td>Maria Paula</td>
-                                                            <td>Administrador</td>
-                                                            <td>Creo nueva tasa</td>
-                                                            <td>2021-08-21 18:21:23</td>
+                                                            <td>Analista</td>
+                                                            <td>Crear nueva tasa</td>
+                                                            <td>21-08-2021 18:21:23</td>
                                                             <td>
                                                                 <button class="btn btn-primary" style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"><i class="fa fa-eye" aria-hidden="true"></i>
                                                                 </button>
@@ -81,9 +81,9 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                                         </tr>
                                                         <tr class="danger">
                                                             <td>Maria Paula</td>
-                                                            <td>Administrador</td>
-                                                            <td>Creo nueva tasa</td>
-                                                            <td>2021-08-21 18:21:23</td>
+                                                            <td>Analista</td>
+                                                            <td>Crear nueva tasa</td>
+                                                            <td>24-08-2021 15:21:23</td>
                                                             <td>
                                                                 <button class="btn btn-primary" style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"><i class="fa fa-eye" aria-hidden="true"></i>
                                                                 </button>
@@ -168,9 +168,9 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                                         <tbody>
                                                             <tr class="danger" id="rev11">
                                                                 <td>Maria Paula</td>
-                                                                <td>Administrador</td>
-                                                                <td>Creo nueva tasa</td>
-                                                                <td>2021-08-21 18:21:23</td>
+                                                                <td>Analista</td>
+                                                                <td>Crear nueva regla</td>
+                                                                <td>24-08-2021 19:21:23</td>
                                                                 <td>Rechazada</td>
                                                                 <td>
                                                                     <button onclick='swap("rev11","rev1")' class="btn btn-danger" style='margin-left: 16px; ' type="button" data-toggle="modal"><i class="fa fa-refresh" aria-hidden="true"></i></button>
@@ -179,21 +179,21 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                                             </tr>
                                                             <tr class="danger" id="rev22">
                                                                 <td>Maria Paula</td>
-                                                                <td>Administrador</td>
-                                                                <td>Creo nueva tasa</td>
-                                                                <td>2021-08-21 18:21:23</td>
-                                                                <td>Rechazada</td>
+                                                                <td>Analista</td>
+                                                                <td>Crear nueva tasa</td>
+                                                                <td>24-08-2021 18:21:23</td>
+                                                                <td>Autorizada</td>
                                                                 <td>
                                                                     <button onclick='swap("rev22","rev2")' class="btn btn-danger" style='margin-left: 16px; ' type="button" data-toggle="modal"><i class="fa fa-refresh" aria-hidden="true"></i></button>
                                                                 </td>
-                                                                <td>No cumple con las normas básicas </td>
+                                                                <td>cumple con las normas básicas </td>
                                                             </tr>
                                                             <tr class="danger" id="rev33">
                                                                 <td>Maria Paula</td>
                                                                 <td>Administrador</td>
-                                                                <td>Creo nueva tasa</td>
-                                                                <td>2021-08-21 18:21:23</td>
-                                                                <td>Rechazada</td>
+                                                                <td>Crear nueva tasa</td>
+                                                                <td>24-08-2021 15:26:23</td>
+                                                                <td>Autorizada</td>
                                                                 <td>
                                                                     <button onclick='swap("rev33","rev3")' class="btn btn-danger" style='margin-left: 16px; ' type="button" data-toggle="modal"><i class="fa fa-refresh" aria-hidden="true"></i></button>
                                                                 </td>
