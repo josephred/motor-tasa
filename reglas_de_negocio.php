@@ -488,6 +488,9 @@ if (!array_key_exists('perfil', $_SESSION)) {
 
 
 
+
+
+
 		console.log(storeVariables);
 		console.log(storeCondciones);
 		console.log(storeReglas);

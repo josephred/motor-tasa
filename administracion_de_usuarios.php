@@ -49,7 +49,7 @@ if (!array_key_exists('perfil', $_SESSION)) {
                                                 <dt class="pt-15">Rut</dt>
                                                 <dd>
                                                     <div class="fg-line">
-                                                        <input type="text" class="form-control hasDatepicker " name="rut" id="rut" value="" placeholder="11.111.111-1" />
+                                                        <input type="text" class="form-control hasDatepicker " name="rut" id="rut" value="" placeholder="12345678-9" />
                                                     </div>
                                                 </dd>
                                             </dl>
@@ -99,7 +99,7 @@ if (!array_key_exists('perfil', $_SESSION)) {
                                                 <dd>
                                                     <!-- <input type="text" class="form-control" readonly id="inputGroupSelect01"> -->
                                                     <select class="form-control" readonly id="perfil">
-                                                        <option selected>Elija una opción</option>
+                                                        <option selected value=''>Elija una opción</option>
                                                         <option value="Administrador">Administrador</option>
                                                         <option value="Analista">Analista</option>
                                                         <option value="Auditor">Auditor</option>
@@ -170,9 +170,9 @@ if (!array_key_exists('perfil', $_SESSION)) {
                                         <div class="row">
 
                                             <div class="m-t-30" style="text-align:center;">
-                                                <button class="btn btn-primary btn-sm " id="btnEditar" onclick="swal('¡Perfecto!','Datos guardados con exito.','success');"> <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
+                                                <button class="btn btn-primary btn-sm " id="btnGuardar" onclick="push()"> <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
 
-                                                <button data-pmb-action="reset" style="margin-left: 150px;" class="btn btn-danger btn-sm pull-left"> <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Cancelar</button>
+                                                <button onclick="limpiaForm()" style="margin-left: 150px;" class="btn btn-danger btn-sm pull-left"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Limpiar Formulario</button>
                                             </div>
                                         </div>
                                     </div>
@@ -450,10 +450,10 @@ if (!array_key_exists('perfil', $_SESSION)) {
             document.querySelector("#TblUsuarioBody").innerHTML = html;
         }
         let idEditUsuario = '';
-        const editar = (id, nombre)=>{
+        const editar = (id, nombre) => {
 
-            storeUsuarios.forEach((i)=>{
-                if( i.id == id ){
+            storeUsuarios.forEach((i) => {
+                if (i.id == id) {
                     idEditUsuario = id;
                     document.querySelector("#nombres").value = i.nombre.split(' ')[0];
                     document.querySelector("#rut").value = i.rut;
@@ -462,21 +462,99 @@ if (!array_key_exists('perfil', $_SESSION)) {
                     document.querySelector("#cargo").value = i.cargo;
                     document.querySelector("#perfil").value = i.perfil;
                     document.querySelector("#correo").value = i.email;
-                    document.querySelector("#telefono").value = (9) + ' ' + ( Math.floor(Math.random() * (99999999 - 11111111 + 1) ) + parseInt(11111111) );
+                    document.querySelector("#telefono").value = (9) + ' ' + (Math.floor(Math.random() * (99999999 - 11111111 + 1)) + parseInt(11111111));
                 }
             });
         }
 
-        const push = ()=>{
+        const limpiaForm = () => {
+            document.querySelector("#nombres").value = '';
+            document.querySelector("#rut").value = '';
+            document.querySelector("#apellidos").value = '';
+            document.querySelector("#fechana").value = '';
+            document.querySelector("#cargo").value = '';
+            document.querySelector("#perfil").value = '';
+            document.querySelector("#correo").value = '';
+            document.querySelector("#telefono").value = '';
+            idEditUsuario = '';
+        }
+
+        const push = () => {
             let msj = '';
-            if( document.querySelector("#nombres") == '' ){ msj = '<li> El Nombre no puede ser vacío </li>'; }
-            if( document.querySelector("#rut") == '' ){ msj = '<li> El RUT no puede ser vacío </li>'; }
-            if( document.querySelector("#apellidos") == '' ){ msj = '<li> El Apellido no puede ser vacío </li>'; }
-            if( document.querySelector("#fechana") == '' ){ msj = '<li> La fecha de nacimiento no puede ser vacío </li>'; }
-            if( document.querySelector("#caargo") == '' ){ msj = '<li> El cargo no puede ser vacío </li>'; }
-            if( document.querySelector("#perfil") == '' ){ msj = '<li> El perfil no puede ser vacío </li>'; }
-            if( document.querySelector("#correo") == '' ){ msj = '<li> El correo no puede ser vacío </li>'; }
-            if( document.querySelector("#telefono") == '' ){ msj = '<li> El telefono no puede ser vacío </li>'; }
+            if (document.querySelector("#nombres").value == '') {
+                msj += '<li> El Nombre no puede ser vacío </li>';
+            }
+            if (document.querySelector("#rut").value == '') {
+                msj += '<li> El RUT no puede ser vacío </li>';
+            }
+            if (document.querySelector("#apellidos").value == '') {
+                msj += '<li> El Apellido no puede ser vacío </li>';
+            }
+            if (document.querySelector("#fechana").value == '') {
+                msj += '<li> La fecha de nacimiento no puede ser vacío </li>';
+            }
+            if (document.querySelector("#cargo").value == '') {
+                msj += '<li> El cargo no puede ser vacío </li>';
+            }
+            if (document.querySelector("#perfil").value == '') {
+                msj += '<li> El perfil no puede ser vacío </li>';
+            }
+            if (document.querySelector("#correo").value == '') {
+                msj += '<li> El correo no puede ser vacío </li>';
+            }
+            if (document.querySelector("#telefono").value == '') {
+                msj += '<li> El telefono no puede ser vacío </li>';
+            }
+
+            if (msj != '') {
+                Swal.fire({
+                    icon: 'error',
+                    title: '¡Atención!',
+                    html: `<div style='text-align:left'><ul>${msj}</ul></div>`,
+                    footer: '<!--<a href="">Why do I have this issue?</a>-->'
+                });
+                return false;
+            } else {
+                if (idEditUsuario != '') {
+                    storeUsuarios.forEach((i) => {
+                        if (i.id == idEditUsuario) {
+                            i.nombre = document.querySelector("#nombres").value + ' ' + document.querySelector("#apellidos").value;
+                            i.rut = document.querySelector("#rut").value;
+                            i.fechana = document.querySelector("#fechana").value;
+                            i.cargo = document.querySelector("#cargo").value;
+                            i.perfil = document.querySelector("#perfil").value;
+                            i.correo = document.querySelector("#correo").value;
+                            i.telefono = document.querySelector("#telefono").value;
+                            Swal.fire({
+                                icon: 'success',
+                                title: '¡Perfecto!',
+                                text: 'Registro modificado con exito',
+                                footer: '<!--<a href="">Why do I have this issue?</a>-->'
+                            })
+                        }
+                    });
+                } else {
+                    storeUsuarios.push({
+                        id: parseInt(storeUsuarios.length + 1 ),
+                        nombre: document.querySelector("#nombres").value + ' ' + document.querySelector("#apellidos").value,
+                        rut: document.querySelector("#rut").value,
+                        fechana: document.querySelector("#fechana").value,
+                        cargo: document.querySelector("#cargo").value,
+                        perfil: document.querySelector("#perfil").value,
+                        correo: document.querySelector("#correo").value,
+                        telefono: document.querySelector("#telefono").value
+                    });
+                    Swal.fire({
+						icon: 'success',
+						title: '¡Perfecto!',
+						text: 'Registro creado con exito',
+						footer: '<!--<a href="">Why do I have this issue?</a>-->'
+					})
+                }
+                idEditUsuario = '';
+                limpiaForm();
+                loadTblUsuario();
+            }
 
         }
 

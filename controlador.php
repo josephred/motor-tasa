@@ -10,6 +10,7 @@ $storeUsuarios = [
         'perfil' => "Administrador",
         'password' => "123456",
         'cargo' => "Gerente Gral.",
+        'fechana' => "1990-11-22",
     ],
     [
         'id' => "2",
@@ -20,6 +21,7 @@ $storeUsuarios = [
         'perfil' => "Monitor",
         'password' => "123456",
         'cargo' => "Operador",
+        'fechana' => "1985-08-12",
     ],
     [
         'id' => "3",
@@ -30,6 +32,7 @@ $storeUsuarios = [
         'perfil' => "Auditor",
         'password' => "123456",
         'cargo' => "Sub Gerente",
+        'fechana' => "2004-01-28",
     ],
     [
         'id' => "4",
@@ -40,6 +43,7 @@ $storeUsuarios = [
         'perfil' => "Analista",
         'password' => "123456",
         'cargo' => "Analista Finanzas",
+        'fechana' => "1999-12-20",
     ]
 ];
 
