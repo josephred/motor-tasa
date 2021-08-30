@@ -331,7 +331,7 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 							estado = 0;
 						}
 						if (estado == 1) {
-							swal({
+							swal.fire({
 								title: "Archivo Cargado",
 								text: "Los datos se han cargado exitosamente!!",
 								type: "success",
