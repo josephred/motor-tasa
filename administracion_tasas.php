@@ -2,7 +2,9 @@
 include('lib/support.php');
 session_start();
 $fecha_hoy = date("d-m-Y");
-if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
+if (!array_key_exists('perfil', $_SESSION)) {
+	header("Location: login.php");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,13 +38,12 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 							<div class="panel panel-default">
 								<div class="panel-body">
 									<div class="row">
-										<h4> &nbsp;  Importación de tasas</h4>
+										<h4> &nbsp; Importación de tasas</h4>
 										<div class="col-lg-6 col-md-6 col-sm-12">
 											<input type="file">
 										</div>
 										<div class="col-lg-6 col-md-6 col-sm-12">
-											<button class="btn btn-primary btn-sm " data-toggle="modal" data-target="#ModalTasaImportar" 
-											style='margin-left: 16px; ;' type="button"> <span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> Importar</button>
+											<button class="btn btn-primary btn-sm " data-toggle="modal" data-target="#ModalTasaImportar" style='margin-left: 16px; ;' type="button"> <span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> Importar</button>
 										</div>
 									</div>
 									<br />
@@ -58,9 +59,9 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 											<br>
 											Cargados : 978
 											<br>
-											<span class="text-red" style="color: red; font-weight:  bolder;">Erroneos : 2</span>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="#" data-toggle="modal" data-target="#ModalTasaVer">
-																						<span class="label label-info">
-																						<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Ver</span></a>
+											<span class="text-red" style="color: red; font-weight:  bolder;">Erroneos : 2</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="#" data-toggle="modal" data-target="#ModalTasaVer">
+												<span class="label label-info">
+													<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Ver</span></a>
 											<br>
 											Lineas con Error: 12, 114
 											<br>
@@ -70,12 +71,8 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 									</div>
 									<div class="row">
 										<div class="col-lg-12">
-											<button class="btn btn-success pull-left" type="button" 
-													 aria-expanded="false" 
-													aria-controls="collapseExample" style="margin: 10px;"
-													onclick="$('#collapseExample').show()"
-													>
-													<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nueva Tasa</button>
+											<button class="btn btn-success pull-left" type="button" aria-expanded="false" aria-controls="collapseExample" style="margin: 10px;" onclick="$('#collapseExample').show()">
+												<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nueva Tasa</button>
 										</div>
 										<div class="collapse" id="collapseExample">
 											<div class="well">
@@ -92,11 +89,8 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 													</div>
 													<div class="col-lg-2">
 														&nbsp; <br>
-														<button class="btn btn-primary pull-right col-3" 
-																style='margin-left: 16px; margin-bottom: 3px;' 
-																type="button"
-																onclick="guardaNuevaTasa(); "
-																> <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar </button>
+														<button class="btn btn-primary pull-right col-3" style='margin-left: 16px; margin-bottom: 3px;' type="button" onclick="guardaNuevaTasa(); ">
+															<span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar </button>
 													</div>
 												</div>
 
@@ -173,7 +167,7 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 	<div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="ModalTasaImportar">
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
-				<div class="modal-header bg-primary" >
+				<div class="modal-header bg-primary">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<h4 class="modal-title" id="gridSystemModalLabel">Información de Importación</h4>
 				</div>
@@ -181,7 +175,7 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 					<h4 class="text-center">
 						El proceso de carga informa de algunos errores. <br>
 						¿Desea guardar los datos de todas formas?
-					</h4> 
+					</h4>
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<div class="row">
@@ -205,10 +199,7 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 					Ingrese el origen de datos: <input type="text" class="form-control">
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary btn-sm pull-right col-lg-3 col-md-3" 
-							data-dismiss="modal" aria-label="Close"
-							onclick="$('#infoImportar').toggle(); swal('¡Perfecto!','Importado con exito','success') ;"
-							> <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
+					<button type="button" class="btn btn-primary btn-sm pull-right col-lg-3 col-md-3" data-dismiss="modal" aria-label="Close" onclick="ConfirmImportarSi()"> <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
 					<button type="button" class="btn btn-danger btn-sm pull-left" data-dismiss="modal" aria-label="Close"> <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Cancelar</button>
 				</div>
 			</div>
@@ -331,25 +322,52 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 							estado = 0;
 						}
 						if (estado == 1) {
-							swal.fire({
-								title: "Archivo Cargado",
-								text: "Los datos se han cargado exitosamente!!",
-								type: "success",
-								showCancelButton: false,
-								confirmButtonColor: "#7ac144",
-								confirmButtonText: "Ok",
-								closeOnConfirm: true
-							}, function(isConfirm) {
-								if (isConfirm) {
+
+							Swal.fire({
+								title: 'Archivo Cargado',
+								text: `Los datos se han cargado exitosamente!!`,
+								icon: 'success',
+								showCancelButton: true,
+								confirmButtonColor: '#3085d6',
+								cancelButtonColor: '#d33',
+								confirmButtonText: 'Sí, eliminar!',
+								cancelButtonText: 'Cancelar'
+							}).then((result) => {
+								if (result.isConfirmed) {
 									$("#preview").removeClass("ocultar_formato").addClass('mostrar');
 								}
 							});
+
+							// swal.fire({
+							// 	title: "Archivo Cargado",
+							// 	text: "Los datos se han cargado exitosamente!!",
+							// 	type: "success",
+							// 	showCancelButton: false,
+							// 	confirmButtonColor: "#7ac144",
+							// 	confirmButtonText: "Ok",
+							// 	closeOnConfirm: true
+							// }, function(isConfirm) {
+							// 	if (isConfirm) {
+							// 	}
+							// });
 						} else {
-							swal("ERROR", "No hay archivo para guardar", "error");
+							// swal("ERROR", "No hay archivo para guardar", "error");
+							Swal.fire({
+								icon: 'error',
+								title: 'ERROR',
+								text: 'No hay archivo para guardar',
+								footer: '<!--<a href="">Why do I have this issue?</a>-->'
+							})
 						}
 					}
 				} else {
-					swal("La extensión no es permitida", "La carga permite las siguientes extensiones: orf", "error");
+					Swal.fire({
+						icon: 'error',
+						title: 'La extensión no es permitida',
+						text: 'La carga permite las siguientes extensiones: orf',
+						footer: '<!--<a href="">Why do I have this issue?</a>-->'
+					})
+					// swal("La extensión no es permitida", "La carga permite las siguientes extensiones: orf", "error");
 				}
 			});
 
@@ -408,13 +426,13 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 								</tr></thead>`;
 			let n = 0;
 
-			let html='';
+			let html = '';
 			storeTasas.forEach((i) => {
 				let arrVigencia = i.vigencia.split(',');
 				let f1 = new Date(arrVigencia[0]);
 				let f2 = new Date(arrVigencia[1]);
 				let ahora = new Date();
-				let estado = ( f1 < ahora && f2 > ahora )? 'Vigente':'Caducado';
+				let estado = (f1 < ahora && f2 > ahora) ? 'Vigente' : 'Caducado';
 				html += `<tr class='danger'>
 							<td>${++n}</td>
 							<td>${i.nombre}</td>
@@ -429,75 +447,93 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 							</td>
 						</tr>`;
 			});
-			tablaReglas.innerHTML = htmlHead + `<tbody> ${html} <tbody>` ;
-
-			// $('#table-example-fixed').dataTable().fnClearTable();
-			// $('#table-example-fixed').dataTable().fnDestroy();
-			// var tableFixed = $('#table-example-fixed').dataTable();
-			// $('#table-example-fixed').DataTable().clear().destroy();
+			tablaReglas.innerHTML = htmlHead + `<tbody> ${html} <tbody>`;
 
 		};
 
 
 
-		console.log(storeVariables);
-		console.log(storeCondciones);
-		console.log(storeReglas);
 
 
 		const eliminar = (id, nom) => {
-			if (confirm(`¿Seguro desea eliminar el registro "${nom}" ?`)) {
-				let indice = -1;
-				for (let i = 0; i < storeTasas.length; i++) {
-					if (id == storeTasas[i].id) {
-						indice = i;
+
+			Swal.fire({
+				title: '¡Atención!',
+				text: `¿Seguro desea eliminar el registro "${nom}" ?`,
+				icon: 'warning',
+				showCancelButton: true,
+				confirmButtonColor: '#3085d6',
+				cancelButtonColor: '#d33',
+				confirmButtonText: 'Sí, eliminar!',
+				cancelButtonText: 'Cancelar'
+			}).then((result) => {
+				if (result.isConfirmed) {
+					let indice = -1;
+					for (let i = 0; i < storeTasas.length; i++) {
+						if (id == storeTasas[i].id) {
+							indice = i;
+						}
 					}
+					storeTasas.splice(indice, 1);
+					Swal.fire({
+						icon: 'success',
+						title: '',
+						text: 'Registro eliminado con exito',
+						footer: '<!--<a href="">Why do I have this issue?</a>-->'
+					})
+					// swal('Registro eliminado!', '', 'success');
+					loadTablaReglas();
 				}
-				storeTasas.splice(indice, 1);
-				swal('Registro eliminado!', '', 'success');
-				loadTablaReglas();
-			}
+			});
+
 		}
 
-		const guardaNuevaTasa = ()=>{
+		const guardaNuevaTasa = () => {
 			let msj = '';
-			if( document.querySelector("#txtTasaNombre").value == '' ){
+			if (document.querySelector("#txtTasaNombre").value == '') {
 				msj += ' El nombre no puede ser vacío ;  ';
 			}
-			if( document.querySelector("#txtTasaValor").value == '' ){
+			if (document.querySelector("#txtTasaValor").value == '') {
 				msj += ' El valor no puede ser vacío ;  ';
 			}
-			if( document.querySelector("#txtTasaVigencia").value == '' ){
+			if (document.querySelector("#txtTasaVigencia").value == '') {
 				msj += ' El valor no puede ser vacío ;  ';
 			}
-			if( msj !='' ){
-				swal('Atención','Por favor verifique:  ' + msj,'danger');
+			if (msj != '') {
+				swal('Atención', 'Por favor verifique:  ' + msj, 'danger');
 				return false;
 			}
 			let txt = '';
-			if( idEditado != '' ){
+			if (idEditado != '') {
 				txt = 'Registro modificado con exito.';
-				storeTasas.forEach((i)=>{
-					if( idEditado == i.id ){
-						i.nombre = document.querySelector("#txtTasaNombre").value ;
-						i.valor = document.querySelector("#txtTasaValor").value ;
-						i.vigencia = document.querySelector("#txtTasaVigencia").value ;
+				storeTasas.forEach((i) => {
+					if (idEditado == i.id) {
+						i.nombre = document.querySelector("#txtTasaNombre").value;
+						i.valor = document.querySelector("#txtTasaValor").value;
+						i.vigencia = document.querySelector("#txtTasaVigencia").value;
 					}
 				});
-
-			} else{
+				idEditado = '';
+			} else {
 				txt = 'Guardado con exito.';
 				storeTasas.push({
-					id: 1,
-					fecha: new Date().toISOString().split('T')[0] ,
-					nombre:  document.querySelector("#txtTasaNombre").value ,
+					id: parseInt(storeTasas.length + 1),
+					fecha: new Date().toISOString().split('T')[0],
+					nombre: document.querySelector("#txtTasaNombre").value,
 					origen: "LOCAL",
 					valor: document.querySelector("#txtTasaValor").value,
 					vigencia: document.querySelector("#txtTasaVigencia").value,
 				});
 			}
 
-			swal('¡Perfecto!', txt ,'success');
+			// swal('¡Perfecto!', txt, 'success');
+
+			Swal.fire({
+				icon: 'success',
+				title: '¡Perfecto!',
+				text: txt,
+				footer: '<!--<a href="">Why do I have this issue?</a>-->'
+			})
 
 			loadTablaReglas();
 			document.querySelector("#txtTasaNombre").value = '';
@@ -505,20 +541,35 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 			document.querySelector("#txtTasaVigencia").value = '8/26 06:00 PM - 8/28 02:00 AM';
 			$("#collapseExample").hide();
 		}
-		
+
 		let idEditado = '';
-		const editarTasa = (id)=>{
-			for( let i=0 ; i< storeTasas.length ; i++ ){
-				if( id == storeTasas[i].id ){
+		const editarTasa = (id) => {
+			for (let i = 0; i < storeTasas.length; i++) {
+				if (id == storeTasas[i].id) {
 					idEditado = id;
-					document.querySelector("#txtTasaNombre").value = storeTasas[i].nombre ;
-					document.querySelector("#txtTasaValor").value = storeTasas[i].valor ;
-					document.querySelector("#txtTasaVigencia").value = storeTasas[i].vigencia ;
+					document.querySelector("#txtTasaNombre").value = storeTasas[i].nombre;
+					document.querySelector("#txtTasaValor").value = storeTasas[i].valor;
+					document.querySelector("#txtTasaVigencia").value = storeTasas[i].vigencia;
 					$("#collapseExample").show();
 					break;
 				}
 			}
 		}
+
+
+
+		const ConfirmImportarSi = () => {
+			$('#infoImportar').show();
+			Swal.fire({
+				icon: 'success',
+				title: '¡Perfecto!',
+				text: 'Importado con exito',
+				footer: '<!--<a href="">Why do I have this issue?</a>-->'
+			})
+			// swal('','Importado con exito','success') ;
+		}
+
+
 
 		loadTablaReglas();
 	</script>
