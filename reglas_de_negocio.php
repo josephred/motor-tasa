@@ -30,7 +30,7 @@ if (!array_key_exists('perfil', $_SESSION)) {
 									</div>
 									<div class="col-lg-6 col-md-6 col-sm-12" style="margin-top: 20px;">
 										<button class="btn btn-primary pull-right " style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"> <span class="glyphicon glyphicon-list" aria-hidden="true"></span> Administración de Variables</button>
-										<button class="btn btn-success pull-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+										<button class="btn btn-success pull-right" onclick='$("#collapseExample").show();' type="button" >
 											<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nueva Regla
 										</button>
 									</div>
@@ -48,7 +48,7 @@ if (!array_key_exists('perfil', $_SESSION)) {
 														<dt class="pt-15">Nombre</dt>
 														<dd>
 															<div class="fg-line">
-																<input type="text" class="form-control" name="nombres" id="nombres" value="" />
+																<input type="text" class="form-control" name="nombres" id="reglaNombre" value="" />
 															</div>
 														</dd>
 													</dl>
@@ -58,7 +58,7 @@ if (!array_key_exists('perfil', $_SESSION)) {
 														<dt class="pt-15">Vigencia</dt>
 														<dd>
 															<div class="row">
-																<input type="text" class="form-control hasDatepicker " name="fechaVigencia" id="fechaVigencia" value="" />
+																<input type="text" class="form-control hasDatepicker " name="fechaVigencia" id="reglaVigencia" value="" />
 															</div>
 														</dd>
 													</dl>
@@ -79,7 +79,7 @@ if (!array_key_exists('perfil', $_SESSION)) {
 																				<div class="row">
 
 																					<div class="col-lg-3 col-md-3 col-sm-3">
-																						<input readonly type="text" class="form-control" id="<?php echo $var['id'] ?>" value="<?php echo $var['nombre'] ?>" />
+																						<input readonly type="text" class="form-control" id="reglaVariableNombre_<?php echo $var['id']; ?>" value="<?php echo $var['nombre'] ?>" />
 																					</div>
 
 																					<div class="col-lg-3 col-md-3 col-sm-3">
@@ -106,7 +106,7 @@ if (!array_key_exists('perfil', $_SESSION)) {
 																	<div id="variablesOpcionales">
 
 																	</div>
-																	<button class='btn btn-success btn-sm' style="margin-top: 10px;" onclick="addVariable()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Agregar Variable Opcional </button>
+																	<button class='btn btn-success btn-sm' style="margin-top: 10px;" onclick="addVariable()"  data-toggle="collapse" data-target="#collapseExample" ><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Agregar Variable Opcional </button>
 																</div>
 															</div>
 														</dd>
@@ -120,13 +120,14 @@ if (!array_key_exists('perfil', $_SESSION)) {
 														<dt class="pt-15">Tasa</dt>
 														<dd>
 															<div class="fg-line">
-																<input type="text" class="form-control" name="nombre" id="nombre" value="" />
+																<!-- <input type="text" class="form-control" name="nombre" id="nombre" value="" /> -->
+																<select name="" id="cmbTasas" class="form-control"></select>
 															</div>
 														</dd>
 													</dl>
 												</div>
 												<div class="col-lg-6 col-md-6 col-sm-12">
-													<button class="btn btn-primary pull-right col-3" style='margin-left: 16px; ;' type="button"> <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
+													<button class="btn btn-primary pull-right col-3" style='margin-left: 16px; ;' type="button" onclick="putRegla()"> <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
 												</div>
 											</div>
 										</div>
@@ -294,17 +295,17 @@ if (!array_key_exists('perfil', $_SESSION)) {
 			}
 
 			$('#datepickerDate').datepicker({
-				format: 'dd-mm-yyyy',
+				format: 'yyyy-mm-dd',
 				autoclose: true
 			});
 
 			$('#datepickerDate2').datepicker({
-				format: 'dd-mm-yyyy',
+				format: 'yyyy-mm-dd',
 				autoclose: true
 			});
 
 			$('#datepickerDate3').datepicker({
-				format: 'dd-mm-yyyy',
+				format: 'yyyy-mm-dd',
 				autoclose: true
 			});
 
@@ -381,13 +382,13 @@ if (!array_key_exists('perfil', $_SESSION)) {
 		});
 
 
-		$('input[id="fechaVigencia"]').daterangepicker({
+		$('input[id="reglaVigencia"]').daterangepicker({
 			opens: 'left',
 			timePicker: true,
 			startDate: moment().startOf('hour'),
 			endDate: moment().startOf('hour').add(32, 'hour'),
 			locale: {
-				format: 'M/DD hh:mm A'
+				format: 'YYYY-MM-DD'
 			}
 		}, function(start, end, label) {
 			console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
@@ -397,8 +398,18 @@ if (!array_key_exists('perfil', $_SESSION)) {
 		const tablaVariables = document.querySelector("#tblAdmVar");
 		const divVariablesOpcionales = document.querySelector("#variablesOpcionales");
 		const storeReglas = JSON.parse('<?php echo json_encode($_SESSION["store_reglas"]) ?>');
+		const storeTasas = JSON.parse('<?php echo json_encode($_SESSION["store_tasas"]) ?>');
 		const storeVariables = JSON.parse('<?php echo json_encode($_SESSION["store_variables"]) ?>');
 		const storeCondciones = JSON.parse('<?php echo json_encode($_SESSION["store_condiciones"]) ?>');
+
+		const loadCmbTasa = ()=>{
+			let option = '' ;
+			storeTasas.forEach((i)=>{
+				option += `<option value='${i.id}'>${i.nombre}</option>`;
+			});
+			document.querySelector("#cmbTasas").innerHTML = option;
+		}
+		loadCmbTasa();
 
 		const loadTablaVariables = () => {
 			let html = ``;
@@ -451,6 +462,11 @@ if (!array_key_exists('perfil', $_SESSION)) {
 					}
 
 				});
+				console.log(i.vigencia);
+				let arrVigencia = i.vigencia.split(',');
+				let f1 = arrVigencia[0].trim();
+				let f2 = arrVigencia[1].trim();
+				let estado = ( new Date(f1) < new Date() && new Date() < new Date(f2) )? 'Vigente':'Caducada';
 
 				htmlBody += `<tr class='danger'>
 							<td>${++n}</td>
@@ -458,24 +474,16 @@ if (!array_key_exists('perfil', $_SESSION)) {
 							<td>${html2}</td>
 							<td>${i.tasa}</td>
 							<td>${i.vigencia}</td>
-							<td> - </td>
+							<td>${estado}</td>
 							<td>${i.fecha_creacion}</td>
 							<td> 
-								<button class='btn btn-sm btn-warning'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+								<button class='btn btn-sm btn-warning' onclick='editRegla("${i.id}")'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
 								<button class='btn btn-sm btn-danger' onclick='eliminar("${i.id}","${i.nombre}")'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
 							</td>
 						</tr>`;
 			});
 			tablaReglas.innerHTML = `${htmlHead} <tbody> ${htmlBody} </tbody>`;
-
-			// var tableFixed = $('#table-example-fixed').dataTable({
-			// 	// info: false,
-			// 	pageLength: 10,
-			// 	fixedHeader: {
-			// 		header: true,
-			// 		headerOffset: $('body.fixed-header #header-navbar').height()
-			// 	}
-			// });
+		
 		};
 
 
@@ -486,17 +494,36 @@ if (!array_key_exists('perfil', $_SESSION)) {
 
 
 		const eliminar = (id, nom) => {
-			if (confirm(`¿Seguro desea eliminar el registro "${nom}" ?`)) {
-				let indice = -1;
-				for (let i = 0; i < storeReglas.length; i++) {
-					if (id == storeReglas[i].id) {
-						indice = i;
+
+			Swal.fire({
+				title: '¡Atención!',
+				text: `¿Seguro desea eliminar el registro "${nom}" ?`,
+				icon: 'warning',
+				showCancelButton: true,
+				confirmButtonColor: '#3085d6',
+				cancelButtonColor: '#d33',
+				confirmButtonText: 'Sí, eliminar!',
+				cancelButtonText: 'Cancelar'
+			}).then((result) => {
+				if (result.isConfirmed) {
+					let indice = -1;
+					for (let i = 0; i < storeReglas.length; i++) {
+						if (id == storeReglas[i].id) {
+							indice = i;
+						}
 					}
+					storeReglas.splice(indice, 1);
+					Swal.fire({
+						icon: 'success',
+						title: '',
+						text: 'Registro eliminado con exito',
+						footer: '<!--<a href="">Why do I have this issue?</a>-->'
+					})
+					loadTablaReglas();
 				}
-				storeReglas.splice(indice, 1);
-				swal('Registro eliminado!', '', 'success');
-				loadTablaReglas();
-			}
+			});
+
+
 		}
 
 		const eliminarVar = (id, nom) => {
@@ -623,7 +650,7 @@ if (!array_key_exists('perfil', $_SESSION)) {
 				Swal.fire({
 					title: '¡Atención!',
 					icon: 'error',
-					html: `<div class='text-left'><ul>${msj}</ul></div>`,
+					html: `<div style='text-align:left;'><ul>${msj}</ul></div>`,
 					showCloseButton: true,
 					showCancelButton: false,
 					focusConfirm: false,
@@ -673,6 +700,84 @@ if (!array_key_exists('perfil', $_SESSION)) {
 			idEditVariable = '';
 		}
 
+		let idEditRegla = ''; 
+		const editRegla = (id)=>{
+			idEditRegla = id ;
+			storeReglas.forEach((i)=>{
+				if( i.id == id ){
+					document.querySelector("#reglaNombre").value = i.nombre ;
+					document.querySelector("#reglaVigencia").value = i.vigencia;
+					document.querySelector("#txtValor_1").value = '0.1';
+					document.querySelector("#txtValor_2").value = '0.5';
+					document.querySelector("#cmbTasas").value = i.tasa ;
+				}
+			});
+			$("#collapseExample").show();
+		}
+
+
+		const putRegla = ()=>{
+			let msj = '';
+
+			if( document.querySelector("#reglaNombre").value == '' ){
+				msj += '<li> El nombre no puede ser vacío </li>';
+			}
+			if( document.querySelector("#reglaVigencia").value == '' ){
+				msj += '<li> La vigencia no puede ser vacío </li>';
+			}
+			let msj2 = '';
+			document.querySelectorAll("[id^=txtValor]").forEach((i)=>{
+				if( i.value == '' ){
+					msj2 = `<li> Existe uno o más valores vacíos, por favor verifique.</li>`;
+				}
+			});
+			msj = msj + msj2;
+			if( msj != '' ){
+				Swal.fire({
+					icon: 'error',
+					title: '¡Atención!',
+					html: `<div style='text-align:left;' ><ul>${msj}</ul></div>`,
+					footer: '<!--<a href="">Why do I have this issue?</a>-->'
+				})
+				return false;
+			} else {
+				let vars = [];
+				document.querySelectorAll("[id^=reglaVariableNombre_]").forEach((i)=>{ 
+					vars.push(i.id.split('_')[1]);
+				})
+				storeReglas.push({
+					id : parseInt(storeReglas.length + 1) ,
+					nombre : document.querySelector("#reglaNombre").value ,
+					vigencia : document.querySelector("#reglaVigencia").value.replace(' - ',',') ,
+					variables : vars.join(' ') ,
+					tasa : document.querySelector("#cmbTasas").value, 
+					fecha_creacion: new Date().toISOString().split("T")[0]
+				});
+				loadTablaReglas();
+
+				document.querySelector("#reglaNombre").value = '';
+				document.querySelectorAll("[id^=reglaVariableNombre_]").forEach((i)=>{ 
+					//i.value = '';
+				});
+				document.querySelectorAll("[id^=cmbCondicion_]").forEach((i)=>{ 
+					i.value = '1';
+				});
+				document.querySelectorAll("[id^=txtValor_]").forEach((i)=>{ 
+					i.value = '';
+				});
+				document.querySelector("#cmbTasas").value = '1';
+
+				$("#collapseExample").hide();
+
+				Swal.fire({
+						icon: 'success',
+						title: '',
+						text: 'Registro creado con exito',
+						footer: '<!--<a href="">Why do I have this issue?</a>-->'
+					})
+
+			}
+		}
 
 		loadTablaVariables();
 		loadTablaReglas();
