@@ -173,7 +173,7 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                                     </div>
                                                     <div class="row">
                                                         <button class="btn btn-primary btn-sm pull-right col-lg-3 col-md-3 col-sm-6"
-                                                            onclick="swal('¡Perfecto!','Datos guardados con exito.','success');"
+                                                            onclick="guardarOperacional()"
                                                             >
                                                                 <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
                                                     </div>
@@ -191,7 +191,9 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                                                 <div class="col-gl-6 col-md-6 col-sm-12">
                                                                     Seleccione Logo Ingreso: <input type="file" class="form-control">
                                                                     <br>
-                                                                    <button class="btn btn-primary btn-sm pull-right  col-lg-4 col-md-4">  <span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span>  Subir</button>
+                                                                    <button class="btn btn-primary btn-sm pull-right  col-lg-4 col-md-4"
+                                                                        onclick="subirLogoLogin()"
+                                                                        >  <span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span>  Subir</button>
                                                                 </div>
                                                                 <div class="col-gl-6 col-md-6 col-sm-12">
                                                                     Previsualizar:
@@ -211,7 +213,9 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                                                 <div class="col-gl-6 col-md-6 col-sm-12">
                                                                     Seleccione Logo Menu: <input type="file" class="form-control">
                                                                     <br>
-                                                                    <button class="btn btn-primary btn-sm pull-right col-lg-4 col-md-4">  <span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span>  Subir</button>
+                                                                    <button class="btn btn-primary btn-sm pull-right col-lg-4 col-md-4"
+                                                                        onclick="subirLogoMenu()"
+                                                                        >  <span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span>  Subir</button>
                                                                 </div>
                                                                 <div class="col-gl-6 col-md-6 col-sm-12">
                                                                     Previsualizar:
@@ -315,9 +319,11 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                                     <br>
                                                     <div class="col-lg-12">
                                                         <button class="btn btn-sm btn-primary pull-right col-md-3"
-                                                            onclick="swal('¡Perfecto!','Datos guardados con exito.','success');"
+                                                            onclick="guardarApariencia()"
                                                             > <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
-                                                        <button class="btn btn-sm btn-default pull-left"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> Restablecer</button>
+                                                        <button class="btn btn-sm btn-default pull-left"
+                                                            onclick="restablecerConfiguracion()"
+                                                            > <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> Restablecer</button>
                                                     </div>
                                                     <br>
                                                 </div>
@@ -419,9 +425,9 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                                                         </dl>
                                                                         <div class="m-t-30" style="text-align:center;">
                                                                             <button class="btn btn-primary btn-sm pull-right col-lg-3" id="btnEditar"
-                                                                                onclick="swal('¡Perfecto!','Datos guardados con exito.','success');"
+                                                                                onclick="guardarPerfil()"
                                                                                 > <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
-                                                                            <button data-pmb-action="reset" class="btn btn-danger btn-sm pull-left"> <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Cancelar</button>
+                                                                            <!-- <button data-pmb-action="reset" class="btn btn-danger btn-sm pull-left"> <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Cancelar</button> -->
                                                                         </div>
                                                                     </div>
                                                                 </form>
@@ -669,35 +675,99 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 
 
         const eliminarLogo = () => {
-            swal({
-                title: '¿Eliminar registro?',
-                text: "!No se podrá deshacer esta acción!",
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Si, eliminar!',
-                cancelButtonText: 'Cancel!',
-                confirmButtonClass: 'btn btn-success',
-                cancelButtonClass: 'btn btn-danger',
-                buttonsStyling: false
-            }).then(function() {
-                swal(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                )
-            }, function(dismiss) {
-                // dismiss can be 'cancel', 'overlay',
-                // 'close', and 'timer'
-                if (dismiss === 'cancel') {
-                    swal(
-                        'Cancelled',
-                        'Your imaginary file is safe :)',
-                        'error'
-                    )
+
+
+            Swal.fire({
+				title: '¿Eliminar registro?',
+				text: "!No se podrá deshacer esta acción!",
+				icon: 'warning',
+				showCancelButton: true,
+				confirmButtonColor: '#3085d6',
+				cancelButtonColor: '#d33',
+				confirmButtonText: 'Sí, eliminar!',
+				cancelButtonText: 'Cancelar'
+			}).then((result) => {
+				if (result.isConfirmed) {
+                    Swal.fire({
+						icon: 'success',
+						title: '',
+						text: 'Registro eliminado con exito',
+						footer: '<!--<a href="">Why do I have this issue?</a>-->'
+					})
+                } else {
+                    Swal.fire({
+						icon: 'success',
+						title: '',
+						text: 'Acción cancelada',
+						footer: '<!--<a href="">Why do I have this issue?</a>-->'
+					})
                 }
+            });
+
+
+        }
+
+
+        const subirLogoLogin = ()=>{
+            Swal.fire({
+                icon: 'success',
+                title: '¡Perfecto!',
+                text: 'Imagen subida con éxito.',
+                footer: '<!--<a href="">Why do I have this issue?</a>-->'
             })
+        }
+        const subirLogoMenu = ()=>{
+            Swal.fire({
+                icon: 'success',
+                title: '¡Perfecto!',
+                text: 'Imagen subida con éxito.',
+                footer: '<!--<a href="">Why do I have this issue?</a>-->'
+            })
+        }
+        const guardarApariencia = ()=>{
+            Swal.fire({
+                icon: 'success',
+                title: '¡Perfecto!',
+                text: 'Datos guardados con éxito.',
+                footer: '<!--<a href="">Why do I have this issue?</a>-->'
+            })
+        }
+        const guardarPerfil = ()=>{
+            Swal.fire({
+                icon: 'success',
+                title: '¡Perfecto!',
+                text: 'Datos guardados con éxito.',
+                footer: '<!--<a href="">Why do I have this issue?</a>-->'
+            })
+        }
+        const guardarOperacional = ()=>{
+            Swal.fire({
+                icon: 'success',
+                title: '¡Perfecto!',
+                text: 'Datos guardados con éxito.',
+                footer: '<!--<a href="">Why do I have this issue?</a>-->'
+            })
+        }
+        const restablecerConfiguracion = ()=>{
+            Swal.fire({
+				title: '¡Atención!',
+				text: `¿Seguro desea restablecer los valores por defecto ?`,
+				icon: 'warning',
+				showCancelButton: true,
+				confirmButtonColor: '#3085d6',
+				cancelButtonColor: '#d33',
+				confirmButtonText: 'Sí, eliminar!',
+				cancelButtonText: 'Cancelar'
+			}).then((result) => {
+				if (result.isConfirmed) {					
+					Swal.fire({
+						icon: 'success',
+						title: '',
+						text: 'Valores restablecidos con exito',
+						footer: '<!--<a href="">Why do I have this issue?</a>-->'
+					})
+				}
+			});
 
         }
     </script>
