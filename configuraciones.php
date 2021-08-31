@@ -568,7 +568,7 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
 
                 /*PREGUNTO SI HAY DATOS EN LA CONTRASEÑA NUEVA, PARA VALIDAR LA MODIFICACIÓN, SINO NO EVÁLIDO PORQUE NO LA MODIFICARÁ*/
                 if ($("#passwordNueva").val() != '') {
-
+                    return false;
                     var passwordNueva = $("#passwordNueva").val();
                     if (passwordNueva == '') {
                         $('#passwordNueva').css('border-color', '#FF0000');

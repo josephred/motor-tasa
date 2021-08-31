@@ -57,35 +57,47 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr class="danger">
+                                                        <tr class="danger" id="rev01">
 
                                                             <td>Maria Paula</td>
                                                             <td>Analista</td>
                                                             <td>Crear nueva regla</td>
                                                             <td>21-08-2021 08:21:23</td>
                                                             <td>
-                                                                <button class="btn btn-primary" style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"><i class="fa fa-eye" aria-hidden="true"></i>
+                                                                <button class="btn btn-primary" 
+                                                                        style='margin-left: 16px; ' type="button" 
+                                                                        data-toggle="modal" data-target="#ModalAdminVar"
+                                                                        onclick="arrBajar=['rev01','rev011'] "
+                                                                        ><i class="fa fa-eye" aria-hidden="true"></i>
                                                                 </button>
                                                             </td>
                                                         </tr>
-                                                        <tr class="danger">
+                                                        <tr class="danger" id="rev02">
                                                             <td>Maria Paula</td>
                                                             <td>Analista</td>
                                                             <td>Crear nueva tasa</td>
                                                             <td>21-08-2021 18:21:23</td>
                                                             <td>
-                                                                <button class="btn btn-primary" style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"><i class="fa fa-eye" aria-hidden="true"></i>
+                                                                <button class="btn btn-primary" 
+                                                                        style='margin-left: 16px; ' type="button" 
+                                                                        data-toggle="modal" data-target="#ModalAdminVar"
+                                                                        onclick="arrBajar=['rev02','rev022'] "
+                                                                        ><i class="fa fa-eye" aria-hidden="true"></i>
                                                                 </button>
                                                             </td>
 
                                                         </tr>
-                                                        <tr class="danger">
+                                                        <tr class="danger" id="rev03">
                                                             <td>Maria Paula</td>
                                                             <td>Analista</td>
                                                             <td>Crear nueva tasa</td>
                                                             <td>24-08-2021 15:21:23</td>
                                                             <td>
-                                                                <button class="btn btn-primary" style='margin-left: 16px; ' type="button" data-toggle="modal" data-target="#ModalAdminVar"><i class="fa fa-eye" aria-hidden="true"></i>
+                                                                <button class="btn btn-primary" 
+                                                                        style='margin-left: 16px; ' type="button" 
+                                                                        data-toggle="modal" data-target="#ModalAdminVar"
+                                                                        onclick="arrBajar=['rev03','rev033'] "
+                                                                        ><i class="fa fa-eye" aria-hidden="true"></i>
                                                                 </button>
                                                             </td>
 
@@ -166,6 +178,48 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+
+                                                        <tr class="danger" id="rev011">
+
+                                                            <td>Maria Paula</td>
+                                                            <td>Analista</td>
+                                                            <td>Crear nueva regla</td>
+                                                            <td>21-08-2021 08:21:23</td>
+                                                            <td>Rechazada</td>
+                                                            <td>
+                                                                <button onclick='swap("rev011","rev01")' class="btn btn-danger" style='margin-left: 16px; ' type="button" data-toggle="modal" ><i class="fa fa-refresh" aria-hidden="true"></i>
+                                                                </button>
+                                                            </td>
+                                                            <td>No cumple con las normas básicas </td>
+                                                        </tr>
+                                                        <tr class="danger" id="rev022">
+                                                            <td>Maria Paula</td>
+                                                            <td>Analista</td>
+                                                            <td>Crear nueva tasa</td>
+                                                            <td>21-08-2021 18:21:23</td>
+                                                            <td>Autorizada</td>
+                                                            <td>
+                                                                <button onclick='swap("rev022","rev02")' class="btn btn-danger" style='margin-left: 16px; ' type="button" data-toggle="modal" ><i class="fa fa-refresh" aria-hidden="true"></i>
+                                                                </button>
+                                                            </td>
+                                                            <td>No cumple con las normas básicas </td>
+                                                        </tr>
+                                                        <tr class="danger" id="rev033">
+                                                            <td>Maria Paula</td>
+                                                            <td>Analista</td>
+                                                            <td>Crear nueva tasa</td>
+                                                            <td>24-08-2021 15:21:23</td>
+                                                            <td>Autorizada</td>
+                                                            <td>
+                                                                <button onclick='swap("rev033","rev03")' class="btn btn-danger" style='margin-left: 16px; ' type="button" data-toggle="modal" ><i class="fa fa-refresh" aria-hidden="true"></i>
+                                                                </button>
+                                                            </td>
+                                                            <td>No cumple con las normas básicas </td>
+                                                        </tr>
+
+
+
+
                                                             <tr class="danger" id="rev11">
                                                                 <td>Maria Paula</td>
                                                                 <td>Analista</td>
@@ -266,7 +320,7 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-primary btn-sm pull-right col-lg-3" data-dismiss="modal" aria-label="Close"
-                                onclick="swal('¡Perfecto!','Datos guardados con exito.','success');"  > <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
+                                onclick="bajar()"  > <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
 
                         <button type="button" class="btn btn-default btn-sm pull-left" data-dismiss="modal" aria-label="Close"> <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Cerrar </button>
                     </div>
@@ -423,14 +477,34 @@ if( !array_key_exists('perfil', $_SESSION) ){  header("Location: login.php");}
                 });
 
             });
-            const swap = (idOcultar, idMostrar)=>{
+            const swap = (idOcultar, idMostrar, reversa=true)=>{
                 $(`#${idOcultar}`).hide();
                 $(`#${idMostrar}`).show();
-                swal('¡Perfecto!','Autorización reversada con exito.','success');
+                let m = '';
+                if( reversa ){
+                    m = 'Registro reversada con éxito.';
+                }else{
+                    m = 'Registro gestionado con éxito.';
+                }
+                Swal.fire({
+						icon: 'success',
+						title: '¡Perfecto!',
+						text: m,
+						footer: '<!--<a href="">Why do I have this issue?</a>-->'
+					})
             }
             $("#rev1").hide();
             $("#rev2").hide();
             $("#rev3").hide();
+            $("#rev011").hide();
+            $("#rev022").hide();
+            $("#rev033").hide();
+
+            let arrBajar = [];
+
+            const bajar = ()=>{
+                swap(arrBajar[0],arrBajar[1],false);
+            }
         </script>
 </body>
 
